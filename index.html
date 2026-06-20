@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MRCEM Primary — Exam Preparation Course</title>
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  .course-hero { text-align: center; padding: 3rem 0 2rem; }
+  .course-hero h1 { font-size: 2.6rem; margin-bottom: 0.5rem; }
+  .course-hero .subtitle { font-size: 1.15rem; color: #64748b; font-family: system-ui, sans-serif; }
+  .countdown { font-family: system-ui, sans-serif; background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%); color: #fff; border-radius: 12px; padding: 2rem; margin: 2rem 0; text-align: center; }
+  .countdown .days { font-size: 3rem; font-weight: 800; line-height: 1; }
+  .countdown .label { font-size: 0.85rem; opacity: 0.85; margin-top: 0.25rem; }
+  .phase-card { border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; margin: 1rem 0; background: #fff; }
+  .phase-card h3 { margin-top: 0; }
+  .phase-card .dates { font-family: system-ui, sans-serif; font-size: 0.85rem; color: #64748b; }
+  .lesson-list { list-style: none; margin: 0; padding: 0; }
+  .lesson-list li { display: flex; align-items: baseline; gap: 0.75rem; padding: 0.6rem 0; border-bottom: 1px solid #f1f5f9; }
+  .lesson-list .num { font-family: system-ui, sans-serif; font-size: 0.8rem; font-weight: 600; color: #4f46e5; min-width: 3rem; }
+  .lesson-list .title { flex: 1; }
+  .lesson-list .status { font-family: system-ui, sans-serif; font-size: 0.75rem; padding: 0.2rem 0.6rem; border-radius: 100px; }
+  .status.ready { background: #d1fae5; color: #065f46; }
+  .status.upcoming { background: #f1f5f9; color: #64748b; }
+  .deadline-banner { background: #fef3c7; border: 1px solid #f59e0b; border-radius: 12px; padding: 1.25rem 1.5rem; margin: 2rem 0; font-family: system-ui, sans-serif; }
+  .deadline-banner strong { color: #92400e; }
+</style>
+</head>
+<body>
+<div class="lesson-container">
+
+<header class="course-hero">
+  <p class="lesson-number">MRCEM Primary Exam Preparation</p>
+  <h1>Pass the MRCEM Primary</h1>
+  <p class="subtitle">18-week structured course · Exam: 27 October 2026</p>
+</header>
+
+<div class="countdown">
+  <div class="days" id="countdown-days">—</div>
+  <div class="label" id="countdown-label">days until the exam</div>
+</div>
+
+<div class="deadline-banner">
+  ⚠️ <strong>Applications open 15 July 2026 at 10am UK</strong> — close 22 July at 4pm.<br>
+  Join RCEM <strong>before 14 July</strong> for the £429 member rate (saves £96).
+</div>
+
+<section>
+<h2>The Plan</h2>
+
+<div class="phase-card">
+  <h3>Phase 1: Foundations</h3>
+  <p class="dates">Weeks 1–6 · 20 June – 1 August</p>
+  <p>Core anatomy, physiology, and cellular foundations across all major systems.</p>
+  <ul class="lesson-list">
+    <li><span class="num">0001</span><span class="title"><a href="lessons/0001-cellular-injury-inflammation.html">Cellular Injury, Inflammation &amp; Immune Response</a></span><span class="status ready">ready</span></li>
+    <li><span class="num">0002</span><span class="title">Acute Inflammation Mediators &amp; Wound Healing</span><span class="status upcoming">upcoming</span></li>
+    <li><span class="num">0003</span><span class="title">Cardiovascular Anatomy</span><span class="status upcoming">upcoming</span></li>
+  </ul>
+</div>
+
+<div class="phase-card">
+  <h3>Phase 2: Clinical Sciences</h3>
+  <p class="dates">Weeks 7–12 · 2 August – 12 September</p>
+  <p>Pathology and pharmacology by system. Disease mechanisms and drug actions.</p>
+</div>
+
+<div class="phase-card">
+  <h3>Phase 3: Consolidation &amp; Gaps</h3>
+  <p class="dates">Weeks 13–16 · 13 September – 10 October</p>
+  <p>Microbiology deep dive, EBM, embryology, full pharmacology review.</p>
+</div>
+
+<div class="phase-card">
+  <h3>Phase 4: Exam Conditioning</h3>
+  <p class="dates">Weeks 17–18 · 11 October – 26 October</p>
+  <p>Mock exams, timing practice, weak-spot reinforcement. Rest before exam day.</p>
+</div>
+</section>
+
+<section>
+<h2>Reference Materials</h2>
+<ul>
+  <li><a href="reference/cellular-injury-cheatsheet.html">Cellular Injury &amp; Inflammation Cheat Sheet</a> — print-friendly quick reference</li>
+  <li><a href="PLAN.md">Full 18-Week Plan</a></li>
+  <li><a href="RESOURCES.md">Resource List</a></li>
+</ul>
+</section>
+
+<footer>
+  <p>💬 Each lesson page includes a reminder: ask follow-up questions anytime. I'm your teacher — if something's unclear, we work through it until it's solid.</p>
+</footer>
+
+</div>
+
+<script>
+// Countdown timer
+const examDate = new Date('2026-10-27T09:00:00+01:00');
+const el = document.getElementById('countdown-days');
+const label = document.getElementById('countdown-label');
+function update() {
+  const now = new Date();
+  const diff = examDate - now;
+  const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
+  el.textContent = days > 0 ? days : '0';
+  label.textContent = days > 0 ? 'days until the exam' : "It's exam day. You've got this.";
+}
+update();
+setInterval(update, 60000);
+</script>
+
+</body>
+</html>

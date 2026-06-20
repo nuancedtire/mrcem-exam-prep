@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MRCEM Primary — Lesson 1: Cellular Injury, Inflammation &amp; Immune Response</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  .quiz-options { display: flex; flex-direction: column; gap: 0.5rem; margin: 1rem 0; }
+  .quiz-option { padding: 0.75rem 1rem; border: 2px solid #d1d5db; border-radius: 8px; cursor: pointer; transition: all 0.15s; background: #fff; }
+  .quiz-option:hover { border-color: #6366f1; background: #eef2ff; }
+  .quiz-option.correct { border-color: #059669; background: #d1fae5; }
+  .quiz-option.incorrect { border-color: #dc2626; background: #fee2e2; }
+  .quiz-option.reveal-correct { border-color: #059669; background: #d1fae5; }
+  .answer-feedback { display: none; margin-top: 0.75rem; padding: 0.75rem 1rem; border-radius: 8px; font-size: 0.9rem; }
+  .answer-feedback.correct { display: block; background: #d1fae5; color: #065f46; }
+  .answer-feedback.incorrect { display: block; background: #fee2e2; color: #991b1b; }
+  .flashcard { border: 2px solid #e5e7eb; border-radius: 12px; padding: 2rem; margin: 1.5rem 0; text-align: center; cursor: pointer; user-select: none; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); }
+  .flashcard .front { font-weight: 600; font-size: 1.1rem; }
+  .flashcard .back { display: none; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #e5e7eb; color: #4b5563; }
+  .flashcard.flipped .front { display: none; }
+  .flashcard.flipped .back { display: block; }
+  .key-point { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 1rem 1.25rem; margin: 1rem 0; border-radius: 0 8px 8px 0; }
+  .exam-tip { background: #e0e7ff; border-left: 4px solid #6366f1; padding: 1rem 1.25rem; margin: 1rem 0; border-radius: 0 8px 8px 0; }
+</style>
+</head>
+<body>
+<div class="lesson-container">
+
+<header>
+  <p class="lesson-number">Lesson 0001</p>
+  <h1>Cellular Injury, Inflammation &amp; Immune Response</h1>
+  <p class="lesson-meta">MRCEM Primary · Phase 1 Foundations · Week 1</p>
+</header>
+
+<section>
+<h2>Why This Matters</h2>
+<p>Every disease you see in the Emergency Department — from anaphylaxis to myocardial infarction, sepsis to trauma — begins at the cellular level. MRCEM Primary tests your understanding of <em>what happens inside and between cells</em> when injury occurs. This lesson covers roughly 15-20% of the Pathology questions and underpins all of Microbiology.</p>
+</section>
+
+<section>
+<h2>Knowledge: The Core Framework</h2>
+
+<h3>1. Cellular Responses to Injury</h3>
+<p>Cells have four fundamental responses to stress or injury:</p>
+
+<table>
+  <tr><th>Response</th><th>What Happens</th><th>Reversible?</th><th>Key Feature</th></tr>
+  <tr><td><strong>Adaptation</strong></td><td>Cell changes size/number/type to survive</td><td>Yes</td><td>Hypertrophy, hyperplasia, atrophy, metaplasia</td></tr>
+  <tr><td><strong>Reversible injury</strong></td><td>Cellular swelling, fatty change</td><td>Yes</td><td>ATP depletion → Na+/K+ pump failure → swelling</td></tr>
+  <tr><td><strong>Irreversible injury</strong></td><td>Point of no return</td><td>No</td><td>Mitochondrial membrane damage, Ca²⁺ influx</td></tr>
+  <tr><td><strong>Cell death</strong></td><td>Necrosis or apoptosis</td><td>No</td><td>Necrosis = messy; Apoptosis = clean/programmed</td></tr>
+</table>
+
+<div class="flashcard" onclick="this.classList.toggle('flipped')">
+  <div class="front">🔥 Quick recall: Name the 4 types of cellular adaptation</div>
+  <div class="back">
+    <strong>Hypertrophy</strong> — increase in cell SIZE<br>
+    <strong>Hyperplasia</strong> — increase in cell NUMBER<br>
+    <strong>Atrophy</strong> — decrease in cell size<br>
+    <strong>Metaplasia</strong> — change from one mature cell type to another
+  </div>
+</div>
+
+<h3>2. Necrosis vs Apoptosis</h3>
+<p>This is one of the <strong>highest-yield distinctions</strong> in MRCEM Primary.</p>
+
+<table>
+  <tr><th>Feature</th><th>Necrosis</th><th>Apoptosis</th></tr>
+  <tr><td>Mechanism</td><td>Pathological — energy failure</td><td>Programmed — ATP-dependent</td></tr>
+  <tr><td>Cell size</td><td>Swelling (oncosis)</td><td>Shrinking (pyknosis)</td></tr>
+  <tr><td>Membrane</td><td>Ruptures early → leaks contents</td><td>Intact until late</td></tr>
+  <tr><td>Inflammation</td><td><strong>Yes</strong> — contents trigger it</td><td><strong>No</strong> — contents contained</td></tr>
+  <tr><td>Nucleus</td><td>Karyolysis (fading)</td><td>Karyorrhexis (fragmentation)</td></tr>
+  <tr><td>Pattern</td><td>Groups of cells</td><td>Single cells</td></tr>
+  <tr><td>Examples</td><td>MI, stroke, burn</td><td>Embryogenesis, viral hepatitis (Councilman bodies)</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>🧠 Exam pattern:</strong> MRCEM loves asking "Which type of cell death is characterized by..." and giving you a description. Memorise the <em>membrane integrity</em> and <em>inflammation</em> rows — those are the most reliable differentiators.
+</div>
+
+<h3>3. Types of Necrosis</h3>
+<table>
+  <tr><th>Type</th><th>Appearance</th><th>Classic Example</th></tr>
+  <tr><td><strong>Coagulative</strong></td><td>Firm, pale, architecture preserved</td><td>Myocardial infarction</td></tr>
+  <tr><td><strong>Liquefactive</strong></td><td>Liquid, pus-filled</td><td>Brain infarct, abscess</td></tr>
+  <tr><td><strong>Caseous</strong></td><td>Cheese-like, granular</td><td>Tuberculosis</td></tr>
+  <tr><td><strong>Fat necrosis</strong></td><td>Chalky white (saponification)</td><td>Acute pancreatitis</td></tr>
+  <tr><td><strong>Gangrenous</strong></td><td>Black, dry or wet</td><td>Limb ischaemia</td></tr>
+  <tr><td><strong>Fibrinoid</strong></td><td>Bright eosinophilic vessel walls</td><td>Malignant hypertension, vasculitis</td></tr>
+</table>
+
+<h3>4. Acute Inflammation — The 5 Cardinal Signs</h3>
+<p class="mnemonic"><strong>PRISH:</strong> Pain, Redness, Immobility, Swelling, Heat</p>
+<p>The vascular changes that produce these:</p>
+<ol>
+  <li><strong>Transient vasoconstriction</strong> (seconds)</li>
+  <li><strong>Vasodilation</strong> → redness + heat (histamine, NO, prostaglandins)</li>
+  <li><strong>Increased permeability</strong> → swelling (histamine, bradykinin, leukotrienes)</li>
+  <li><strong>Leukocyte migration</strong> → pain + immobility (margination → rolling → adhesion → diapedesis → chemotaxis)</li>
+</ol>
+
+<div class="key-point">
+  <strong>⚡ Key mediators for the exam:</strong><br>
+  <strong>Histamine</strong> — from mast cells. Vasodilation + permeability. <em>The</em> acute-phase mediator.<br>
+  <strong>Prostaglandins (PGE₂, PGI₂)</strong> — COX pathway. Vasodilation + pain sensitisation.<br>
+  <strong>Leukotrienes (LTB₄, LTC₄/D₄/E₄)</strong> — LOX pathway. Chemotaxis + permeability.<br>
+  <strong>Bradykinin</strong> — pain + permeability.<br>
+  <strong>Complement (C3a, C5a)</strong> — anaphylatoxins → mast cell degranulation + chemotaxis.
+</div>
+
+<h3>5. Chronic Inflammation</h3>
+<p>When acute inflammation doesn't resolve. Characterised by:</p>
+<ul>
+  <li><strong>Mononuclear cells</strong> (macrophages, lymphocytes, plasma cells) — not neutrophils</li>
+  <li><strong>Tissue destruction</strong></li>
+  <li><strong>Repair</strong> (angiogenesis + fibrosis)</li>
+</ul>
+<p>Classic example: <strong>Granulomatous inflammation</strong> — epithelioid macrophages + giant cells (TB, sarcoidosis, Crohn's, fungal infections).</p>
+
+<h3>6. Immune Response Overview</h3>
+<table>
+  <tr><th>Feature</th><th>Innate</th><th>Adaptive</th></tr>
+  <tr><td>Speed</td><td>Immediate (minutes-hours)</td><td>Delayed (days)</td></tr>
+  <tr><td>Specificity</td><td>Pattern recognition (PAMPs/DAMPs)</td><td>Highly specific (antigens)</td></tr>
+  <tr><td>Memory</td><td>No</td><td>Yes</td></tr>
+  <tr><td>Cells</td><td>Neutrophils, macrophages, NK cells, DCs</td><td>T cells, B cells</td></tr>
+  <tr><td>Key receptors</td><td>TLRs, NLRs, RLRs</td><td>TCR, BCR</td></tr>
+</table>
+</section>
+
+<section>
+<h2>Skills: Retrieval Practice</h2>
+<p>Answer each question <em>from memory</em> before clicking. Retrieval builds storage strength.</p>
+
+<div class="quiz" id="q1">
+  <p><strong>Q1.</strong> A 62-year-old man dies 48 hours after an anterior STEMI. At autopsy, the affected myocardium appears firm and pale with preserved tissue architecture. This is most consistent with:</p>
+  <div class="quiz-options">
+    <div class="quiz-option" onclick="checkAnswer('q1', this, 3)">A. Liquefactive necrosis</div>
+    <div class="quiz-option" onclick="checkAnswer('q1', this, 3)">B. Caseous necrosis</div>
+    <div class="quiz-option" onclick="checkAnswer('q1', this, 0)">C. Coagulative necrosis</div>
+    <div class="quiz-option" onclick="checkAnswer('q1', this, 3)">D. Fat necrosis</div>
+    <div class="quiz-option" onclick="checkAnswer('q1', this, 3)">E. Fibrinoid necrosis</div>
+  </div>
+  <div class="answer-feedback" id="q1-feedback"></div>
+</div>
+
+<div class="quiz" id="q2">
+  <p><strong>Q2.</strong> Which cell type is the <em>predominant</em> infiltrate in acute inflammation?</p>
+  <div class="quiz-options">
+    <div class="quiz-option" onclick="checkAnswer('q2', this, 0)">A. Neutrophils</div>
+    <div class="quiz-option" onclick="checkAnswer('q2', this, 0)">B. Lymphocytes</div>
+    <div class="quiz-option" onclick="checkAnswer('q2', this, 0)">C. Macrophages</div>
+    <div class="quiz-option" onclick="checkAnswer('q2', this, 0)">D. Plasma cells</div>
+    <div class="quiz-option" onclick="checkAnswer('q2', this, 0)">E. Eosinophils</div>
+  </div>
+  <div class="answer-feedback" id="q2-feedback"></div>
+</div>
+
+<div class="quiz" id="q3">
+  <p><strong>Q3.</strong> Which mediator is <em>primarily</em> responsible for the pain associated with acute inflammation?</p>
+  <div class="quiz-options">
+    <div class="quiz-option" onclick="checkAnswer('q3', this, 0)">A. Histamine</div>
+    <div class="quiz-option" onclick="checkAnswer('q3', this, 3)">B. Bradykinin</div>
+    <div class="quiz-option" onclick="checkAnswer('q3', this, 3)">C. Nitric oxide</div>
+    <div class="quiz-option" onclick="checkAnswer('q3', this, 3)">D. Leukotriene B4</div>
+    <div class="quiz-option" onclick="checkAnswer('q3', this, 3)">E. Complement C3a</div>
+  </div>
+  <div class="answer-feedback" id="q3-feedback"></div>
+</div>
+
+<div class="quiz" id="q4">
+  <p><strong>Q4.</strong> A cell undergoing <em>programmed</em> cell death shows nuclear fragmentation, cell shrinkage, and intact plasma membrane. Which process is this?</p>
+  <div class="quiz-options">
+    <div class="quiz-option" onclick="checkAnswer('q4', this, 0)">A. Apoptosis</div>
+    <div class="quiz-option" onclick="checkAnswer('q4', this, 0)">B. Coagulative necrosis</div>
+    <div class="quiz-option" onclick="checkAnswer('q4', this, 0)">C. Autophagy</div>
+    <div class="quiz-option" onclick="checkAnswer('q4', this, 0)">D. Oncosis</div>
+    <div class="quiz-option" onclick="checkAnswer('q4', this, 0)">E. Pyroptosis</div>
+  </div>
+  <div class="answer-feedback" id="q4-feedback"></div>
+</div>
+
+<div class="quiz" id="q5">
+  <p><strong>Q5.</strong> Which Toll-like receptor (TLR) recognises lipopolysaccharide (LPS) from Gram-negative bacteria?</p>
+  <div class="quiz-options">
+    <div class="quiz-option" onclick="checkAnswer('q5', this, 3)">A. TLR2</div>
+    <div class="quiz-option" onclick="checkAnswer('q5', this, 0)">B. TLR4</div>
+    <div class="quiz-option" onclick="checkAnswer('q5', this, 3)">C. TLR3</div>
+    <div class="quiz-option" onclick="checkAnswer('q5', this, 3)">D. TLR7</div>
+    <div class="quiz-option" onclick="checkAnswer('q5', this, 3)">E. TLR9</div>
+  </div>
+  <div class="answer-feedback" id="q5-feedback"></div>
+</div>
+</section>
+
+<section>
+<h2>Key Takeaways</h2>
+<ol>
+  <li><strong>Necrosis vs apoptosis</strong> = membrane rupture + inflammation vs programmed + contained. Know this cold.</li>
+  <li><strong>6 necrosis types</strong> — coagulative (MI), liquefactive (brain), caseous (TB), fat (pancreatitis), gangrenous (limb), fibrinoid (vasculitis)</li>
+  <li><strong>5 cardinal signs</strong> — PRISH. Mediated by histamine, prostaglandins, bradykinin, leukotrienes.</li>
+  <li><strong>Innate vs adaptive</strong> — speed + pattern recognition vs specificity + memory</li>
+  <li><strong>TLR4 recognises LPS</strong> — this is the single most tested TLR fact in MRCEM Primary</li>
+</ol>
+</section>
+
+<section class="resources">
+<h2>Recommended Primary Source</h2>
+<p>📖 <strong>Robbins Basic Pathology</strong>, Chapter 2 (Cell Injury, Cell Death, and Adaptations) &amp; Chapter 3 (Inflammation and Repair). The gold-standard pathology textbook — and the examiners write from it.</p>
+<p>🌐 <strong>RCEMLearning</strong> — Basic Sciences module → Cellular Pathology &amp; Immunology sections (available once you join RCEM)</p>
+<p>📄 <strong>Reference:</strong> <a href="../reference/cellular-injury-cheatsheet.html">Cellular Injury Quick-Reference Cheat Sheet</a></p>
+<p>📋 <strong>Plan:</strong> <a href="../PLAN.md">18-Week Study Plan</a></p>
+</section>
+
+<footer>
+  <p>💬 <strong>Stuck on something?</strong> Ask me follow-up questions. I'm your teacher — anything unclear, let's work through it.</p>
+  <p class="lesson-number">Lesson 0001 · Phase 1 Foundations · <a href="0002-acute-inflammation-mediators.html">Next: Lesson 2 →</a></p>
+</footer>
+
+</div>
+
+<script>
+function checkAnswer(qid, el, correctIdx) {
+  const quiz = document.getElementById(qid);
+  const options = quiz.querySelectorAll('.quiz-option');
+  const feedback = document.getElementById(qid + '-feedback');
+  const idx = Array.from(options).indexOf(el);
+
+  // Reset all
+  options.forEach(o => { o.classList.remove('correct', 'incorrect', 'reveal-correct'); o.style.pointerEvents = 'none'; });
+
+  if (idx === correctIdx) {
+    el.classList.add('correct');
+    feedback.className = 'answer-feedback correct';
+    feedback.textContent = '✅ Correct! Well done.';
+  } else {
+    el.classList.add('incorrect');
+    options[correctIdx].classList.add('reveal-correct');
+    feedback.className = 'answer-feedback incorrect';
+    feedback.textContent = '❌ Not quite. The correct answer is highlighted in green.';
+  }
+}
+</script>
+
+</body>
+</html>

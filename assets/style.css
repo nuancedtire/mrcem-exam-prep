@@ -1,0 +1,140 @@
+/* MRCEM Primary Exam Prep — Shared Stylesheet */
+/* Tufte-inspired: clean, readable, print-friendly */
+
+:root {
+  --text: #1a1a2e;
+  --muted: #64748b;
+  --bg: #fafbfc;
+  --card: #ffffff;
+  --accent: #4f46e5;
+  --border: #e2e8f0;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Charter", "Georgia", "Times New Roman", serif;
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+.lesson-container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid var(--border);
+}
+
+.lesson-number {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+
+h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0.5rem 0 0.25rem;
+}
+
+h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 2rem 0 0.75rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--border);
+}
+
+h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.5rem;
+  color: #334155;
+}
+
+p { margin-bottom: 0.85rem; }
+
+p + p { margin-top: -0.25rem; }
+
+ol, ul { margin: 0.5rem 0 0.85rem 1.5rem; }
+li { margin-bottom: 0.35rem; }
+
+.lesson-meta {
+  font-family: system-ui, sans-serif;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+strong { color: #1e1b4b; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0 1.25rem;
+  font-size: 0.9rem;
+}
+
+th {
+  background: #f1f5f9;
+  font-weight: 600;
+  text-align: left;
+  padding: 0.6rem 0.75rem;
+  border-bottom: 2px solid var(--border);
+}
+
+td {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+tr:last-child td { border-bottom: none; }
+
+.mnemonic {
+  font-family: system-ui, sans-serif;
+  font-size: 1rem;
+  background: #f0fdf4;
+  border-left: 4px solid #22c55e;
+  padding: 0.75rem 1rem;
+  border-radius: 0 8px 8px 0;
+  margin: 0.75rem 0;
+}
+
+footer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid var(--border);
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+@media print {
+  body { font-size: 12pt; background: #fff; }
+  .lesson-container { max-width: 100%; padding: 0; }
+  .quiz-options { display: none; }
+}
+
+/* Cheat sheet specific */
+.cheatsheet { font-size: 0.9rem; }
+.cheatsheet h2 { font-size: 1.1rem; }
+.cheatsheet table { font-size: 0.8rem; }
