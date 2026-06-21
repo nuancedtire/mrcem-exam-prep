@@ -2,140 +2,131 @@
 
 ## Philosophy
 
-This course is a reading-to-learn experience. The design must feel like a premium publication — every.to's literary elegance, Notion's calm spaciousness, Linear's precision. Content density without visual noise. Beauty that recedes into the background so the material commands attention.
+This is a reading-to-learn experience for clinicians. The design draws from three sources:
+
+- **every.to** — bold dark/light contrast, magazine typography, editorial confidence. The hero makes a statement. The reading experience feels premium.
+- **Notion** — warm whites, soft rounded cards, emoji anchors, generous spacing. Content floats on a calm surface.
+- **Linear** — precision status indicators, crisp data tables, monospaced numbers. Information is scannable at a glance.
+
+The result: a course that feels like a premium publication, not a textbook.
 
 ## Principles
 
-### 1. Typography is the architecture
-- **Body:** Charter / Georgia serif at 17–18px — warm, readable, authoritative. Every.to uses serif body for its magazine feel; we do the same for sustained reading.
-- **UI:** System font stack (Inter / SF Pro / Segoe UI) for navigation, badges, metadata — the crisp precision of Linear.
-- **Scale:** A restrained scale — h1 at 2.2rem, h2 at 1.4rem, h3 at 1.15rem. No typographic shouting.
-- **Measure:** 760px max-width, 1.65 line-height. Comfortable for long-form medical reading.
+### 1. Bold entry, calm reading
+The hero is dark and confident — it says "this matters." The reading surface is warm and quiet — it says "stay here, focus."
 
-### 2. Space is the luxury material
-- Generous padding. Cards breathe. Sections have room.
-- Notion's genius is what it *doesn't* show. Remove chrome. Thin dividers, not heavy borders.
-- Whitespace is the primary layout tool — not boxes.
+### 2. Typography carries the weight
+- **Headings:** Charter/Georgia serif — authoritative, warm
+- **Body:** Charter/Georgia at 17px with 1.7 line-height — comfortable for sustained study
+- **UI elements:** Inter/system-ui — crisp, modern, scannable
+- **Numbers:** Tabular figures (`font-feature-settings: "tnum"`) for countdowns and lesson numbers
 
-### 3. One accent color. Everything else is neutral.
-- Linear uses a single blue accent against cool grays. We adopt the same discipline.
-- **Accent:** #4f46e5 (indigo) for links, active states, highlights
-- **Success:** #059669 for correct answers
-- **Danger:** #dc2626 for incorrect
-- **Warning:** #d97706 for alerts
-- Everything else: neutral-50 through neutral-900
+### 3. One accent. Everything else is neutral.
+- Accent: warm indigo (#4f46e5) — links, hover states, active elements
+- Everything else: warm grays and off-whites. No purple gradients, no rainbow semantics.
+- The dark hero uses only white and transparent white — no colored text.
 
-### 4. Micro-interactions signal quality
-- Every interactive element has a smooth CSS transition (150–250ms)
-- Hover states are subtle lifts (translateY(-1px) + shadow increase)
-- Links underline on hover with a slide-in effect
-- Quiz options smoothly transition border/background
-- Flashcards have a gentle flip
-- Status badges scale subtly on hover
-- Page sections fade in on load
+### 4. Warm surfaces
+- Background: #faf8f5 (warm off-white — paper, not screen)
+- Cards: #ffffff with subtle warm borders (#e8e5e0)
+- Dark surfaces: #111827 with radial indigo glow
 
-### 5. Content-first, chrome-last
-- Remove everything that's not content or essential navigation
-- The quick-launch nav buttons are gone — the lesson list IS the navigation
-- Status badges tell you what's ready vs upcoming at a glance
-- The countdown is minimal — a single number, not a banner
+### 5. Micro-interactions signal care
+- Cards lift 2px on hover with shadow expansion (300ms ease)
+- Quiz options lift 1px + glow ring on hover (200ms)
+- Answer feedback slides up (250ms)
+- Flashcard flips with fade (300ms)
+- Links transition color (200ms)
 
-### 6. Print is a first-class medium
-- Print styles strip color, remove interactive elements, maximize readability
-- These are study materials — many users will print them
+### 6. Print is respected
+- Print strips backgrounds, borders, animations
+- Body becomes 12pt black on white
+- Interactive elements hidden
+- Ornaments disabled
 
 ## Color Palette
 
 ```
-Base:
-  --bg:           #fafbfc    page background
-  --surface:      #ffffff    card backgrounds
-  --border:       #e5e7eb    subtle borders
-  --border-light: #f3f4f6    very subtle dividers
+Warm surface:   #faf8f5  (page background — warm paper)
+White:          #ffffff  (cards)
+Dark:           #111827  (hero, footer)
+Dark glow:      radial-gradient(ellipse, rgba(79,70,229,0.12), transparent)
 
 Text:
-  --text:         #111827    primary text
-  --text-muted:   #6b7280    secondary text
-  --text-subtle:  #9ca3af    tertiary / placeholder
+  heading:      #1a1a2e  (near-black with blue undertone)
+  body:         #3e3e3e  (softened dark — never pure black)
+  muted:        #787878  (secondary text)
+  subtle:       #a3a3a3  (tertiary)
 
 Accent:
-  --accent:       #4f46e5    links, active, brand
-  --accent-hover: #4338ca    hover state
-  --accent-light: #eef2ff    accent backgrounds
+  base:         #4f46e5  (indigo-600)
+  hover:        #4338ca  (indigo-700)
+  light bg:     #eef2ff  (indigo-50)
+  glow ring:    rgba(79,70,229,0.08)
+
+Borders:
+  base:         #e8e5e0  (warm gray)
+  light:        #f0ede8  (very subtle)
 
 Semantic:
-  --success:      #059669    correct answers
-  --success-bg:   #d1fae5
-  --danger:       #dc2626    incorrect answers
-  --danger-bg:    #fee2e2
-  --warning:      #d97706    alerts / deadlines
-  --warning-bg:   #fef3c7
-  --info:         #2563eb    blueprint context
-  --info-bg:      #dbeafe
-
-Shadows:
-  --shadow-sm:    0 1px 2px rgba(0,0,0,0.05)
-  --shadow-md:    0 4px 6px -1px rgba(0,0,0,0.07)
-  --shadow-lg:    0 10px 25px -5px rgba(0,0,0,0.08)
+  success:      #059669 / bg #ecfdf5
+  danger:       #dc2626 / bg #fef2f2
+  warning:      #d97706 / bg #fffbeb
+  info:         #2563eb / bg #eff6ff
 ```
 
 ## Typography Scale
 
 | Element | Font | Size | Weight | Notes |
 |---------|------|------|--------|-------|
-| h1 | Charter | 2.2rem | 700 | Page titles |
-| h2 | Charter | 1.4rem | 600 | Section headers with thin bottom border |
-| h3 | Charter | 1.15rem | 600 | Sub-sections |
-| body | Charter | 17px | 400 | Main reading text, 1.65 line-height |
-| .lesson-number | system-ui | 0.8rem | 600 | Uppercase, tracked-out, accent color |
-| .lesson-meta | system-ui | 0.85rem | 400 | Muted secondary info |
-| table | Charter | 0.9rem | 400 | Compact but readable |
-| .status badge | system-ui | 0.72rem | 500 | Tiny, rounded-pill |
-| footer | Charter | 0.9rem | 400 | Muted, separated by top border |
+| Hero h1 | Charter | 3rem | 700 | -0.03em letter-spacing |
+| Page h1 | Charter | 2.4rem | 700 | -0.02em letter-spacing |
+| h2 | Charter | 1.45rem | 600 | Preceded by "···" ornament |
+| h3 | Charter | 1.15rem | 600 | |
+| Body | Charter | 17px | 400 | 1.7 line-height |
+| UI text | Inter | 0.75–0.9rem | 400–600 | Labels, badges, metadata |
+| Kicker | Inter | 0.72rem | 600 | Uppercase, 0.15em tracking |
+| Table headers | Inter | 0.72rem | 600 | Uppercase, 0.06em tracking |
 
-## Spacing Scale
+## Spacing
 
-- **xs:** 0.25rem
-- **sm:** 0.5rem
-- **md:** 1rem
-- **lg:** 1.5rem
-- **xl:** 2rem
-- **2xl:** 3rem
-
-Page container: `max-width: 760px` with `padding: 2rem 1.5rem 4rem`
+- Page container: 720px max-width
+- Hero: full-bleed dark background
+- Section margin: 2.5–3rem between major sections
+- Card padding: 1.5–1.75rem
+- Content padding: 1.5rem horizontal
 
 ## Component Patterns
 
-### Callout Boxes (blueprint-context, exam-pattern, mnemonic, key-point, exam-tip)
-- Left border accent (4px)
-- Subtle background tint
-- Rounded right corners (8px)
-- System-ui font at 0.92rem
-- Padding: 1rem 1.25rem
+### Hero (index page only)
+- Full-bleed dark (#111827) background
+- Subtle radial indigo glow (CSS radial-gradient)
+- White serif heading at 3rem
+- Inter subtitle in 60% white
+- Countdown number at 4.5rem Inter
+- Application date in 55% white
 
-### Quiz Options
-- 2px border, rounded 8px
-- Hover: border-color transition to accent, background tint
-- Correct: green border + green bg
-- Incorrect: red border + red bg
-- Feedback: slides in below, color-coded
-- All transitions 150ms ease
+### Phase Cards
+- White card, 1px warm border, 16px radius
+- Hover: lift 2px, shadow expands
+- Inter for all card text
+- Lesson list with tabular numbers, hover highlights
+- Linear-style status badges (Ready / Next / Upcoming)
 
-### Flashcards
-- Subtle gradient background
-- Click to flip (instant toggle)
-- Centered text
-- Border 2px neutral
-- Rounded 12px
+### Blueprint Card
+- White card, centered text
+- Clean table with horizontal rules only
+- Progress bars: 5px tall, indigo fill at 60% opacity
 
-### Tables
-- Clean, minimal
-- Header row with subtle background
-- Thin borders
-- Full-width
+### Section Headings (h2)
+- Centered
+- 32px indigo underline ornament
+- "···" ornament above (in lesson pages)
 
-### Phase Cards (index page)
-- White card, subtle border
-- Rounded 12px
-- Hover: translateY(-1px), shadow increase
-- Transition: 200ms ease
+### Callout Boxes
+- Full border (not just left border), rounded
+- Light tinted backgrounds
+- Inter font at 0.88rem
+
+### Quiz Options & Flashcards
+- See shared CSS — consistent interactions everywhere

@@ -1,55 +1,67 @@
 /* MRCEM Primary Exam Prep — Shared Stylesheet */
-/* Design system: Notion/Linear/every.to inspired — typography-first, micro-interactions, content-focused */
+/* Magazine aesthetic: every.to editorial warmth × Notion calm × Linear precision */
 
 /* ── Design Tokens ────────────────────────────────────────────── */
 :root {
-  /* Base */
-  --bg: #fafbfc;
+  /* Surfaces */
+  --bg: #faf8f5;
   --surface: #ffffff;
-  --border: #e5e7eb;
-  --border-light: #f3f4f6;
+  --surface-hover: #fafaf9;
+  --dark: #111827;
+  --dark-soft: #1f2937;
 
   /* Text */
-  --text: #111827;
-  --text-muted: #6b7280;
-  --text-subtle: #9ca3af;
+  --text: #3e3e3e;
+  --text-heading: #1a1a2e;
+  --text-muted: #787878;
+  --text-subtle: #a3a3a3;
 
-  /* Accent */
+  /* Accent — warm indigo */
   --accent: #4f46e5;
   --accent-hover: #4338ca;
   --accent-light: #eef2ff;
+  --accent-glow: rgba(79, 70, 229, 0.08);
 
   /* Semantic */
   --success: #059669;
-  --success-bg: #d1fae5;
+  --success-bg: #ecfdf5;
   --danger: #dc2626;
-  --danger-bg: #fee2e2;
+  --danger-bg: #fef2f2;
   --warning: #d97706;
-  --warning-bg: #fef3c7;
+  --warning-bg: #fffbeb;
   --info: #2563eb;
-  --info-bg: #dbeafe;
+  --info-bg: #eff6ff;
   --pink: #db2777;
-  --pink-bg: #fce7f3;
+  --pink-bg: #fdf2f8;
+  --green-soft: #f0fdf4;
+
+  /* Borders */
+  --border: #e8e5e0;
+  --border-light: #f0ede8;
 
   /* Shadows */
-  --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
-  --shadow-md: 0 4px 12px rgba(0,0,0,0.06);
-  --shadow-lg: 0 12px 32px rgba(0,0,0,0.08);
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.03);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.05);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,0.07);
+  --shadow-glow: 0 0 0 4px var(--accent-glow);
 
   /* Radii */
   --radius-sm: 6px;
   --radius-md: 10px;
-  --radius-lg: 14px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
 }
 
 /* ── Reset ────────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* ── Typography ───────────────────────────────────────────────── */
+/* ── Base Typography ──────────────────────────────────────────── */
+html { scroll-behavior: smooth; }
+
 body {
   font-family: "Charter", "Georgia", "Times New Roman", serif;
   font-size: 17px;
-  line-height: 1.65;
+  line-height: 1.7;
   color: var(--text);
   background: var(--bg);
   -webkit-font-smoothing: antialiased;
@@ -57,142 +69,179 @@ body {
 }
 
 .lesson-container {
-  max-width: 760px;
+  max-width: 720px;
   margin: 0 auto;
-  padding: 2.5rem 1.5rem 5rem;
+  padding: 0 1.5rem 5rem;
 }
 
-/* ── Header ───────────────────────────────────────────────────── */
-header {
-  margin-bottom: 2.5rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid var(--border);
-}
-
+/* ── Typography Scale ─────────────────────────────────────────── */
 .lesson-number {
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  font-size: 0.78rem;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   color: var(--accent);
-  margin-bottom: 0.25rem;
 }
 
 h1 {
-  font-size: 2.2rem;
+  font-family: "Charter", "Georgia", "Times New Roman", serif;
+  font-size: 2.4rem;
   font-weight: 700;
-  line-height: 1.2;
-  margin: 0.35rem 0 0.25rem;
-  color: var(--text);
-  letter-spacing: -0.01em;
+  line-height: 1.15;
+  color: var(--text-heading);
+  letter-spacing: -0.02em;
 }
 
 h2 {
-  font-size: 1.4rem;
+  font-family: "Charter", "Georgia", "Times New Roman", serif;
+  font-size: 1.45rem;
   font-weight: 600;
-  margin: 2.25rem 0 0.75rem;
-  padding-bottom: 0.4rem;
-  border-bottom: 1px solid var(--border-light);
-  color: var(--text);
+  line-height: 1.25;
+  color: var(--text-heading);
+  margin: 2.5rem 0 1rem;
+  position: relative;
+}
+/* Section ornament above h2 */
+h2::before {
+  content: "···";
+  display: block;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.5em;
+  color: var(--text-subtle);
+  margin-bottom: 0.75rem;
+  font-weight: 400;
 }
 
 h3 {
+  font-family: "Charter", "Georgia", "Times New Roman", serif;
   font-size: 1.15rem;
   font-weight: 600;
-  margin: 1.5rem 0 0.5rem;
-  color: #374151;
+  color: var(--text-heading);
+  margin: 1.75rem 0 0.5rem;
 }
 
 p { margin-bottom: 0.85rem; }
-p + p { margin-top: -0.25rem; }
 
 ol, ul { margin: 0.5rem 0 0.85rem 1.5rem; }
 li { margin-bottom: 0.35rem; }
 
 .lesson-meta {
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  font-size: 0.85rem;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.82rem;
   color: var(--text-muted);
 }
 
-strong { color: #1f2937; }
+strong { color: var(--text-heading); font-weight: 600; }
 
 /* ── Links ────────────────────────────────────────────────────── */
 a {
   color: var(--accent);
   text-decoration: none;
-  transition: color 0.15s ease;
-  background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat;
-  transition: background-size 0.2s ease, color 0.15s ease;
-  padding-bottom: 1px;
+  transition: color 0.2s ease;
 }
-a:hover {
-  background-size: 100% 1px;
-}
+a:hover { color: var(--accent-hover); }
 
 /* ── Tables ───────────────────────────────────────────────────── */
 table {
   width: 100%;
   border-collapse: collapse;
-  margin: 1rem 0 1.25rem;
-  font-size: 0.9rem;
+  margin: 1.25rem 0;
+  font-size: 0.88rem;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border);
 }
 th {
-  background: #f9fafb;
+  background: #fafaf9;
   font-weight: 600;
   text-align: left;
-  padding: 0.6rem 0.75rem;
+  padding: 0.65rem 0.85rem;
   border-bottom: 2px solid var(--border);
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  font-size: 0.78rem;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 0.72rem;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
   color: var(--text-muted);
 }
 td {
-  padding: 0.5rem 0.75rem;
+  padding: 0.55rem 0.85rem;
   border-bottom: 1px solid var(--border-light);
   vertical-align: top;
 }
 tr:last-child td { border-bottom: none; }
 tr { transition: background 0.15s ease; }
 
+/* ── Pull Quote ───────────────────────────────────────────────── */
+.pull-quote {
+  text-align: center;
+  font-family: "Charter", "Georgia", serif;
+  font-size: 1.3rem;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--text-heading);
+  padding: 2rem 2.5rem;
+  margin: 2rem 0;
+  position: relative;
+}
+.pull-quote::before {
+  content: "\201C";
+  display: block;
+  font-size: 4rem;
+  line-height: 1;
+  color: var(--accent);
+  opacity: 0.25;
+  margin-bottom: -1.5rem;
+  font-style: normal;
+  font-family: "Charter", "Georgia", serif;
+}
+
 /* ── Callout Boxes ────────────────────────────────────────────── */
-/* Shared pattern: left-border accent + subtle background + rounded right */
 .blueprint-context,
 .exam-pattern,
 .key-point,
 .exam-tip,
 .mnemonic {
   padding: 1rem 1.25rem;
-  margin: 1.25rem 0;
-  border-radius: 0 var(--radius-md) var(--radius-md) 0;
-  font-size: 0.92rem;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  margin: 1.5rem 0;
+  border-radius: var(--radius-md);
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 0.88rem;
   line-height: 1.55;
+  border: 1px solid transparent;
 }
-.blueprint-context strong,
-.exam-pattern strong,
-.key-point strong,
-.exam-tip strong,
-.mnemonic strong { color: inherit; }
 
-.blueprint-context { background: var(--info-bg); border-left: 4px solid var(--info); }
+.blueprint-context {
+  background: var(--info-bg);
+  border-color: #bfdbfe;
+}
 .blueprint-context strong { color: #1e40af; }
 
-.exam-pattern { background: var(--pink-bg); border-left: 4px solid var(--pink); }
+.exam-pattern {
+  background: var(--pink-bg);
+  border-color: #fbcfe8;
+}
 .exam-pattern strong { color: #9d174d; }
 
-.key-point { background: var(--warning-bg); border-left: 4px solid var(--warning); }
+.key-point {
+  background: var(--warning-bg);
+  border-color: #fde68a;
+}
 .key-point strong { color: #92400e; }
 
-.exam-tip { background: var(--accent-light); border-left: 4px solid var(--accent); }
+.exam-tip {
+  background: var(--accent-light);
+  border-color: #c7d2fe;
+}
 .exam-tip strong { color: #3730a3; }
 
-.mnemonic { background: #f0fdf4; border-left: 4px solid #22c55e; border-radius: 0 var(--radius-md) var(--radius-md) 0; }
+.mnemonic {
+  background: var(--green-soft);
+  border-color: #bbf7d0;
+}
 
-/* ── Quiz Options (base) ──────────────────────────────────────── */
+/* ── Quiz Options ─────────────────────────────────────────────── */
 .quiz-options {
   display: flex;
   flex-direction: column;
@@ -200,118 +249,128 @@ tr { transition: background 0.15s ease; }
   margin: 1rem 0;
 }
 .quiz-option {
-  padding: 0.75rem 1rem;
-  border: 2px solid var(--border);
+  padding: 0.8rem 1rem;
+  border: 1.5px solid var(--border);
   border-radius: var(--radius-sm);
   cursor: pointer;
-  transition: border-color 0.15s ease, background 0.15s ease, transform 0.1s ease;
+  transition: all 0.2s ease;
   background: var(--surface);
-  font-size: 0.95rem;
+  font-size: 0.92rem;
+  font-family: "Inter", system-ui, sans-serif;
 }
 .quiz-option:hover {
   border-color: var(--accent);
   background: var(--accent-light);
+  box-shadow: var(--shadow-glow);
   transform: translateY(-1px);
 }
 .quiz-option:active { transform: translateY(0); }
 .quiz-option.correct {
   border-color: var(--success);
   background: var(--success-bg);
+  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1);
 }
 .quiz-option.incorrect {
   border-color: var(--danger);
   background: var(--danger-bg);
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.08);
 }
 .quiz-option.reveal-correct {
   border-color: var(--success);
   background: var(--success-bg);
+  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1);
 }
 
 /* ── Answer Feedback ──────────────────────────────────────────── */
 .answer-feedback {
   display: none;
   margin-top: 0.75rem;
-  padding: 0.75rem 1rem;
+  padding: 0.85rem 1rem;
   border-radius: var(--radius-sm);
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   line-height: 1.55;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  animation: slideIn 0.2s ease;
+  font-family: "Inter", system-ui, sans-serif;
+  animation: slideUp 0.25s ease;
 }
-.answer-feedback.correct { display: block; background: var(--success-bg); color: #065f46; }
-.answer-feedback.incorrect { display: block; background: var(--danger-bg); color: #991b1b; }
+.answer-feedback.correct { display: block; background: var(--success-bg); color: #065f46; border: 1px solid #a7f3d0; }
+.answer-feedback.incorrect { display: block; background: var(--danger-bg); color: #991b1b; border: 1px solid #fecaca; }
 
-@keyframes slideIn {
-  from { opacity: 0; transform: translateY(-4px); }
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(6px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
 /* ── Flashcards ───────────────────────────────────────────────── */
 .flashcard {
-  border: 2px solid var(--border);
+  border: 1.5px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 2rem;
   margin: 1.5rem 0;
   text-align: center;
   cursor: pointer;
   user-select: none;
-  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+  background: linear-gradient(135deg, #fafaf9 0%, #f5f4f0 100%);
+  transition: all 0.25s ease;
 }
 .flashcard:hover {
   border-color: var(--accent);
-  box-shadow: var(--shadow-sm);
-  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
 }
 .flashcard:active { transform: translateY(0); }
-.flashcard .front { font-weight: 600; font-size: 1.1rem; }
+.flashcard .front { font-weight: 600; font-size: 1.05rem; color: var(--text-heading); }
 .flashcard .back {
   display: none;
   margin-top: 1rem;
   padding-top: 1rem;
-  border-top: 1px solid var(--border);
-  color: #4b5563;
+  border-top: 1px solid var(--border-light);
+  color: var(--text-muted);
 }
 .flashcard.flipped .front { display: none; }
-.flashcard.flipped .back { display: block; }
+.flashcard.flipped .back { display: block; animation: fadeIn 0.3s ease; }
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ── Drop Cap (for lesson intros) ─────────────────────────────── */
+.drop-cap::first-letter {
+  float: left;
+  font-size: 3.8rem;
+  line-height: 0.8;
+  padding-right: 0.5rem;
+  padding-top: 0.2rem;
+  color: var(--accent);
+  font-weight: 700;
+}
 
 /* ── Footer ───────────────────────────────────────────────────── */
 footer {
-  margin-top: 3rem;
+  margin-top: 4rem;
   padding-top: 1.5rem;
   border-top: 1px solid var(--border);
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   color: var(--text-muted);
+  font-family: "Inter", system-ui, sans-serif;
 }
 footer a { color: var(--accent); }
 
-/* ── Animations ───────────────────────────────────────────────── */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-section { animation: fadeIn 0.4s ease both; }
-section:nth-child(1) { animation-delay: 0s; }
-section:nth-child(2) { animation-delay: 0.05s; }
-section:nth-child(3) { animation-delay: 0.1s; }
-section:nth-child(4) { animation-delay: 0.15s; }
-section:nth-child(5) { animation-delay: 0.2s; }
-section:nth-child(6) { animation-delay: 0.25s; }
-
 /* ── Print ────────────────────────────────────────────────────── */
 @media print {
-  body { font-size: 12pt; background: #fff; }
+  body { font-size: 12pt; background: #fff; color: #000; }
   .lesson-container { max-width: 100%; padding: 0; }
   .quiz-options, .flashcard, .answer-feedback { display: none; }
   .blueprint-context, .exam-pattern, .key-point, .exam-tip, .mnemonic {
-    border-left: 2px solid #000;
+    border: 1px solid #ccc;
     background: #fff;
     padding: 0.5rem 0.75rem;
   }
-  section { animation: none; }
+  h2::before { display: none; }
 }
 
 /* ── Cheatsheet ───────────────────────────────────────────────── */
 .cheatsheet { font-size: 0.9rem; }
 .cheatsheet h2 { font-size: 1.1rem; }
+.cheatsheet h2::before { content: none; }
 .cheatsheet table { font-size: 0.8rem; }

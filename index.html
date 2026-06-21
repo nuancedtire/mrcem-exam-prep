@@ -4,169 +4,252 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MRCEM Primary — Exam Preparation Course</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 <style>
-  /* ── Index-specific styles ─────────────────────────── */
-  .course-hero { text-align: center; padding: 3rem 0 1.5rem; }
-  .course-hero h1 { font-size: 2.6rem; margin-bottom: 0.35rem; letter-spacing: -0.02em; }
-  .course-hero .subtitle { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 1.05rem; color: var(--text-muted); }
+  /* ── Dark Hero ──────────────────────────────────── */
+  .hero {
+    background: var(--dark);
+    color: #fff;
+    margin: 0 calc(-50vw + 50%);
+    padding: 4rem 1.5rem 3.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(79,70,229,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-inner {
+    max-width: 640px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  .hero .kicker {
+    font-family: "Inter", system-ui, sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 1rem;
+  }
+  .hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.1;
+    color: #fff;
+    letter-spacing: -0.03em;
+    margin: 0 0 0.75rem;
+  }
+  .hero .subtitle {
+    font-family: "Inter", system-ui, sans-serif;
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.5;
+    max-width: 480px;
+    margin: 0 auto;
+  }
 
-  /* Countdown — minimal, elegant */
-  .countdown {
+  /* ── Hero Countdown ─────────────────────────────── */
+  .hero-countdown {
     display: flex;
     align-items: baseline;
     justify-content: center;
-    gap: 0.4rem;
-    margin: 2.5rem 0;
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    gap: 0.3rem;
+    margin-top: 2.5rem;
   }
-  .countdown .days {
-    font-size: 4rem;
+  .hero-countdown .days {
+    font-family: "Inter", system-ui, sans-serif;
+    font-size: 4.5rem;
     font-weight: 700;
     line-height: 1;
-    color: var(--text);
+    color: #fff;
     letter-spacing: -0.03em;
     font-feature-settings: "tnum";
-    animation: countPulse 8s ease-in-out infinite;
   }
-  .countdown .label {
-    font-size: 0.9rem;
-    color: var(--text-muted);
-    padding-bottom: 0.3rem;
-  }
-  @keyframes countPulse {
-    0%, 100% { color: var(--text); }
-    50% { color: var(--accent); }
+  .hero-countdown .label {
+    font-family: "Inter", system-ui, sans-serif;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.45);
+    padding-bottom: 0.2rem;
   }
 
-  /* Application deadline — subtle */
-  .deadline-banner {
-    background: var(--warning-bg);
-    border: 1px solid #fcd34d;
-    border-radius: var(--radius-md);
-    padding: 0.9rem 1.25rem;
-    margin: 0 0 2.5rem;
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-    font-size: 0.88rem;
-    color: #92400e;
+  /* ── Application Banner ─────────────────────────── */
+  .app-banner {
+    font-family: "Inter", system-ui, sans-serif;
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.55);
+    margin-top: 1.5rem;
+  }
+  .app-banner strong { color: rgba(255,255,255,0.75); }
+
+  /* ── Content sections (below hero) ──────────────── */
+  .content-wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* ── Section headings ───────────────────────────── */
+  .section-heading {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-heading);
+    margin: 3rem 0 1.25rem;
     text-align: center;
+    position: relative;
   }
-  .deadline-banner strong { color: #92400e; }
+  .section-heading::after {
+    content: "";
+    display: block;
+    width: 32px;
+    height: 3px;
+    background: var(--accent);
+    margin: 0.75rem auto 0;
+    border-radius: 2px;
+    opacity: 0.5;
+  }
 
-  /* Blueprint summary card */
-  .blueprint-summary {
+  /* ── Blueprint Card ─────────────────────────────── */
+  .blueprint-card {
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
-    padding: 1.5rem;
-    margin: 1.25rem 0 2rem;
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-    font-size: 0.9rem;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 2.5rem;
     box-shadow: var(--shadow-sm);
+    font-family: "Inter", system-ui, sans-serif;
   }
-  .blueprint-summary > p { margin-bottom: 1rem; color: var(--text-muted); }
-  .blueprint-summary table { margin: 0; }
-  .blueprint-summary th {
-    font-size: 0.72rem;
-    padding: 0.4rem 0.5rem 0.5rem;
+  .blueprint-card > p {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+    text-align: center;
+  }
+  .blueprint-card table { border: none; margin: 0; }
+  .blueprint-card th {
+    font-size: 0.68rem;
+    padding: 0.35rem 0.5rem 0.5rem;
     background: transparent;
     border-bottom: 1px solid var(--border);
   }
-  .blueprint-summary td {
-    padding: 0.5rem 0.5rem;
-    font-size: 0.85rem;
+  .blueprint-card td {
+    padding: 0.55rem 0.5rem;
+    font-size: 0.84rem;
   }
-  .blueprint-summary tr:hover { background: #f9fafb; cursor: default; }
+  .blueprint-card tr:hover { background: #fafaf9; }
   .blueprint-bar {
     height: 5px;
     border-radius: 3px;
     background: var(--border-light);
     overflow: hidden;
-    min-width: 80px;
+    min-width: 60px;
   }
   .blueprint-bar-fill {
     height: 100%;
     border-radius: 3px;
     background: var(--accent);
-    transition: width 0.6s ease;
+    opacity: 0.6;
   }
 
-  /* Phase cards */
+  /* ── Phase Cards ────────────────────────────────── */
   .phase-card {
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
-    padding: 1.5rem;
+    padding: 1.75rem;
     margin: 1.25rem 0;
     box-shadow: var(--shadow-sm);
-    transition: box-shadow 0.2s ease, transform 0.15s ease, border-color 0.2s ease;
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
   }
   .phase-card:hover {
     box-shadow: var(--shadow-md);
-    transform: translateY(-1px);
-    border-color: #d1d5db;
+    transform: translateY(-2px);
   }
   .phase-card h3 {
-    margin-top: 0;
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-family: "Inter", system-ui, sans-serif;
+    font-size: 1.05rem;
     font-weight: 600;
-    font-size: 1.1rem;
+    color: var(--text-heading);
+    margin: 0 0 0.5rem;
   }
   .phase-card .dates {
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-    font-size: 0.82rem;
+    font-family: "Inter", system-ui, sans-serif;
+    font-size: 0.78rem;
     color: var(--text-muted);
     margin-bottom: 0.75rem;
   }
   .phase-card > p {
-    font-size: 0.9rem;
+    font-family: "Inter", system-ui, sans-serif;
+    font-size: 0.85rem;
     color: var(--text-muted);
     margin-bottom: 1rem;
+    line-height: 1.5;
   }
 
-  /* Lesson list */
-  .lesson-list { list-style: none; margin: 0; padding: 0; }
+  /* ── Lesson List ────────────────────────────────── */
+  .lesson-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--border-light);
+  }
   .lesson-list li {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    padding: 0.6rem 0.5rem;
-    border-radius: var(--radius-sm);
+    padding: 0.65rem 0.5rem;
+    border-bottom: 1px solid var(--border-light);
     transition: background 0.15s ease;
     margin: 0 -0.5rem;
+    border-radius: var(--radius-sm);
   }
-  .lesson-list li:hover { background: #f9fafb; }
+  .lesson-list li:last-child { border-bottom: none; }
+  .lesson-list li:hover { background: #fafaf9; }
   .lesson-list .num {
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-    font-size: 0.75rem;
+    font-family: "Inter", system-ui, sans-serif;
+    font-size: 0.72rem;
     font-weight: 600;
-    color: var(--accent);
-    min-width: 2.75rem;
+    color: var(--text-subtle);
+    min-width: 2.5rem;
     font-feature-settings: "tnum";
+    text-align: right;
   }
-  .lesson-list .title { flex: 1; font-size: 0.93rem; }
+  .lesson-list .title {
+    flex: 1;
+    font-size: 0.9rem;
+    font-family: "Inter", system-ui, sans-serif;
+  }
   .lesson-list a {
     color: var(--text);
-    background: none;
-    padding-bottom: 0;
+    transition: color 0.15s ease;
   }
-  .lesson-list a:hover { color: var(--accent); background-size: 0 0; }
+  .lesson-list a:hover { color: var(--accent); }
+  .lesson-list .no-link { color: var(--text-muted); }
 
-  /* Status badges */
+  /* ── Status Badges (Linear-inspired) ────────────── */
   .status {
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-    font-size: 0.7rem;
+    font-family: "Inter", system-ui, sans-serif;
+    font-size: 0.68rem;
     font-weight: 500;
-    padding: 0.15rem 0.6rem;
+    padding: 0.15rem 0.55rem;
     border-radius: 100px;
     white-space: nowrap;
-    transition: transform 0.15s ease;
+    letter-spacing: 0.02em;
   }
-  .status:hover { transform: scale(1.05); }
   .status.ready { background: var(--success-bg); color: #065f46; }
-  .status.upcoming { background: #f3f4f6; color: var(--text-muted); }
+  .status.next { background: var(--accent-light); color: #3730a3; }
+  .status.upcoming { color: var(--text-subtle); }
 
-  /* Reference section */
+  /* ── Reference List ─────────────────────────────── */
   .ref-list {
     list-style: none;
     margin: 0;
@@ -174,157 +257,188 @@
   }
   .ref-list li {
     padding: 0.5rem 0;
+    font-family: "Inter", system-ui, sans-serif;
+    font-size: 0.9rem;
   }
-  .ref-list a {
-    color: var(--text);
-    font-size: 0.93rem;
-    background: none;
-    padding-bottom: 0;
+  .ref-list a { color: var(--text); }
+  .ref-list a:hover { color: var(--accent); }
+
+  /* ── Dark Footer ────────────────────────────────── */
+  .site-footer {
+    background: var(--dark);
+    color: rgba(255,255,255,0.5);
+    font-family: "Inter", system-ui, sans-serif;
+    font-size: 0.82rem;
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    margin: 4rem calc(-50vw + 50%) 0;
   }
-  .ref-list a:hover { color: var(--accent); background-size: 0 0; }
+  .site-footer a { color: rgba(255,255,255,0.7); }
+  .site-footer a:hover { color: #fff; }
+
+  /* ── Responsive ─────────────────────────────────── */
+  @media (max-width: 640px) {
+    .hero { padding: 3rem 1.25rem 2.5rem; }
+    .hero h1 { font-size: 2.2rem; }
+    .hero-countdown .days { font-size: 3.5rem; }
+    .content-wrap { padding: 0 1rem; }
+    .blueprint-card { padding: 1.25rem; }
+    .phase-card { padding: 1.25rem; }
+  }
 </style>
 </head>
 <body>
-<div class="lesson-container">
 
-<header class="course-hero">
-  <p class="lesson-number">MRCEM Primary Exam Preparation</p>
-  <h1>Pass the MRCEM Primary</h1>
-  <p class="subtitle">18-week blueprint-aligned course for the 27 October 2026 exam</p>
+<!-- ═══ Dark Hero ════════════════════════════════════════════════ -->
+<header class="hero">
+  <div class="hero-inner">
+    <p class="kicker">MRCEM Primary Exam Preparation</p>
+    <h1>Pass the MRCEM Primary</h1>
+    <p class="subtitle">An 18-week, blueprint-aligned course for the 27 October 2026 exam. Built for clinicians who learn by understanding, not memorising.</p>
+    <div class="hero-countdown">
+      <span class="days" id="countdown-days">—</span>
+      <span class="label" id="countdown-label">days until the exam</span>
+    </div>
+    <p class="app-banner">Applications open <strong>15 July 2026 at 10am UK</strong> — close 22 July at 4pm.</p>
+  </div>
 </header>
 
-<div class="countdown">
-  <div class="days" id="countdown-days">—</div>
-  <div class="label" id="countdown-label">days until the exam</div>
-</div>
+<div class="content-wrap">
 
-<div class="deadline-banner">
-  ⚠️ <strong>Applications open 15 July 2026 at 10am UK</strong> — close 22 July at 4pm.
-</div>
-
+<!-- ═══ Blueprint ═════════════════════════════════════════════════ -->
 <section>
-<h2>The Blueprint</h2>
-<div class="blueprint-summary">
-  <p>Every lesson maps to the <strong>official MRCEM Primary blueprint</strong> (Nov 2023). 180 SBAs, 3 hours, Angoff standard-set. Pass rate ~25%.</p>
-  <table>
-    <tr><th>Category</th><th>Questions</th><th>Weight</th><th>Coverage</th></tr>
-    <tr>
-      <td>🦴 Anatomy</td><td>60</td><td>33%</td>
-      <td><div class="blueprint-bar"><div class="blueprint-bar-fill" style="width: 8%"></div></div></td>
-    </tr>
-    <tr>
-      <td>🫁 Physiology</td><td>60</td><td>33%</td>
-      <td><div class="blueprint-bar"><div class="blueprint-bar-fill" style="width: 5%"></div></div></td>
-    </tr>
-    <tr>
-      <td>💊 Pharmacology</td><td>24</td><td>13%</td>
-      <td><div class="blueprint-bar"><div class="blueprint-bar-fill" style="width: 0%"></div></div></td>
-    </tr>
-    <tr>
-      <td>🦠 Microbiology</td><td>17</td><td>9%</td>
-      <td><div class="blueprint-bar"><div class="blueprint-bar-fill" style="width: 0%"></div></div></td>
-    </tr>
-    <tr>
-      <td>🔬 Pathology</td><td>9</td><td>5%</td>
-      <td><div class="blueprint-bar"><div class="blueprint-bar-fill" style="width: 60%"></div></div></td>
-    </tr>
-    <tr>
-      <td>📊 EBM</td><td>10</td><td>6%</td>
-      <td><div class="blueprint-bar"><div class="blueprint-bar-fill" style="width: 0%"></div></div></td>
-    </tr>
-  </table>
-</div>
+  <h2 class="section-heading">The Blueprint</h2>
+  <div class="blueprint-card">
+    <p>Every lesson maps to the official MRCEM Primary blueprint (Nov 2023). 180 SBAs · 3 hours · Angoff standard-set · Pass rate ~25%.</p>
+    <table>
+      <tr><th>Category</th><th>Questions</th><th>Weight</th><th>Coverage</th></tr>
+      <tr>
+        <td>🦴 Anatomy</td><td>60</td><td>33%</td>
+        <td><div class="blueprint-bar"><div class="blueprint-bar-fill" style="width:8%"></div></div></td>
+      </tr>
+      <tr>
+        <td>🫁 Physiology</td><td>60</td><td>33%</td>
+        <td><div class="blueprint-bar"><div class="blueprint-bar-fill" style="width:5%"></div></div></td>
+      </tr>
+      <tr>
+        <td>💊 Pharmacology</td><td>24</td><td>13%</td>
+        <td><div class="blueprint-bar"><div class="blueprint-bar-fill" style="width:0%"></div></div></td>
+      </tr>
+      <tr>
+        <td>🦠 Microbiology</td><td>17</td><td>9%</td>
+        <td><div class="blueprint-bar"><div class="blueprint-bar-fill" style="width:0%"></div></div></td>
+      </tr>
+      <tr>
+        <td>🔬 Pathology</td><td>9</td><td>5%</td>
+        <td><div class="blueprint-bar"><div class="blueprint-bar-fill" style="width:60%"></div></div></td>
+      </tr>
+      <tr>
+        <td>📊 EBM</td><td>10</td><td>6%</td>
+        <td><div class="blueprint-bar"><div class="blueprint-bar-fill" style="width:0%"></div></div></td>
+      </tr>
+    </table>
+  </div>
 </section>
 
+<!-- ═══ Phase 1 ═══════════════════════════════════════════════════ -->
 <section>
-<h2>Phase 1: Foundations + Core Anatomy/Physiology</h2>
-<div class="phase-card">
-  <p class="dates">Weeks 1–6 · 21 June – 1 August</p>
-  <p>Anatomy (33%) and Physiology (33%) dominate. We cover ~55/60 anatomy questions and ~50/60 physiology questions in this phase.</p>
-  <ul class="lesson-list">
-    <li><span class="num">0001</span><span class="title"><a href="lessons/0001-cellular-injury-inflammation.html">Cellular Injury, Inflammation &amp; Immune Response</a></span><span class="status ready">ready</span></li>
-    <li><span class="num">0002</span><span class="title"><a href="lessons/0002-upper-limb-anatomy.html">Upper Limb Anatomy</a></span><span class="status ready">ready</span></li>
-    <li><span class="num">0003</span><span class="title">Lower Limb Anatomy</span><span class="status upcoming">next</span></li>
-    <li><span class="num">0004</span><span class="title">Thorax Anatomy</span><span class="status upcoming">upcoming</span></li>
-    <li><span class="num">0005</span><span class="title">Abdomen Anatomy</span><span class="status upcoming">upcoming</span></li>
-    <li><span class="num">0006</span><span class="title">Head &amp; Neck Anatomy</span><span class="status upcoming">upcoming</span></li>
-    <li><span class="num">0007</span><span class="title">Cardiovascular Physiology</span><span class="status upcoming">upcoming</span></li>
-    <li><span class="num">0008</span><span class="title">Respiratory Physiology</span><span class="status upcoming">upcoming</span></li>
-    <li><span class="num">0009</span><span class="title">CNS Anatomy: Brain &amp; Spinal Cord</span><span class="status upcoming">upcoming</span></li>
-    <li><span class="num">0010</span><span class="title">Cranial Nerve Lesions</span><span class="status upcoming">upcoming</span></li>
-    <li><span class="num">0011</span><span class="title">Renal Physiology</span><span class="status upcoming">upcoming</span></li>
-    <li><span class="num">0012</span><span class="title">GI Physiology</span><span class="status upcoming">upcoming</span></li>
-    <li><span class="num">0013</span><span class="title">Endocrine Physiology</span><span class="status upcoming">upcoming</span></li>
-    <li><span class="num">0014</span><span class="title">Microbiology: Principles</span><span class="status upcoming">upcoming</span></li>
+  <h2 class="section-heading">Phase 1 · Foundations</h2>
+  <div class="phase-card">
+    <h3>Core Anatomy &amp; Physiology</h3>
+    <p class="dates">Weeks 1–6 · 21 June – 1 August</p>
+    <p>Anatomy (33%) and Physiology (33%) dominate the exam — we front-load them. ~55/60 anatomy questions and ~50/60 physiology questions covered in this phase alone.</p>
+    <ul class="lesson-list">
+      <li><span class="num">001</span><span class="title"><a href="lessons/0001-cellular-injury-inflammation.html">Cellular Injury, Inflammation &amp; Immune Response</a></span><span class="status ready">Ready</span></li>
+      <li><span class="num">002</span><span class="title"><a href="lessons/0002-upper-limb-anatomy.html">Upper Limb Anatomy</a></span><span class="status ready">Ready</span></li>
+      <li><span class="num">003</span><span class="title"><span class="no-link">Lower Limb Anatomy</span></span><span class="status next">Next</span></li>
+      <li><span class="num">004</span><span class="title"><span class="no-link">Thorax Anatomy</span></span><span class="status upcoming">Upcoming</span></li>
+      <li><span class="num">005</span><span class="title"><span class="no-link">Abdomen Anatomy</span></span><span class="status upcoming">Upcoming</span></li>
+      <li><span class="num">006</span><span class="title"><span class="no-link">Head &amp; Neck Anatomy</span></span><span class="status upcoming">Upcoming</span></li>
+      <li><span class="num">007</span><span class="title"><span class="no-link">Cardiovascular Physiology</span></span><span class="status upcoming">Upcoming</span></li>
+      <li><span class="num">008</span><span class="title"><span class="no-link">Respiratory Physiology</span></span><span class="status upcoming">Upcoming</span></li>
+      <li><span class="num">009</span><span class="title"><span class="no-link">CNS Anatomy: Brain &amp; Spinal Cord</span></span><span class="status upcoming">Upcoming</span></li>
+      <li><span class="num">010</span><span class="title"><span class="no-link">Cranial Nerve Lesions</span></span><span class="status upcoming">Upcoming</span></li>
+      <li><span class="num">011</span><span class="title"><span class="no-link">Renal Physiology</span></span><span class="status upcoming">Upcoming</span></li>
+      <li><span class="num">012</span><span class="title"><span class="no-link">GI Physiology</span></span><span class="status upcoming">Upcoming</span></li>
+      <li><span class="num">013</span><span class="title"><span class="no-link">Endocrine Physiology</span></span><span class="status upcoming">Upcoming</span></li>
+      <li><span class="num">014</span><span class="title"><span class="no-link">Microbiology: Principles</span></span><span class="status upcoming">Upcoming</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ═══ Phase 2 ═══════════════════════════════════════════════════ -->
+<section>
+  <h2 class="section-heading">Phase 2 · Clinical Sciences</h2>
+  <div class="phase-card">
+    <h3>Pharmacology, Microbiology &amp; Pathology</h3>
+    <p class="dates">Weeks 7–10 · 2 August – 29 August</p>
+    <p>System-based pharmacology mapped to the anatomy and physiology already covered. Microbiology deep dive into pathogen groups.</p>
+    <ul class="lesson-list">
+      <li><span class="num">015</span><span class="title"><span class="no-link">Cardiovascular Pharmacology</span></span><span class="status upcoming">Upcoming</span></li>
+      <li><span class="num">016</span><span class="title"><span class="no-link">Respiratory Pharmacology</span></span><span class="status upcoming">Upcoming</span></li>
+      <li><span class="num">017</span><span class="title"><span class="no-link">CNS Pharmacology</span></span><span class="status upcoming">Upcoming</span></li>
+      <li><span class="num">018</span><span class="title"><span class="no-link">Antimicrobials</span></span><span class="status upcoming">Upcoming</span></li>
+      <li><span class="num">019</span><span class="title"><span class="no-link">GI &amp; Endocrine Pharmacology</span></span><span class="status upcoming">Upcoming</span></li>
+      <li><span class="num">020</span><span class="title"><span class="no-link">Microbiology: Pathogen Groups</span></span><span class="status upcoming">Upcoming</span></li>
+      <li><span class="num">021</span><span class="title"><span class="no-link">Haematology + Remaining Pathology</span></span><span class="status upcoming">Upcoming</span></li>
+      <li><span class="num">022</span><span class="title"><span class="no-link">MSK, Anaesthesia &amp; Immunological Pharm</span></span><span class="status upcoming">Upcoming</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ═══ Phase 3 ═══════════════════════════════════════════════════ -->
+<section>
+  <h2 class="section-heading">Phase 3 · Integration</h2>
+  <div class="phase-card">
+    <h3>System-Based Review</h3>
+    <p class="dates">Weeks 11–14 · 30 August – 26 September</p>
+    <p>Systems reviewed end-to-end: Anatomy → Physiology → Pathology → Pharmacology. Heavy question practice with cross-category SBAs.</p>
+    <ul class="lesson-list">
+      <li><span class="num">023</span><span class="title"><span class="no-link">CVS System Integration</span></span><span class="status upcoming">Upcoming</span></li>
+      <li><span class="num">024</span><span class="title"><span class="no-link">Respiratory System Integration</span></span><span class="status upcoming">Upcoming</span></li>
+      <li><span class="num">025</span><span class="title"><span class="no-link">Neurology System Integration</span></span><span class="status upcoming">Upcoming</span></li>
+      <li><span class="num">026</span><span class="title"><span class="no-link">GI, Renal &amp; Endocrine Integration</span></span><span class="status upcoming">Upcoming</span></li>
+      <li><span class="num">027</span><span class="title"><span class="no-link">Pharmacology Full Consolidation</span></span><span class="status upcoming">Upcoming</span></li>
+      <li><span class="num">028</span><span class="title"><span class="no-link">MSK Anatomy Final Pass</span></span><span class="status upcoming">Upcoming</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ═══ Phase 4 ═══════════════════════════════════════════════════ -->
+<section>
+  <h2 class="section-heading">Phase 4 · Exam Conditioning</h2>
+  <div class="phase-card">
+    <h3>EBM, Consolidation &amp; Mock Exams</h3>
+    <p class="dates">Weeks 15–18 · 27 September – 26 October</p>
+    <p>Evidence Based Medicine (10Q), final consolidation passes, two full mock exams with wrong-answer analysis, and weak-spot drilling.</p>
+    <ul class="lesson-list">
+      <li><span class="num">029</span><span class="title"><span class="no-link">EBM: Statistics</span></span><span class="status upcoming">Upcoming</span></li>
+      <li><span class="num">030</span><span class="title"><span class="no-link">EBM: Study Methodology &amp; Critical Appraisal</span></span><span class="status upcoming">Upcoming</span></li>
+      <li><span class="num">031</span><span class="title"><span class="no-link">Anatomy Final Pass</span></span><span class="status upcoming">Upcoming</span></li>
+      <li><span class="num">032</span><span class="title"><span class="no-link">Microbiology Final Pass</span></span><span class="status upcoming">Upcoming</span></li>
+      <li><span class="num">033</span><span class="title"><span class="no-link">Pharmacology Rapid Review</span></span><span class="status upcoming">Upcoming</span></li>
+      <li><span class="num">034</span><span class="title"><span class="no-link">Mock Exam 1 + Analysis</span></span><span class="status upcoming">Upcoming</span></li>
+      <li><span class="num">035</span><span class="title"><span class="no-link">Mock Exam 2 + Final Drills</span></span><span class="status upcoming">Upcoming</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ═══ Reference ═════════════════════════════════════════════════ -->
+<section>
+  <h2 class="section-heading">Reference</h2>
+  <ul class="ref-list">
+    <li><a href="reference/cellular-injury-cheatsheet.html">Cellular Injury &amp; Inflammation Cheat Sheet</a></li>
+    <li><a href="PLAN.md">Full 18-Week Study Plan</a></li>
+    <li><a href="RESOURCES.md">Resource List (Robbins, RCEMLearning, PassMedicine)</a></li>
   </ul>
-</div>
 </section>
 
-<section>
-<h2>Phase 2: Pharmacology + Microbiology + Pathology</h2>
-<div class="phase-card">
-  <p class="dates">Weeks 7–10 · 2 August – 29 August</p>
-  <p>System-based pharmacology mapped to anatomy/physiology already covered. Microbiology deep dive.</p>
-  <ul class="lesson-list">
-    <li><span class="num">0015</span><span class="title">Cardiovascular Pharmacology</span><span class="status upcoming">upcoming</span></li>
-    <li><span class="num">0016</span><span class="title">Respiratory Pharmacology</span><span class="status upcoming">upcoming</span></li>
-    <li><span class="num">0017</span><span class="title">CNS Pharmacology</span><span class="status upcoming">upcoming</span></li>
-    <li><span class="num">0018</span><span class="title">Antimicrobials: Pharmacology &amp; Microbiology</span><span class="status upcoming">upcoming</span></li>
-    <li><span class="num">0019</span><span class="title">GI &amp; Endocrine Pharmacology</span><span class="status upcoming">upcoming</span></li>
-    <li><span class="num">0020</span><span class="title">Microbiology: Pathogen Groups</span><span class="status upcoming">upcoming</span></li>
-    <li><span class="num">0021</span><span class="title">Haematology + Remaining Pathology</span><span class="status upcoming">upcoming</span></li>
-    <li><span class="num">0022</span><span class="title">MSK, Anaesthesia &amp; Immunological Pharmacology</span><span class="status upcoming">upcoming</span></li>
-  </ul>
-</div>
-</section>
+</div><!-- /content-wrap -->
 
-<section>
-<h2>Phase 3: System Integration</h2>
-<div class="phase-card">
-  <p class="dates">Weeks 11–14 · 30 August – 26 September</p>
-  <p>System-based review integrating Anatomy → Physiology → Pathology → Pharmacology. Heavy question practice.</p>
-  <ul class="lesson-list">
-    <li><span class="num">0023</span><span class="title">CVS System Integration</span><span class="status upcoming">upcoming</span></li>
-    <li><span class="num">0024</span><span class="title">Respiratory System Integration</span><span class="status upcoming">upcoming</span></li>
-    <li><span class="num">0025</span><span class="title">Neurology System Integration</span><span class="status upcoming">upcoming</span></li>
-    <li><span class="num">0026</span><span class="title">GI, Renal &amp; Endocrine Integration</span><span class="status upcoming">upcoming</span></li>
-    <li><span class="num">0027</span><span class="title">Pharmacology Full Consolidation</span><span class="status upcoming">upcoming</span></li>
-    <li><span class="num">0028</span><span class="title">MSK Anatomy Final Pass</span><span class="status upcoming">upcoming</span></li>
-  </ul>
-</div>
-</section>
-
-<section>
-<h2>Phase 4: EBM + Consolidation + Mock Exams</h2>
-<div class="phase-card">
-  <p class="dates">Weeks 15–18 · 27 September – 26 October</p>
-  <p>Evidence Based Medicine (10Q), final consolidation, full mock exams, weak-spot drilling.</p>
-  <ul class="lesson-list">
-    <li><span class="num">0029</span><span class="title">EBM: Statistics</span><span class="status upcoming">upcoming</span></li>
-    <li><span class="num">0030</span><span class="title">EBM: Study Methodology &amp; Critical Appraisal</span><span class="status upcoming">upcoming</span></li>
-    <li><span class="num">0031</span><span class="title">Anatomy Final Pass</span><span class="status upcoming">upcoming</span></li>
-    <li><span class="num">0032</span><span class="title">Microbiology Final Pass</span><span class="status upcoming">upcoming</span></li>
-    <li><span class="num">0033</span><span class="title">Pharmacology Rapid Review</span><span class="status upcoming">upcoming</span></li>
-    <li><span class="num">0034</span><span class="title">Mock Exam 1 + Analysis</span><span class="status upcoming">upcoming</span></li>
-    <li><span class="num">0035</span><span class="title">Mock Exam 2 + Final Drills</span><span class="status upcoming">upcoming</span></li>
-  </ul>
-</div>
-</section>
-
-<section>
-<h2>Reference Materials</h2>
-<ul class="ref-list">
-  <li><a href="reference/cellular-injury-cheatsheet.html">Cellular Injury &amp; Inflammation Cheat Sheet</a> — print-friendly quick reference</li>
-  <li><a href="PLAN.md">Full 18-Week Blueprint-Aligned Plan</a></li>
-  <li><a href="RESOURCES.md">Resource List (Robbins, RCEMLearning, PassMedicine)</a></li>
-</ul>
-</section>
-
-<footer>
-  <p>💬 Each lesson page includes a reminder: ask follow-up questions anytime. I'm your teacher — if something's unclear, we work through it until it's solid.</p>
+<!-- ═══ Dark Footer ══════════════════════════════════════════════ -->
+<footer class="site-footer">
+  <p>💬 Questions about anything in these lessons? <a href="#">Ask me</a> anytime — I'm your teacher. If something's unclear, we work through it until it's solid.</p>
 </footer>
-
-</div>
 
 <script>
 const examDate = new Date('2026-10-27T09:00:00+01:00');
