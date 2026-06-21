@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MRCEM Primary — Lesson 3: Lower Limb Anatomy</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  .quiz-options { display: flex; flex-direction: column; gap: 0.5rem; margin: 1rem 0; }
+  .quiz-option { padding: 0.75rem 1rem; border: 2px solid #d1d5db; border-radius: 8px; cursor: pointer; transition: all 0.15s; background: #fff; }
+  .quiz-option:hover { border-color: #6366f1; background: #eef2ff; }
+  .quiz-option.correct { border-color: #059669; background: #d1fae5; }
+  .quiz-option.incorrect { border-color: #dc2626; background: #fee2e2; }
+  .quiz-option.reveal-correct { border-color: #059669; background: #d1fae5; }
+  .answer-feedback { display: none; margin-top: 0.75rem; padding: 0.75rem 1rem; border-radius: 8px; font-size: 0.9rem; line-height: 1.55; }
+  .answer-feedback.correct { display: block; background: #d1fae5; color: #065f46; }
+  .answer-feedback.incorrect { display: block; background: #fee2e2; color: #991b1b; }
+  .flashcard { border: 2px solid #e5e7eb; border-radius: 12px; padding: 2rem; margin: 1.5rem 0; text-align: center; cursor: pointer; user-select: none; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); }
+  .flashcard .front { font-weight: 600; font-size: 1.1rem; }
+  .flashcard .back { display: none; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #e5e7eb; color: #4b5563; }
+  .flashcard.flipped .front { display: none; }
+  .flashcard.flipped .back { display: block; }
+</style>
+</head>
+<body>
+<div class="lesson-container">
+
+<header>
+  <p class="lesson-number">Lesson 0003</p>
+  <h1>Lower Limb Anatomy</h1>
+  <p class="lesson-meta">MRCEM Primary · Phase 1 Foundations · Week 2</p>
+</header>
+
+<div class="blueprint-context">
+  <strong>🗺️ MRCEM Blueprint Context:</strong> Lower Limb Anatomy represents <strong>~8–10 of the 60 Anatomy questions</strong> (~5% of total exam). Combined with Upper Limb (~8–10Q), these are the highest-yield anatomy subcategories. Lower limb nerve lesions — especially <strong>common peroneal nerve (foot drop)</strong> and <strong>sciatic nerve</strong> — are tested in <em>every</em> MRCEM Primary sitting. You cannot afford to lose marks here.
+</div>
+
+<section>
+<h2>Why This Matters</h2>
+<p>Every shift brings lower limb pathology: the hip fracture at 3am, the dislocated knee with a threatened popliteal artery, the drunk who can't dorsiflex their foot. You cannot assess a tibial plateau fracture without understanding the common peroneal nerve. You cannot reduce a hip dislocation without respecting the sciatic nerve. <strong>MRCEM Primary tests lower limb anatomy as applied clinical knowledge</strong> — nerve lesion vignettes, fracture complications, and gait abnormalities are board favourites.</p>
+</section>
+
+<section>
+<h2>Knowledge: The Core Framework</h2>
+
+<!-- ====== LUMBOSACRAL PLEXUS ====== -->
+<h3>1. The Lumbosacral Plexus — HIGHEST-YIELD TOPIC</h3>
+<p>Like the brachial plexus in the upper limb, the lumbosacral plexus is tested in every sitting. It supplies all motor and sensory innervation to the lower limb. Divided into <strong>lumbar plexus (L1–L4)</strong> and <strong>sacral plexus (L4–S4)</strong>.</p>
+
+<h4>Lumbar Plexus (L1–L4) — Anterior Thigh</h4>
+<table>
+  <tr><th>Nerve</th><th>Roots</th><th>Key Motor Supply</th><th>Sensory</th><th>Clinical</th></tr>
+  <tr>
+    <td><strong>Femoral n.</strong></td>
+    <td>L2, L3, L4</td>
+    <td>Anterior thigh: quadriceps (knee extension), sartorius, pectineus</td>
+    <td>Anterior thigh + medial leg/ankle (saphenous n.)</td>
+    <td>Injury → weak knee extension + absent knee jerk. <strong>Psoas abscess, pelvic surgery, femoral artery catheterisation</strong></td>
+  </tr>
+  <tr>
+    <td><strong>Obturator n.</strong></td>
+    <td>L2, L3, L4</td>
+    <td>Medial thigh: adductors (adductor longus/brevis/magnus, gracilis, obturator externus)</td>
+    <td>Medial thigh</td>
+    <td>Injury → weak hip adduction. <strong>Pelvic surgery, obturator hernia</strong></td>
+  </tr>
+  <tr>
+    <td><strong>Lateral femoral cutaneous n.</strong></td>
+    <td>L2, L3</td>
+    <td>None (pure sensory)</td>
+    <td>Lateral thigh</td>
+    <td><strong>Meralgia paraesthetica</strong> — entrapment under inguinal ligament → burning lateral thigh pain</td>
+  </tr>
+</table>
+
+<h4>Sacral Plexus (L4–S4) — Posterior Thigh + Everything Below Knee</h4>
+<table>
+  <tr><th>Nerve</th><th>Roots</th><th>Key Motor Supply</th><th>Sensory</th><th>Clinical</th></tr>
+  <tr>
+    <td><strong>Sciatic n.</strong></td>
+    <td>L4–S3</td>
+    <td>Hamstrings (via tibial division) + all muscles below knee (via tibial + common peroneal divisions)</td>
+    <td>Posterior thigh, entire leg and foot (except medial leg/ankle — saphenous n.)</td>
+    <td><strong>Posterior hip dislocation</strong> (most common). Piriformis syndrome. Largest nerve in the body — exits pelvis through greater sciatic foramen BELOW piriformis</td>
+  </tr>
+  <tr>
+    <td><strong>Superior gluteal n.</strong></td>
+    <td>L4, L5, S1</td>
+    <td>Gluteus medius + minimus, tensor fasciae latae</td>
+    <td>None (pure motor)</td>
+    <td>Injury → <strong>Trendelenburg gait</strong> (pelvis drops on unsupported side). <strong>Intramuscular injection too high/medial</strong></td>
+  </tr>
+  <tr>
+    <td><strong>Inferior gluteal n.</strong></td>
+    <td>L5, S1, S2</td>
+    <td>Gluteus maximus (hip extension)</td>
+    <td>None (pure motor)</td>
+    <td>Injury → difficulty rising from chair, climbing stairs</td>
+  </tr>
+  <tr>
+    <td><strong>Pudendal n.</strong></td>
+    <td>S2, S3, S4</td>
+    <td>External anal + urethral sphincters, pelvic floor</td>
+    <td>Perineum</td>
+    <td><strong>Pudendal nerve entrapment</strong> in Alcock's canal. S2–S4 keeps the pee off the floor</td>
+  </tr>
+</table>
+
+<div class="flashcard" onclick="this.classList.toggle('flipped')">
+  <div class="front">🔥 Quick recall: Name the major nerves of the lumbar plexus and sacral plexus</div>
+  <div class="back">
+    <strong>Lumbar plexus (L1–L4):</strong> Femoral n., Obturator n., Lateral femoral cutaneous n.<br>
+    <strong>Sacral plexus (L4–S4):</strong> Sciatic n. (L4–S3), Superior gluteal n., Inferior gluteal n., Pudendal n. (S2–S4)<br>
+    <strong>Sciatic = tibial division + common peroneal division</strong> — they separate in the distal posterior thigh/popliteal fossa
+  </div>
+</div>
+
+<!-- ====== HIP JOINT ====== -->
+<h3>2. The Hip Joint — Stability and Blood Supply</h3>
+<p>The hip is a ball-and-socket joint (femoral head + acetabulum). It sacrifices mobility for stability — unlike the shoulder.</p>
+
+<table>
+  <tr><th>Feature</th><th>Details</th><th>Clinical Significance</th></tr>
+  <tr>
+    <td><strong>Blood supply to femoral head</strong></td>
+    <td>Medial + lateral circumflex femoral arteries (from profunda femoris) → retinacular arteries → <strong>artery of ligamentum teres</strong> (from obturator a., minor contribution)</td>
+    <td><strong>Intracapsular femoral neck fracture</strong> → retinacular vessels torn → avascular necrosis of femoral head. The artery of ligamentum teres is insufficient to sustain the head alone</td>
+  </tr>
+  <tr>
+    <td><strong>Hip dislocation</strong></td>
+    <td><strong>Posterior = 90%</strong> (dashboard injury, shortened + internally rotated leg). Anterior = 10% (externally rotated + abducted)</td>
+    <td>Posterior dislocation → <strong>sciatic nerve at risk</strong>. Common peroneal division most vulnerable (lateral, more superficial). Document foot dorsiflexion before AND after reduction</td>
+  </tr>
+  <tr>
+    <td><strong>Stability</strong></td>
+    <td>Bony (deep acetabulum), ligamentous (iliofemoral — strongest ligament in body), muscular (glutei, short external rotators)</td>
+    <td>Hip dislocation requires significant force (high-energy trauma, except prosthetic hips). Native hip = hard to dislocate; THR = easier</td>
+  </tr>
+</table>
+
+<div class="exam-tip">
+  <strong>🧠 Exam pattern:</strong> "An elderly woman falls and sustains an intracapsular femoral neck fracture. She undergoes hemiarthroplasty. Which vessel was disrupted, and why is AVN a concern?" The answer is the <strong>retinacular branches of the medial circumflex femoral artery</strong>. The artery of ligamentum teres contributes minimally and atrophies with age. This is tested in <em>every</em> MRCEM sitting — know it cold.
+</div>
+
+<!-- ====== THIGH COMPARTMENTS ====== -->
+<h3>3. Thigh Compartments</h3>
+<table>
+  <tr><th>Compartment</th><th>Key Muscles</th><th>Nerve</th><th>Action</th><th>Key Points</th></tr>
+  <tr>
+    <td><strong>Anterior</strong></td>
+    <td>Quadriceps (rectus femoris, vastus lateralis/medialis/intermedius), Sartorius</td>
+    <td><strong>Femoral n.</strong> (L2–L4)</td>
+    <td>Knee extension + hip flexion (rectus femoris crosses both joints)</td>
+    <td>Quadriceps tendon → patella → patellar ligament. <strong>Absent knee jerk = femoral nerve lesion (L3, L4)</strong></td>
+  </tr>
+  <tr>
+    <td><strong>Medial</strong></td>
+    <td>Adductor longus/brevis/magnus, Gracilis, Obturator externus</td>
+    <td><strong>Obturator n.</strong> (L2–L4)<br>Adductor magnus also gets tibial n. (sciatic)</td>
+    <td>Hip adduction</td>
+    <td>Adductor magnus has <strong>dual innervation</strong> — obturator (adductor part) + tibial division of sciatic (hamstring part). <strong>Adductor hiatus</strong> transmits femoral vessels to popliteal fossa</td>
+  </tr>
+  <tr>
+    <td><strong>Posterior</strong></td>
+    <td>Hamstrings: Biceps femoris (long + short heads), Semitendinosus, Semimembranosus</td>
+    <td><strong>Tibial division of sciatic n.</strong> (all except short head of biceps — common peroneal division)</td>
+    <td>Hip extension + knee flexion</td>
+    <td><strong>Short head of biceps femoris = ONLY hamstring by common peroneal n.</strong> All others = tibial division. <strong>Hamstring avulsion</strong> = ischial tuberosity</td>
+  </tr>
+</table>
+
+<div class="exam-pattern">
+  <strong>🔬 Recalled Exam Pattern:</strong> The exam loves asking "Which muscle in the posterior thigh is NOT innervated by the tibial division of the sciatic nerve?" Answer: <strong>short head of biceps femoris</strong> (common peroneal division). This is the lower limb equivalent of "FCU is ulnar nerve" — a single exception that gets tested repeatedly. Similarly: "Which adductor receives dual innervation?" → adductor magnus.
+</div>
+
+<!-- ====== KNEE AND POPLITEAL FOSSA ====== -->
+<h3>4. The Knee Joint and Popliteal Fossa</h3>
+
+<h4>Popliteal Fossa — Contents (Medial to Lateral)</h4>
+<p class="mnemonic"><strong>🧠 Mnemonic: Serve And Volley Next Ball</strong><br>
+<strong>S</strong>emimembranosus → <strong>A</strong>rtery (popliteal) → <strong>V</strong>ein (popliteal) → <strong>N</strong>erve (tibial) → <strong>B</strong>iceps femoris</p>
+
+<div class="key-point">
+  <strong>⚡ Popliteal fossa boundaries:</strong><br>
+  <strong>Superomedial:</strong> Semimembranosus + semitendinosus<br>
+  <strong>Superolateral:</strong> Biceps femoris<br>
+  <strong>Inferomedial:</strong> Medial head of gastrocnemius<br>
+  <strong>Inferolateral:</strong> Lateral head of gastrocnemius + plantaris<br>
+  <strong>Floor:</strong> Popliteal surface of femur, posterior capsule of knee joint, popliteus muscle<br>
+  <strong>Roof:</strong> Deep fascia + small saphenous vein + posterior femoral cutaneous nerve
+</div>
+
+<h4>Knee Ligaments — Unhappy Triad</h4>
+<table>
+  <tr><th>Ligament</th><th>Attachments</th><th>Function</th><th>Injury Mechanism</th></tr>
+  <tr>
+    <td><strong>ACL</strong></td>
+    <td>Anterior intercondylar area of tibia → medial aspect of lateral femoral condyle</td>
+    <td>Prevents anterior translation of tibia on femur</td>
+    <td>Non-contact pivoting injury, hyperextension. <strong>Lachman test > anterior drawer</strong></td>
+  </tr>
+  <tr>
+    <td><strong>PCL</strong></td>
+    <td>Posterior intercondylar area of tibia → lateral aspect of medial femoral condyle</td>
+    <td>Prevents posterior translation of tibia</td>
+    <td><strong>Dashboard injury</strong> — tibia driven posteriorly. Posterior sag sign</td>
+  </tr>
+  <tr>
+    <td><strong>MCL</strong></td>
+    <td>Medial femoral epicondyle → medial tibial condyle</td>
+    <td>Resists valgus stress</td>
+    <td>Valgus force to knee. <strong>Attached to medial meniscus</strong></td>
+  </tr>
+  <tr>
+    <td><strong>LCL</strong></td>
+    <td>Lateral femoral epicondyle → head of fibula</td>
+    <td>Resists varus stress</td>
+    <td>Varus force. <strong>Not attached to lateral meniscus</strong></td>
+  </tr>
+</table>
+
+<div class="key-point">
+  <strong>⚡ The Unhappy Triad (O'Donoghue's Triad):</strong> ACL + MCL + Medial meniscus. Mechanism: valgus force + external rotation of tibia on a fixed foot — classic football/skiing injury. The MCL is attached to the medial meniscus, so valgus stress injures both. The ACL tears from rotational strain. The <strong>LCL is NOT attached to the lateral meniscus</strong> — another exam favourite.
+</div>
+
+<!-- ====== LEG COMPARTMENTS ====== -->
+<h3>5. The Leg — Four Compartments</h3>
+<table>
+  <tr><th>Compartment</th><th>Key Muscles</th><th>Nerve</th><th>Action</th><th>Key Points</th></tr>
+  <tr>
+    <td><strong>Anterior</strong></td>
+    <td>Tibialis anterior, EHL, EDL, Peroneus tertius</td>
+    <td><strong>Deep peroneal n.</strong> (from common peroneal)</td>
+    <td>Dorsiflexion + toe extension + foot inversion (tibialis anterior)</td>
+    <td><strong>Foot drop = anterior compartment failure.</strong> Deep peroneal n. sensory: first web space (between great + 2nd toe)</td>
+  </tr>
+  <tr>
+    <td><strong>Lateral</strong></td>
+    <td>Peroneus longus + brevis</td>
+    <td><strong>Superficial peroneal n.</strong> (from common peroneal)</td>
+    <td>Foot eversion + weak plantarflexion</td>
+    <td>Superficial peroneal n. sensory: dorsum of foot (except first web space)</td>
+  </tr>
+  <tr>
+    <td><strong>Superficial posterior</strong></td>
+    <td>Gastrocnemius, Soleus, Plantaris</td>
+    <td><strong>Tibial n.</strong></td>
+    <td>Plantarflexion. Gastrocnemius also flexes knee</td>
+    <td><strong>Achilles tendon</strong> = combined gastrocnemius + soleus tendons. <strong>Soleus is the workhorse</strong> of plantarflexion — mostly type I fibres (posture)</td>
+  </tr>
+  <tr>
+    <td><strong>Deep posterior</strong></td>
+    <td>Tibialis posterior, FDL, FHL, Popliteus</td>
+    <td><strong>Tibial n.</strong></td>
+    <td>Foot inversion (tibialis posterior), toe flexion, unlocks knee (popliteus)</td>
+    <td><strong>Tom, Dick, And Very Nervous Harry:</strong> Tibialis posterior, flexor Digitorum longus, posterior tibial Artery, tibial Vein, tibial Nerve, flexor Hallucis longus — order at the medial malleolus</td>
+  </tr>
+</table>
+
+<div class="mnemonic">
+  <strong>🧠 Tarsal tunnel contents (Tom, Dick, And Very Nervous Harry):</strong><br>
+  <strong>T</strong>ibialis posterior · <strong>D</strong>igitorum longus · <strong>A</strong>rtery (posterior tibial) · <strong>V</strong>ein · <strong>N</strong>erve (tibial) · <strong>H</strong>allucis longus<br>
+  <em>Deep to the flexor retinaculum, posterior to the medial malleolus.</em>
+</div>
+
+<!-- ====== ANKLE AND FOOT ====== -->
+<h3>6. The Ankle and Foot</h3>
+
+<h4>Ankle Ligaments</h4>
+<table>
+  <tr><th>Side</th><th>Ligament Complex</th><th>Components</th><th>Injury</th></tr>
+  <tr>
+    <td><strong>Lateral</strong></td>
+    <td>Lateral ligament complex</td>
+    <td><strong>ATFL</strong> (anterior talofibular — weakest, most commonly injured)<br><strong>CFL</strong> (calcaneofibular)<br><strong>PTFL</strong> (posterior talofibular — strongest)</td>
+    <td><strong>Inversion injury</strong> (rolling ankle). ATFL → CFL → PTFL in order of injury severity</td>
+  </tr>
+  <tr>
+    <td><strong>Medial</strong></td>
+    <td><strong>Deltoid ligament</strong></td>
+    <td>4 parts: tibionavicular, tibiocalcaneal, anterior + posterior tibiotalar</td>
+    <td><strong>Eversion injury</strong>. Much stronger than lateral — eversion injury more likely to cause medial malleolus fracture than isolated ligament rupture</td>
+  </tr>
+</table>
+
+<div class="exam-tip">
+  <strong>🧠 Exam pattern:</strong> "A 25-year-old footballer inverts his ankle during a tackle. Which ligament is MOST likely injured?" → <strong>ATFL</strong> (anterior talofibular ligament). The exam expects you to know the order: ATFL first, then CFL, then PTFL. The <strong>Ottawa ankle rules</strong> are MRCEM clinical content but the anatomy basis (ATFL tenderness = lateral malleolus tip) is the Primary connection.
+</div>
+
+<h4>Foot — Arches and Support</h4>
+<p>The foot has <strong>three arches</strong> (medial longitudinal, lateral longitudinal, transverse) maintained by bony configuration, ligaments (spring ligament = plantar calcaneonavicular — most important for medial arch), and dynamic support (tibialis posterior, peroneus longus, intrinsic foot muscles).</p>
+
+<div class="key-point">
+  <strong>⚡ High-yield fact:</strong> <strong>Tibialis posterior dysfunction = acquired flat foot (pes planus)</strong> in adults. The tibialis posterior tendon is the primary dynamic stabiliser of the medial longitudinal arch. Rupture or tendinopathy → progressive collapse of the arch → valgus hindfoot deformity. Common in middle-aged women, often mistaken for ankle sprain.
+</div>
+
+<!-- ====== NERVE LESIONS ====== -->
+<h3>7. Lower Limb Nerve Lesions — THE HIGHEST-YIELD SECTION</h3>
+<p>MRCEM Primary <em>loves</em> lower limb nerve lesion questions. You must know the classic presenting signs, anatomical level of injury, and distinguishing features.</p>
+
+<table>
+  <tr><th>Nerve</th><th>Classic Deformity</th><th>Motor Loss</th><th>Sensory Loss</th><th>Common Scenarios</th></tr>
+  <tr>
+    <td><strong>Common peroneal n.</strong></td>
+    <td><strong>Foot drop</strong> + high-stepping gait</td>
+    <td>Dorsiflexors (tibialis anterior) + evertors (peronei). Toe extensors. Foot slap when walking</td>
+    <td>Dorsum of foot (superficial peroneal) + first web space (deep peroneal)</td>
+    <td><strong>Fibular neck fracture</strong>, tight plaster cast below knee, prolonged leg crossing, lithotomy position. <em>Most common lower limb mononeuropathy</em></td>
+  </tr>
+  <tr>
+    <td><strong>Tibial n.</strong></td>
+    <td>Loss of plantarflexion, cannot stand on toes</td>
+    <td>All posterior leg muscles + intrinsic foot muscles (claw toes)</td>
+    <td>Sole of foot (medial + lateral plantar nerves)</td>
+    <td><strong>Knee dislocation (popliteal fossa)</strong>, tarsal tunnel syndrome</td>
+  </tr>
+  <tr>
+    <td><strong>Sciatic n.</strong></td>
+    <td>Flail foot + weak knee flexion</td>
+    <td>Hamstrings + everything below knee. Foot drop + loss of plantarflexion</td>
+    <td>Posterior thigh, entire leg and foot (except medial leg/ankle — saphenous n.)</td>
+    <td><strong>Posterior hip dislocation</strong>, intramuscular injection (wrong quadrant). Common peroneal division more affected than tibial (more superficial)</td>
+  </tr>
+  <tr>
+    <td><strong>Femoral n.</strong></td>
+    <td>Cannot extend knee. Buckling when walking downstairs</td>
+    <td>Quadriceps → weak knee extension, sartorius</td>
+    <td>Anterior thigh + medial leg/ankle (saphenous n.)</td>
+    <td><strong>Pelvic surgery, psoas abscess, femoral artery catheterisation</strong>. Absent knee jerk (L3, L4)</td>
+  </tr>
+  <tr>
+    <td><strong>Obturator n.</strong></td>
+    <td>Weak hip adduction. Waddling gait</td>
+    <td>Adductor muscles</td>
+    <td>Medial thigh</td>
+    <td><strong>Pelvic surgery, obturator hernia</strong>. Rare in isolation</td>
+  </tr>
+  <tr>
+    <td><strong>Superior gluteal n.</strong></td>
+    <td><strong>Trendelenburg gait</strong> — pelvis drops on opposite side when standing on affected leg</td>
+    <td>Gluteus medius + minimus → cannot abduct hip when contralateral foot is off ground</td>
+    <td>None (pure motor)</td>
+    <td><strong>Intramuscular injection</strong> in superomedial quadrant of buttock. <strong>Trendelenburg test positive</strong></td>
+  </tr>
+</table>
+
+<figure style="margin: 1.5rem 0; text-align: center;">
+  <img src="../assets/images/trendelenburg-gait.jpg" alt="Trendelenburg gait clinical photograph" style="max-width: 100%; border-radius: 8px; border: 1px solid #e2e8f0;" loading="lazy">
+  <figcaption style="font-size: 0.82rem; color: #64748b; margin-top: 0.5rem;">Trendelenburg gait: When standing on the affected leg, the contralateral pelvis drops because the gluteus medius and minimus (superior gluteal nerve, L4–S1) cannot maintain pelvic stability. The patient compensates by leaning the trunk toward the affected side.</figcaption>
+</figure>
+
+<div class="key-point">
+  <strong>⚡ Key discriminator — Foot drop:</strong><br>
+  <strong>Common peroneal nerve at fibular neck:</strong> Foot drop ONLY (dorsiflexors and evertors). Plantarflexion intact, ankle jerk intact (tibial n., S1, S2). The most common cause of foot drop.<br>
+  <strong>Sciatic nerve:</strong> Foot drop + loss of plantarflexion + weak hamstrings. Ankle jerk absent. Much rarer.<br>
+  <strong>L5 radiculopathy:</strong> Foot drop + weak big toe extension (EHL) + sensory loss lateral leg and dorsum of foot. Plantarflexion and ankle jerk intact (S1). Back pain often present. <em>Classic exam question: "Is it L5 root or common peroneal nerve?"</em>
+</div>
+
+<div class="flashcard" onclick="this.classList.toggle('flipped')">
+  <div class="front">🔥 Quick recall: Trendelenburg test — which nerve is affected, and describe the test</div>
+  <div class="back">
+    <strong>Superior gluteal nerve (L4, L5, S1)</strong> → gluteus medius + minimus.<br>
+    <strong>Test:</strong> Patient stands on one leg. Normally, the gluteus medius on the standing side contracts to keep the pelvis level. If the nerve/muscle is weak, the <strong>contralateral pelvis drops</strong> (Trendelenburg sign positive).<br>
+    <strong>Compensation:</strong> Patient leans trunk toward the affected side to shift centre of gravity (compensated Trendelenburg gait).
+  </div>
+</div>
+
+<!-- ====== BLOOD SUPPLY ====== -->
+<h3>8. Blood Supply to the Lower Limb</h3>
+<div style="text-align:center; margin: 1rem 0; font-size: 0.95rem; font-family: system-ui, sans-serif;">
+  <strong>External iliac a.</strong> (passes under inguinal ligament) → <strong>Femoral a.</strong> → <strong>Popliteal a.</strong> (through adductor hiatus) → bifurcates at lower border of popliteus into <strong>Anterior tibial a.</strong> + <strong>Posterior tibial a.</strong> (continues as <strong>Peroneal/Fibular a.</strong>).<br>
+  Dorsalis pedis a. = continuation of anterior tibial a. on dorsum of foot. Posterior tibial a. passes behind medial malleolus (Tom, Dick, And Very Nervous Harry).
+</div>
+
+<figure style="margin: 1.5rem 0; text-align: center;">
+  <img src="../assets/images/femoral-artery.png" alt="Femoral artery course and branches" style="max-width: 100%; border-radius: 8px; border: 1px solid #e2e8f0;" loading="lazy">
+  <figcaption style="font-size: 0.82rem; color: #64748b; margin-top: 0.5rem;">Femoral artery: External iliac → common femoral → superficial femoral → popliteal. The profunda femoris (deep femoral artery) is the main blood supply to the thigh — gives off medial + lateral circumflex femoral arteries (crucial for femoral head blood supply).</figcaption>
+</figure>
+
+<div class="key-point">
+  <strong>⚡ The femoral triangle (NAVEL — lateral to medial):</strong><br>
+  <strong>N</strong>erve (femoral), <strong>A</strong>rtery (femoral), <strong>V</strong>ein (femoral), <strong>E</strong>mpty space, <strong>L</strong>ymphatics (canal of Rosenmüller).<br>
+  Boundaries: <strong>SAIL:</strong> <strong>S</strong>artorius (lateral), <strong>A</strong>dductor longus (medial), <strong>I</strong>nguinal <strong>L</strong>igament (superior). Floor: iliopsoas + pectineus.
+</div>
+
+<div class="exam-tip">
+  <strong>🧠 Exam pattern:</strong> The exam may ask about the <strong>dorsalis pedis pulse</strong> — it's located between the <strong>first and second metatarsals</strong>, lateral to the extensor hallucis longus tendon. Absence may indicate peripheral arterial disease or be congenital (~10% absent). The posterior tibial pulse is behind the medial malleolus. <strong>Ankle-Brachial Pressure Index (ABPI)</strong> is tested in MRCEM Primary EBM/physiology.
+</div>
+
+</section>
+
+<section>
+<h2>Skills: Retrieval Practice</h2>
+<p>Answer each question <em>from memory</em> before clicking. These are constructed to real MRCEM difficulty — clinical vignettes testing nerve localisation and anatomical reasoning.</p>
+
+<!-- Q1: Common Peroneal / Foot Drop -->
+<div class="quiz" id="q1">
+  <p><strong>Q1.</strong> A 32-year-old man sustains a fracture of the right fibular neck while playing football. Three weeks after cast removal, he complains that his right foot "slaps" when he walks and he cannot clear his foot from the ground during the swing phase of gait. On examination, he cannot dorsiflex his right foot or extend his toes. Eversion of the foot is also weak. Sensation is reduced over the dorsum of the foot and the first web space. However, plantarflexion is strong and the ankle jerk is intact. Which nerve is injured, and at what level?</p>
+  <div class="quiz-options">
+    <div class="quiz-option" onclick="checkAnswer('q1', this, 1)">A. Tibial nerve — compressed in the tarsal tunnel at the medial malleolus</div>
+    <div class="quiz-option" onclick="checkAnswer('q1', this, 1)">B. Common peroneal nerve — compressed at the fibular neck</div>
+    <div class="quiz-option" onclick="checkAnswer('q1', this, 1)">C. Sciatic nerve — injured in the gluteal region</div>
+    <div class="quiz-option" onclick="checkAnswer('q1', this, 1)">D. L5 nerve root — compressed by a prolapsed intervertebral disc</div>
+    <div class="quiz-option" onclick="checkAnswer('q1', this, 1)">E. Deep peroneal nerve — compressed under the inferior extensor retinaculum</div>
+  </div>
+  <div class="answer-feedback" id="q1-feedback"></div>
+</div>
+
+<!-- Q2: Posterior Hip Dislocation / Sciatic -->
+<div class="quiz" id="q2">
+  <p><strong>Q2.</strong> A 28-year-old driver is brought to the ED following a head-on collision. His right hip is flexed, internally rotated, and adducted — a classic posterior hip dislocation. After successful closed reduction under sedation, he is noted to have weakness of dorsiflexion AND plantarflexion of the right foot, with absent ankle jerk but intact knee jerk. Sensation is reduced over the entire foot and posterior thigh. Which nerve has been injured?</p>
+  <div class="quiz-options">
+    <div class="quiz-option" onclick="checkAnswer('q2', this, 2)">A. Femoral nerve — compressed by the femoral head anteriorly</div>
+    <div class="quiz-option" onclick="checkAnswer('q2', this, 2)">B. Common peroneal nerve — the most lateral structure in the popliteal fossa</div>
+    <div class="quiz-option" onclick="checkAnswer('q2', this, 2)">C. Sciatic nerve — stretched or compressed by the posteriorly displaced femoral head</div>
+    <div class="quiz-option" onclick="checkAnswer('q2', this, 2)">D. Obturator nerve — running through the obturator canal</div>
+    <div class="quiz-option" onclick="checkAnswer('q2', this, 2)">E. Superior gluteal nerve — exiting through the greater sciatic foramen</div>
+  </div>
+  <div class="answer-feedback" id="q2-feedback"></div>
+</div>
+
+<!-- Q3: Femoral Triangle NAVEL -->
+<div class="quiz" id="q3">
+  <p><strong>Q3.</strong> A junior doctor is performing a femoral venous blood gas in a hypotensive patient. They palpate the femoral artery just below the inguinal ligament and insert the needle immediately medial to the pulsation. From lateral to medial, the structures within the femoral sheath are arranged in which order (NAVEL)?</p>
+  <div class="quiz-options">
+    <div class="quiz-option" onclick="checkAnswer('q3', this, 2)">A. Artery → Nerve → Vein → Lymphatics (ANVL)</div>
+    <div class="quiz-option" onclick="checkAnswer('q3', this, 2)">B. Vein → Artery → Nerve → Lymphatics (VANL)</div>
+    <div class="quiz-option" onclick="checkAnswer('q3', this, 2)">C. Nerve → Artery → Vein → Lymphatics (NAVEL)</div>
+    <div class="quiz-option" onclick="checkAnswer('q3', this, 2)">D. Artery → Vein → Nerve → Lymphatics (AVNL)</div>
+    <div class="quiz-option" onclick="checkAnswer('q3', this, 2)">E. Lymphatics → Vein → Artery → Nerve (LVAN)</div>
+  </div>
+  <div class="answer-feedback" id="q3-feedback"></div>
+</div>
+
+<!-- Q4: All EXCEPT — Hamstring Innervation -->
+<div class="quiz" id="q4">
+  <p><strong>Q4.</strong> All of the following muscles in the posterior compartment of the thigh are innervated by the TIBIAL division of the sciatic nerve EXCEPT:</p>
+  <div class="quiz-options">
+    <div class="quiz-option" onclick="checkAnswer('q4', this, 2)">A. Semitendinosus — forming the superomedial border of the popliteal fossa</div>
+    <div class="quiz-option" onclick="checkAnswer('q4', this, 2)">B. Semimembranosus — the deepest of the hamstring muscles</div>
+    <div class="quiz-option" onclick="checkAnswer('q4', this, 2)">C. Short head of biceps femoris — the lateral hamstring that does not cross the hip joint</div>
+    <div class="quiz-option" onclick="checkAnswer('q4', this, 2)">D. Long head of biceps femoris — crossing both the hip and knee joints</div>
+    <div class="quiz-option" onclick="checkAnswer('q4', this, 2)">E. Adductor magnus (hamstring part) — the only adductor innervated by the tibial nerve</div>
+  </div>
+  <div class="answer-feedback" id="q4-feedback"></div>
+</div>
+
+<!-- Q5: Trendelenburg -->
+<div class="quiz" id="q5">
+  <p><strong>Q5.</strong> A 55-year-old man receives an intramuscular injection of an antibiotic into the upper outer quadrant of his right buttock. Two weeks later, he complains of an abnormal gait. On examination, when asked to stand on his right leg, his left pelvis drops significantly. He has no sensory deficit and no weakness of hip flexion, knee extension, knee flexion, or ankle movement. Which nerve has been injured, and which muscle is primarily affected?</p>
+  <div class="quiz-options">
+    <div class="quiz-option" onclick="checkAnswer('q5', this, 0)">A. Superior gluteal nerve — gluteus medius and minimus</div>
+    <div class="quiz-option" onclick="checkAnswer('q5', this, 0)">B. Inferior gluteal nerve — gluteus maximus</div>
+    <div class="quiz-option" onclick="checkAnswer('q5', this, 0)">C. Sciatic nerve — hamstrings and muscles below knee</div>
+    <div class="quiz-option" onclick="checkAnswer('q5', this, 0)">D. Obturator nerve — adductor muscles of the thigh</div>
+    <div class="quiz-option" onclick="checkAnswer('q5', this, 0)">E. Femoral nerve — quadriceps and sartorius</div>
+  </div>
+  <div class="answer-feedback" id="q5-feedback"></div>
+</div>
+
+<!-- Q6: AVN Femoral Head -->
+<div class="quiz" id="q6">
+  <p><strong>Q6.</strong> An 82-year-old woman falls at home and sustains a displaced intracapsular fracture of the right femoral neck. She undergoes a hemiarthroplasty. The femoral head is sent to pathology and shows avascular necrosis (AVN). Disruption of which blood vessel is primarily responsible for AVN of the femoral head following an intracapsular fracture?</p>
+  <div class="quiz-options">
+    <div class="quiz-option" onclick="checkAnswer('q6', this, 2)">A. Obturator artery — giving off the artery of the ligamentum teres</div>
+    <div class="quiz-option" onclick="checkAnswer('q6', this, 2)">B. Inferior gluteal artery — supplying the greater trochanter</div>
+    <div class="quiz-option" onclick="checkAnswer('q6', this, 2)">C. Medial circumflex femoral artery — the main blood supply via retinacular vessels</div>
+    <div class="quiz-option" onclick="checkAnswer('q6', this, 2)">D. Lateral circumflex femoral artery — anastamosing with the medial circumflex</div>
+    <div class="quiz-option" onclick="checkAnswer('q6', this, 2)">E. Profunda femoris artery — the deep femoral artery of the thigh</div>
+  </div>
+  <div class="answer-feedback" id="q6-feedback"></div>
+</div>
+
+<!-- Q7: L5 vs CPN -->
+<div class="quiz" id="q7">
+  <p><strong>Q7.</strong> A 45-year-old warehouse worker presents with a 3-month history of progressive right-sided foot drop. He also reports lower back pain radiating down the lateral aspect of the right leg. On examination, he cannot dorsiflex his right foot or extend his great toe. Sensation is reduced over the lateral leg and dorsum of the foot. However, foot eversion is preserved, and the ankle jerk is intact. Straight leg raise test is positive at 40°. This presentation is MOST consistent with:</p>
+  <div class="quiz-options">
+    <div class="quiz-option" onclick="checkAnswer('q7', this, 2)">A. Common peroneal nerve palsy at the fibular neck — with selective fascicular involvement</div>
+    <div class="quiz-option" onclick="checkAnswer('q7', this, 2)">B. Sciatic nerve entrapment in the greater sciatic foramen (piriformis syndrome)</div>
+    <div class="quiz-option" onclick="checkAnswer('q7', this, 2)">C. L5 radiculopathy — from a prolapsed L4/L5 intervertebral disc</div>
+    <div class="quiz-option" onclick="checkAnswer('q7', this, 2)">D. Deep peroneal nerve entrapment at the ankle (anterior tarsal tunnel syndrome)</div>
+    <div class="quiz-option" onclick="checkAnswer('q7', this, 2)">E. Tibial nerve compression in the popliteal fossa (Baker's cyst)</div>
+  </div>
+  <div class="answer-feedback" id="q7-feedback"></div>
+</div>
+
+<!-- Q8: Unhappy Triad -->
+<div class="quiz" id="q8">
+  <p><strong>Q8.</strong> A 22-year-old rugby player is tackled from the lateral side during a match. His right foot is planted on the ground, and his knee sustains a valgus force with external rotation of the tibia. MRI confirms the "unhappy triad" (O'Donoghue's triad). Which three structures are injured?</p>
+  <div class="quiz-options">
+    <div class="quiz-option" onclick="checkAnswer('q8', this, 0)">A. Anterior cruciate ligament + Medial collateral ligament + Medial meniscus</div>
+    <div class="quiz-option" onclick="checkAnswer('q8', this, 0)">B. Anterior cruciate ligament + Lateral collateral ligament + Lateral meniscus</div>
+    <div class="quiz-option" onclick="checkAnswer('q8', this, 0)">C. Posterior cruciate ligament + Medial collateral ligament + Medial meniscus</div>
+    <div class="quiz-option" onclick="checkAnswer('q8', this, 0)">D. Anterior cruciate ligament + Medial collateral ligament + Lateral meniscus</div>
+    <div class="quiz-option" onclick="checkAnswer('q8', this, 0)">E. Posterior cruciate ligament + Lateral collateral ligament + Lateral meniscus</div>
+  </div>
+  <div class="answer-feedback" id="q8-feedback"></div>
+</div>
+
+</section>
+
+<section>
+<h2>Key Takeaways</h2>
+<ol>
+  <li><strong>Common peroneal nerve = foot drop (most common lower limb mononeuropathy).</strong> Vulnerable at the fibular neck. Fibular neck fracture, plaster cast, leg crossing. Plantarflexion and ankle jerk preserved — distinguishes from sciatic nerve lesion.</li>
+  <li><strong>Sciatic nerve = foot drop + loss of plantarflexion + absent ankle jerk.</strong> Vulnerable in posterior hip dislocation. Common peroneal division more affected (more superficial). Exits greater sciatic foramen below piriformis.</li>
+  <li><strong>Femoral nerve = weak knee extension + absent knee jerk (L3, L4).</strong> Anterior thigh muscles. Vulnerable in pelvic surgery, psoas abscess, femoral artery puncture. Saphenous nerve (sensory) runs all the way to the medial ankle.</li>
+  <li><strong>Superior gluteal nerve = Trendelenburg gait (pelvis drops on contralateral side).</strong> Gluteus medius + minimus. Pure motor. Vulnerable to intramuscular injection if given superomedially.</li>
+  <li><strong>AVN of femoral head = medial circumflex femoral artery disruption.</strong> Intracapsular femoral neck fractures tear retinacular vessels. Artery of ligamentum teres insufficient alone — atrophies with age.</li>
+  <li><strong>Unhappy triad = ACL + MCL + Medial meniscus.</strong> Valgus + external rotation injury. MCL is attached to medial meniscus (LCL is NOT attached to lateral meniscus — classic exam discriminator).</li>
+  <li><strong>Short head of biceps femoris = only hamstring by common peroneal n.</strong> (tibial division supplies all others). Adductor magnus has dual innervation (obturator + tibial). These exceptions are exam favourites.</li>
+  <li><strong>Popliteal fossa (medial → lateral):</strong> Semimembranosus → Artery → Vein → Nerve → Biceps femoris (Serve And Volley Next Ball). Femoral triangle (lateral → medial): NAVEL.</li>
+  <li><strong>Tarsal tunnel (Tom, Dick, And Very Nervous Harry):</strong> Tibialis posterior, flexor Digitorum longus, posterior tibial Artery, tibial Vein, tibial Nerve, flexor Hallucis longus — order at the medial malleolus.</li>
+  <li><strong>L5 radiculopathy vs common peroneal nerve:</strong> L5 = back pain, positive SLR, weak EHL, eversion preserved (L5, S1 via superficial peroneal). CPN = fibular neck tenderness/ trauma, eversion ALSO lost.</li>
+</ol>
+</section>
+
+<section class="resources">
+<h2>Recommended Primary Source</h2>
+<p>📖 <strong>Netter's Atlas of Human Anatomy</strong> — Lower Limb plates. Pay special attention to the lumbosacral plexus (Plate 486–487), femoral triangle (Plate 486), and nerve lesion summaries.</p>
+<p>📖 <strong>Gray's Anatomy for Students</strong> (Drake, Vogl, Mitchell) — excellent clinical correlations for lower limb nerve lesions.</p>
+<p>🌐 <strong>RCEMLearning</strong> — Basic Sciences → Anatomy → Lower Limb. Pay attention to the hip and knee sections which tie directly to MRCEM Primary questions.</p>
+<p>📋 <strong>Plan:</strong> <a href="../PLAN.md">18-Week Study Plan</a></p>
+<p>🔬 <strong>Real exam intel:</strong> Lower limb nerve lesions are tested in every sitting. Common peroneal nerve at fibular neck is the single highest-yield lower limb anatomy question. The exam expects you to differentiate L5 radiculopathy from CPN palsy based on eversion (preserved in L5, lost in CPN). Pass rate ~25%, pass mark ~108/180.</p>
+</section>
+
+<section class="video-resources">
+<h2>📺 Video Resources</h2>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 1.5rem 0;">
+
+  <div style="border: 1px solid #e5e7eb; border-radius: 12px; padding: 1rem; background: #f8fafc;">
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; margin-bottom: 0.75rem;">
+      <iframe src="https://www.youtube.com/embed/oz1gDG7KSCQ" title="Lower Limb Nerve Lesions" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <p style="font-weight: 600; margin: 0 0 0.25rem;">🧠 Lower Limb Nerve Lesions</p>
+    <p style="font-size: 0.85rem; color: #6b7280; margin: 0;">Clinical anatomy of femoral, obturator, sciatic, common peroneal, and tibial nerve injuries.</p>
+  </div>
+
+  <div style="border: 1px solid #e5e7eb; border-radius: 12px; padding: 1rem; background: #f8fafc;">
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; margin-bottom: 0.75rem;">
+      <iframe src="https://www.youtube.com/embed/3dFg-DGyRlU" title="Lumbosacral Plexus" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <p style="font-weight: 600; margin: 0 0 0.25rem;">🧠 Lumbosacral Plexus — Lumbar + Sacral Plexus</p>
+    <p style="font-size: 0.85rem; color: #6b7280; margin: 0;">Comprehensive overview of the lumbar (L1–L4) and sacral (L4–S4) plexuses.</p>
+  </div>
+
+  <div style="border: 1px solid #e5e7eb; border-radius: 12px; padding: 1rem; background: #f8fafc;">
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; margin-bottom: 0.75rem;">
+      <iframe src="https://www.youtube.com/embed/AzydB26K8jE" title="Femoral Triangle and NAVEL" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <p style="font-weight: 600; margin: 0 0 0.25rem;">🧠 Femoral Triangle — Boundaries and Contents</p>
+    <p style="font-size: 0.85rem; color: #6b7280; margin: 0;">SAIL boundaries, NAVEL contents, femoral sheath and canal anatomy for MRCEM.</p>
+  </div>
+
+  <div style="border: 1px solid #e5e7eb; border-radius: 12px; padding: 1rem; background: #f8fafc;">
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; margin-bottom: 0.75rem;">
+      <iframe src="https://www.youtube.com/embed/u24bTGLVkqY" title="Foot Drop vs L5 Radiculopathy" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <p style="font-weight: 600; margin: 0 0 0.25rem;">🧠 Foot Drop: Common Peroneal Nerve vs L5 Radiculopathy</p>
+    <p style="font-size: 0.85rem; color: #6b7280; margin: 0;">How to differentiate the two most common causes of foot drop — a classic MRCEM question.</p>
+  </div>
+
+</div>
+</section>
+
+<footer>
+  <p>💬 <strong>Stuck on something?</strong> Ask me follow-up questions. I'm your teacher — anything unclear, let's work through it.</p>
+  <p class="lesson-number">Lesson 0003 · Phase 1 Foundations · <a href="0002-upper-limb-anatomy.html">← Prev: Upper Limb</a> · <a href="0004-thorax-anatomy.html">Next: Thorax Anatomy →</a> · <a href="../index.html">Course Home</a></p>
+</footer>
+
+</div>
+
+<script>
+function checkAnswer(qid, el, correctIdx) {
+  const quiz = document.getElementById(qid);
+  const options = quiz.querySelectorAll('.quiz-option');
+  const feedback = document.getElementById(qid + '-feedback');
+  const idx = Array.from(options).indexOf(el);
+
+  options.forEach(o => { o.classList.remove('correct', 'incorrect', 'reveal-correct'); o.style.pointerEvents = 'none'; });
+
+  const letter = String.fromCharCode(65 + correctIdx);
+
+  if (idx === correctIdx) {
+    el.classList.add('correct');
+    feedback.className = 'answer-feedback correct';
+    feedback.innerHTML = getCorrectFeedback(qid);
+  } else {
+    el.classList.add('incorrect');
+    options[correctIdx].classList.add('reveal-correct');
+    feedback.className = 'answer-feedback incorrect';
+    feedback.innerHTML = getIncorrectFeedback(qid, letter);
+  }
+}
+
+function getCorrectFeedback(qid) {
+  const fb = {
+    q1: '✅ <strong>Correct! Common peroneal nerve at the fibular neck.</strong> This is the most common lower limb mononeuropathy. The key clues: isolated foot drop + weak eversion (superficial peroneal) + sensory loss dorsum/first web space + INTACT plantarflexion and ankle jerk. This differentiates it from sciatic nerve (ankle jerk absent, plantarflexion lost) and L5 radiculopathy (eversion preserved, back pain + positive SLR).',
+    q2: '✅ <strong>Correct! Sciatic nerve.</strong> Posterior hip dislocation places the sciatic nerve at direct risk as the femoral head displaces posteriorly. The sciatic nerve exits the greater sciatic foramen below piriformis and runs directly posterior to the hip joint capsule. The combination of foot drop (common peroneal) + loss of plantarflexion (tibial) + absent ankle jerk + posterior thigh sensory loss = sciatic nerve, not an isolated branch.',
+    q3: '✅ <strong>Correct! NAVEL (Nerve → Artery → Vein → Empty space → Lymphatics).</strong> The femoral nerve is lateral (outside the femoral sheath). Within the sheath: Artery (lateral), Vein (intermediate), Lymphatics/Canal (medial). The mnemonic NAVEL describes lateral-to-medial: N (femoral nerve — lateral, not in sheath), A (femoral artery), V (femoral vein), E (empty space — actually femoral canal with lymphatics, allowing venous expansion), L (lacunar ligament — medial boundary).',
+    q4: '✅ <strong>Correct! Short head of biceps femoris.</strong> This is the ONLY hamstring muscle innervated by the common peroneal division of the sciatic nerve — all other hamstrings (semitendinosus, semimembranosus, long head of biceps) are supplied by the tibial division. The short head is unique in another way: it does NOT cross the hip joint (originates from the linea aspera of the femur), so it only acts at the knee.',
+    q5: '✅ <strong>Correct! Superior gluteal nerve — gluteus medius and minimus.</strong> The Trendelenburg sign (pelvis drops on the contralateral side when standing on the affected leg) is the classic presentation of superior gluteal nerve injury. It\'s a pure motor nerve (L4–S1) — hence no sensory deficit. The quadrants are intact (femoral n.), hamstrings work (sciatic), and ankle movements preserved (all below knee = sciatic). Only hip abduction is affected.',
+    q6: '✅ <strong>Correct! Medial circumflex femoral artery.</strong> This is the MAIN blood supply to the femoral head via its retinacular branches that run along the femoral neck beneath the capsule. An intracapsular fracture tears these vessels, leading to AVN. The artery of ligamentum teres (from obturator artery) contributes minimally and atrophies with age — it cannot sustain the femoral head alone. The lateral circumflex femoral artery contributes but the medial circumflex is dominant.',
+    q7: '✅ <strong>Correct! L5 radiculopathy from L4/L5 disc prolapse.</strong> The distinguishing features from common peroneal nerve (CPN) palsy are: (1) back pain with dermatomal radiation, (2) positive straight leg raise test, (3) preserved foot eversion (L5,S1 via superficial peroneal n. — the L5 root contributes to eversion via the superior gluteal nerve to gluteus medius). In CPN palsy at the fibular neck, eversion is ALSO lost (superficial peroneal branch). L5 radiculopathy spares eversion because gluteus medius is innervated proximal to the disc.',
+    q8: '✅ <strong>Correct! ACL + MCL + Medial meniscus (O\'Donoghue\'s unhappy triad).</strong> Classic mechanism: valgus force + external rotation of tibia on a fixed foot. The MCL is torn by the valgus stress. Because the MCL is firmly attached to the medial meniscus, the meniscus is also injured. The ACL tears from the rotational component. The LCL is NOT attached to the lateral meniscus — this is a classic exam discriminator between medial and lateral compartments.'
+  };
+  return fb[qid] || '✅ Correct!';
+}
+
+function getIncorrectFeedback(qid, letter) {
+  const fb = {
+    q1: '❌ <strong>Incorrect. The correct answer is B — Common peroneal nerve at the fibular neck.</strong> Isolated foot drop + weak eversion + intact plantarflexion and ankle jerk = common peroneal nerve. The fibular neck is the most common site of injury (fracture, cast pressure, leg crossing). Tibial nerve (A) would cause loss of plantarflexion + absent ankle jerk. Sciatic nerve (C) would also affect hamstrings and plantarflexion. L5 radiculopathy (D) spares eversion and has back pain + positive SLR. Deep peroneal nerve (E) causes foot drop but spares eversion (superficial peroneal) — and is rare in isolation.',
+    q2: '❌ <strong>Incorrect. The correct answer is C — Sciatic nerve.</strong> Posterior hip dislocation is the classic mechanism. The key is the COMBINATION: foot drop (common peroneal territory) + loss of plantarflexion (tibial territory) + absent ankle jerk + posterior thigh sensory loss. Femoral nerve (A) affects knee extension, not foot movement. Common peroneal alone (B) spares plantarflexion and ankle jerk. Obturator (D) affects adduction only. Superior gluteal (E) affects hip abduction only (Trendelenburg).',
+    q3: '❌ <strong>Incorrect. The correct answer is C — NAVEL (Nerve → Artery → Vein → Empty space/Lymphatics).</strong> The femoral nerve lies lateral to the femoral artery outside the femoral sheath. Within the sheath: Artery (lateral), Vein (intermediate), Lymphatics (most medial — the femoral canal). This is why you insert the needle MEDIAL to the femoral artery pulsation for venous access — the vein is medial to the artery.',
+    q4: '❌ <strong>Incorrect. The correct answer is C — Short head of biceps femoris.</strong> This is the ONLY hamstring innervated by the common peroneal (fibular) division of the sciatic nerve. All others (semitendinosus, semimembranosus, long head of biceps) are tibial division. The short head is also the only hamstring that does NOT cross the hip joint (originates from femur, not ischial tuberosity). Adductor magnus (E) has dual innervation: obturator nerve (adductor part) + tibial division of sciatic (hamstring part).',
+    q5: '❌ <strong>Incorrect. The correct answer is A — Superior gluteal nerve, gluteus medius and minimus.</strong> The Trendelenburg sign is pathognomonic for superior gluteal nerve injury or gluteus medius dysfunction. IM injections should be given in the upper OUTER quadrant to avoid the sciatic nerve, but if placed too medial or superior, the superior gluteal nerve can be injured. Inferior gluteal nerve (B) would affect gluteus maximus (difficulty rising from chair), not pelvic stability in single-leg stance.',
+    q6: '❌ <strong>Incorrect. The correct answer is C — Medial circumflex femoral artery.</strong> This vessel provides the MAIN blood supply to the femoral head via retinacular branches. Intracapsular fractures disrupt these vessels. The artery of ligamentum teres (A) from the obturator artery is a minor contributor and atrophies with age — it cannot sustain the femoral head. This is why intracapsular fractures have a high risk of AVN (especially displaced) while extracapsular (intertrochanteric) fractures do not.',
+    q7: '❌ <strong>Incorrect. The correct answer is C — L5 radiculopathy.</strong> The telltale signs: back pain, positive SLR, preserved foot eversion (peronei receive L5,S1 via superficial peroneal — but L5 also contributes to gluteus medius via superior gluteal n.). In CPN palsy (A), eversion is ALSO lost (superficial peroneal branch at the fibular neck). The examiner is testing your ability to differentiate the two most common causes of foot drop based on eversion and back examination.',
+    q8: '❌ <strong>Incorrect. The correct answer is A — ACL + MCL + Medial meniscus.</strong> O\'Donoghue\'s unhappy triad. The valgus force opens the medial joint line → MCL tears. Because the MCL is attached to the medial meniscus, the meniscus tears too. The external rotation component tears the ACL. Why not the lateral side? The LCL is NOT attached to the lateral meniscus — a classic discriminator. PCL (C, E) tears from posterior tibial translation (dashboard injury), not valgus + rotation.'
+  };
+  return fb[qid] || '❌ Incorrect. The correct answer is ' + letter + '. Review the lesson content above.';
+}
+</script>
+
+</body>
+</html>
