@@ -12,7 +12,7 @@
   .quiz-option.correct { border-color: #059669; background: #d1fae5; }
   .quiz-option.incorrect { border-color: #dc2626; background: #fee2e2; }
   .quiz-option.reveal-correct { border-color: #059669; background: #d1fae5; }
-  .answer-feedback { display: none; margin-top: 0.75rem; padding: 0.75rem 1rem; border-radius: 8px; font-size: 0.9rem; }
+  .answer-feedback { display: none; margin-top: 0.75rem; padding: 0.75rem 1rem; border-radius: 8px; font-size: 0.9rem; line-height: 1.55; }
   .answer-feedback.correct { display: block; background: #d1fae5; color: #065f46; }
   .answer-feedback.incorrect { display: block; background: #fee2e2; color: #991b1b; }
   .flashcard { border: 2px solid #e5e7eb; border-radius: 12px; padding: 2rem; margin: 1.5rem 0; text-align: center; cursor: pointer; user-select: none; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); }
@@ -22,6 +22,10 @@
   .flashcard.flipped .back { display: block; }
   .key-point { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 1rem 1.25rem; margin: 1rem 0; border-radius: 0 8px 8px 0; }
   .exam-tip { background: #e0e7ff; border-left: 4px solid #6366f1; padding: 1rem 1.25rem; margin: 1rem 0; border-radius: 0 8px 8px 0; }
+  .blueprint-context { background: #dbeafe; border-left: 4px solid #2563eb; padding: 1rem 1.25rem; margin: 1.25rem 0; border-radius: 0 8px 8px 0; font-size: 0.92rem; }
+  .blueprint-context strong { color: #1e40af; }
+  .exam-pattern { background: #fce7f3; border-left: 4px solid #db2777; padding: 1rem 1.25rem; margin: 1.25rem 0; border-radius: 0 8px 8px 0; font-size: 0.92rem; }
+  .exam-pattern strong { color: #9d174d; }
 </style>
 </head>
 <body>
@@ -32,6 +36,10 @@
   <h1>Cellular Injury, Inflammation &amp; Immune Response</h1>
   <p class="lesson-meta">MRCEM Primary · Phase 1 Foundations · Week 1</p>
 </header>
+
+<div class="blueprint-context">
+  <strong>🗺️ MRCEM Blueprint Context:</strong> This lesson covers ~5 questions in the exam (Pathology domain: inflammatory responses, immune responses, infection, wound healing, haematology). It's a small allocation but foundational — the concepts here underpin respiratory pathology, sepsis, trauma responses, and autoimmune disease across the entire syllabus. Do not skip this.
+</div>
 
 <section>
 <h2>Why This Matters</h2>
@@ -77,7 +85,7 @@
 </table>
 
 <div class="exam-tip">
-  <strong>🧠 Exam pattern:</strong> MRCEM loves asking "Which type of cell death is characterized by..." and giving you a description. Memorise the <em>membrane integrity</em> and <em>inflammation</em> rows — those are the most reliable differentiators.
+  <strong>🧠 Exam pattern:</strong> MRCEM loves asking "Which type of cell death is characterised by..." and giving you a description. Memorise the <em>membrane integrity</em> and <em>inflammation</em> rows — those are the most reliable differentiators.
 </div>
 
 <h3>3. Types of Necrosis</h3>
@@ -231,126 +239,130 @@
 </div>
 </section>
 
+<div class="exam-pattern">
+  <strong>🔬 Recalled Exam Pattern:</strong> The real MRCEM Primary exam consistently asks one question linking <strong>immunofluorescence patterns on renal biopsy to hypersensitivity type</strong>. The exam expects you to know: <em>linear</em> IgG deposition along the GBM = Type II (anti-GBM antibodies → Goodpasture's syndrome); <em>granular ("lumpy-bumpy")</em> IgG + C3 = Type III (immune complex deposition → SLE nephritis, post-streptococcal GN). This linear vs. granular distinction has appeared in multiple sittings. Know it cold.
+</div>
+
 <section>
 <h2>Skills: Retrieval Practice</h2>
-<p>Answer each question <em>from memory</em> before clicking. Retrieval builds storage strength.</p>
+<p>Answer each question <em>from memory</em> before clicking. Retrieval builds storage strength. These are constructed to real MRCEM difficulty — clinical vignettes testing mechanism-level understanding, not simple recall.</p>
 
 <div class="quiz" id="q1">
-  <p><strong>Q1.</strong> A 62-year-old man dies 48 hours after an anterior STEMI. At autopsy, the affected myocardium appears firm and pale with preserved tissue architecture. This is most consistent with:</p>
+  <p><strong>Q1.</strong> A 58-year-old man presents with crushing central chest pain radiating to the left arm. ECG shows ST elevation in leads V1–V4. He dies 36 hours later despite intervention. At autopsy, the affected myocardium appears firm and pale with preserved tissue architecture on microscopy. This pattern of cell death is BEST described as:</p>
   <div class="quiz-options">
-    <div class="quiz-option" onclick="checkAnswer('q1', this, 2)">A. Liquefactive necrosis</div>
-    <div class="quiz-option" onclick="checkAnswer('q1', this, 2)">B. Caseous necrosis</div>
-    <div class="quiz-option" onclick="checkAnswer('q1', this, 2)">C. Coagulative necrosis</div>
-    <div class="quiz-option" onclick="checkAnswer('q1', this, 2)">D. Fat necrosis</div>
-    <div class="quiz-option" onclick="checkAnswer('q1', this, 2)">E. Fibrinoid necrosis</div>
+    <div class="quiz-option" onclick="checkAnswer('q1', this, 2)">A. Liquefactive necrosis — enzymatic dissolution into liquid debris</div>
+    <div class="quiz-option" onclick="checkAnswer('q1', this, 2)">B. Caseous necrosis — cheese-like, granular eosinophilic material</div>
+    <div class="quiz-option" onclick="checkAnswer('q1', this, 2)">C. Coagulative necrosis — firm, pale tissue with ghost architecture</div>
+    <div class="quiz-option" onclick="checkAnswer('q1', this, 2)">D. Fat necrosis — chalky white deposits with saponification</div>
+    <div class="quiz-option" onclick="checkAnswer('q1', this, 2)">E. Fibrinoid necrosis — bright eosinophilic vessel wall staining</div>
   </div>
   <div class="answer-feedback" id="q1-feedback"></div>
 </div>
 
 <div class="quiz" id="q2">
-  <p><strong>Q2.</strong> Which cell type is the <em>predominant</em> infiltrate in acute inflammation?</p>
+  <p><strong>Q2.</strong> A 52-year-old woman with acute bacterial pneumonia has a sputum sample showing abundant neutrophils. The migration of these neutrophils from the bloodstream into the alveolar space follows a sequence: margination → rolling → adhesion → diapedesis → chemotaxis. Which mediator is the MOST potent chemotactic factor directing neutrophils to the site of infection?</p>
   <div class="quiz-options">
-    <div class="quiz-option" onclick="checkAnswer('q2', this, 0)">A. Neutrophils</div>
-    <div class="quiz-option" onclick="checkAnswer('q2', this, 0)">B. Lymphocytes</div>
-    <div class="quiz-option" onclick="checkAnswer('q2', this, 0)">C. Macrophages</div>
-    <div class="quiz-option" onclick="checkAnswer('q2', this, 0)">D. Plasma cells</div>
-    <div class="quiz-option" onclick="checkAnswer('q2', this, 0)">E. Eosinophils</div>
+    <div class="quiz-option" onclick="checkAnswer('q2', this, 4)">A. Histamine — released from mast cell granules</div>
+    <div class="quiz-option" onclick="checkAnswer('q2', this, 4)">B. Prostaglandin E₂ — derived from the COX pathway</div>
+    <div class="quiz-option" onclick="checkAnswer('q2', this, 4)">C. Leukotriene B₄ — derived from the LOX pathway</div>
+    <div class="quiz-option" onclick="checkAnswer('q2', this, 4)">D. Bradykinin — cleaved from high molecular weight kininogen</div>
+    <div class="quiz-option" onclick="checkAnswer('q2', this, 4)">E. Complement C5a — cleaved during complement activation</div>
   </div>
   <div class="answer-feedback" id="q2-feedback"></div>
 </div>
 
 <div class="quiz" id="q3">
-  <p><strong>Q3.</strong> Which mediator is <em>primarily</em> responsible for the pain associated with acute inflammation?</p>
+  <p><strong>Q3.</strong> A 24-year-old woman receives an intramuscular injection of a contrast agent and within minutes develops widespread urticaria, angioedema of the lips, and wheeze. These clinical features are caused by mast cell degranulation with release of histamine and other preformed mediators. Which complement fragments are the anaphylatoxins that can directly trigger mast cell degranulation?</p>
   <div class="quiz-options">
-    <div class="quiz-option" onclick="checkAnswer('q3', this, 1)">A. Histamine</div>
-    <div class="quiz-option" onclick="checkAnswer('q3', this, 1)">B. Bradykinin</div>
-    <div class="quiz-option" onclick="checkAnswer('q3', this, 1)">C. Nitric oxide</div>
-    <div class="quiz-option" onclick="checkAnswer('q3', this, 1)">D. Leukotriene B4</div>
-    <div class="quiz-option" onclick="checkAnswer('q3', this, 1)">E. Complement C3a</div>
+    <div class="quiz-option" onclick="checkAnswer('q3', this, 2)">A. C1q and C4 — classical pathway recognition components</div>
+    <div class="quiz-option" onclick="checkAnswer('q3', this, 2)">B. C3b and Factor B — opsonin and alternative pathway component</div>
+    <div class="quiz-option" onclick="checkAnswer('q3', this, 2)">C. C3a and C5a — cleaved fragments with anaphylatoxin activity</div>
+    <div class="quiz-option" onclick="checkAnswer('q3', this, 2)">D. C5b, C6, and C7 — early membrane attack complex components</div>
+    <div class="quiz-option" onclick="checkAnswer('q3', this, 2)">E. Factor H and Factor I — complement regulatory proteins</div>
   </div>
   <div class="answer-feedback" id="q3-feedback"></div>
 </div>
 
 <div class="quiz" id="q4">
-  <p><strong>Q4.</strong> A cell undergoing <em>programmed</em> cell death shows nuclear fragmentation, cell shrinkage, and intact plasma membrane. Which process is this?</p>
+  <p><strong>Q4.</strong> All of the following are characteristic features of apoptosis EXCEPT:</p>
   <div class="quiz-options">
-    <div class="quiz-option" onclick="checkAnswer('q4', this, 0)">A. Apoptosis</div>
-    <div class="quiz-option" onclick="checkAnswer('q4', this, 0)">B. Coagulative necrosis</div>
-    <div class="quiz-option" onclick="checkAnswer('q4', this, 0)">C. Autophagy</div>
-    <div class="quiz-option" onclick="checkAnswer('q4', this, 0)">D. Oncosis</div>
-    <div class="quiz-option" onclick="checkAnswer('q4', this, 0)">E. Pyroptosis</div>
+    <div class="quiz-option" onclick="checkAnswer('q4', this, 3)">A. Cell shrinkage and membrane blebbing</div>
+    <div class="quiz-option" onclick="checkAnswer('q4', this, 3)">B. Plasma membrane remains intact until late stages</div>
+    <div class="quiz-option" onclick="checkAnswer('q4', this, 3)">C. Nuclear chromatin condensation and fragmentation (karyorrhexis)</div>
+    <div class="quiz-option" onclick="checkAnswer('q4', this, 3)">D. Provocation of a robust acute inflammatory response</div>
+    <div class="quiz-option" onclick="checkAnswer('q4', this, 3)">E. Occurrence in scattered individual cells rather than confluent groups</div>
   </div>
   <div class="answer-feedback" id="q4-feedback"></div>
 </div>
 
 <div class="quiz" id="q5">
-  <p><strong>Q5.</strong> Which Toll-like receptor (TLR) recognises lipopolysaccharide (LPS) from Gram-negative bacteria?</p>
+  <p><strong>Q5.</strong> A 30-year-old nurse develops an intensely pruritic, erythematous, vesicular rash on her hands 48 hours after starting to wear latex gloves. Patch testing confirms a Type IV hypersensitivity reaction to latex accelerators. Which of the following is the PRIMARY effector cell responsible for the clinical manifestations of this reaction?</p>
   <div class="quiz-options">
-    <div class="quiz-option" onclick="checkAnswer('q5', this, 1)">A. TLR2</div>
-    <div class="quiz-option" onclick="checkAnswer('q5', this, 1)">B. TLR4</div>
-    <div class="quiz-option" onclick="checkAnswer('q5', this, 1)">C. TLR3</div>
-    <div class="quiz-option" onclick="checkAnswer('q5', this, 1)">D. TLR7</div>
-    <div class="quiz-option" onclick="checkAnswer('q5', this, 1)">E. TLR9</div>
+    <div class="quiz-option" onclick="checkAnswer('q5', this, 2)">A. Mast cells pre-sensitised with latex-specific IgE</div>
+    <div class="quiz-option" onclick="checkAnswer('q5', this, 2)">B. B lymphocytes producing latex-specific IgG antibodies</div>
+    <div class="quiz-option" onclick="checkAnswer('q5', this, 2)">C. CD4⁺ Th1 lymphocytes secreting IFN-γ and activating macrophages</div>
+    <div class="quiz-option" onclick="checkAnswer('q5', this, 2)">D. Neutrophils recruited by immune complex deposition</div>
+    <div class="quiz-option" onclick="checkAnswer('q5', this, 2)">E. Eosinophils releasing major basic protein and eosinophil peroxidase</div>
   </div>
   <div class="answer-feedback" id="q5-feedback"></div>
 </div>
 
 <div class="quiz" id="q6">
-  <p><strong>Q6.</strong> A 34-year-old woman develops urticaria, bronchospasm, and hypotension within 5 minutes of receiving IV penicillin. Which hypersensitivity reaction is this?</p>
+  <p><strong>Q6.</strong> A 72-year-old man with long-standing, poorly controlled type 2 diabetes mellitus and peripheral arterial disease develops a black, shrivelled, mummified great toe with a well-defined line of demarcation between viable and non-viable tissue. There is no surrounding erythema, pus, or systemic signs of infection. This pattern of tissue necrosis is BEST classified as:</p>
   <div class="quiz-options">
-    <div class="quiz-option" onclick="checkAnswer('q6', this, 0)">A. Type I (IgE-mediated)</div>
-    <div class="quiz-option" onclick="checkAnswer('q6', this, 0)">B. Type II (antibody-mediated)</div>
-    <div class="quiz-option" onclick="checkAnswer('q6', this, 0)">C. Type III (immune complex)</div>
-    <div class="quiz-option" onclick="checkAnswer('q6', this, 0)">D. Type IV (cell-mediated)</div>
-    <div class="quiz-option" onclick="checkAnswer('q6', this, 0)">E. Mixed Type I and III</div>
+    <div class="quiz-option" onclick="checkAnswer('q6', this, 4)">A. Coagulative necrosis — firm, pale infarction with ghost architecture</div>
+    <div class="quiz-option" onclick="checkAnswer('q6', this, 4)">B. Liquefactive necrosis — enzymatic dissolution into liquid pus</div>
+    <div class="quiz-option" onclick="checkAnswer('q6', this, 4)">C. Caseous necrosis — cheese-like, granular appearance with granulomas</div>
+    <div class="quiz-option" onclick="checkAnswer('q6', this, 4)">D. Fat necrosis — chalky white saponification of adipose tissue</div>
+    <div class="quiz-option" onclick="checkAnswer('q6', this, 4)">E. Gangrenous necrosis — dry, black, mummified ischaemic tissue</div>
   </div>
   <div class="answer-feedback" id="q6-feedback"></div>
 </div>
 
 <div class="quiz" id="q7">
-  <p><strong>Q7.</strong> All of the following are examples of Type II hypersensitivity reactions EXCEPT:</p>
+  <p><strong>Q7.</strong> All of the following chemical mediators are derived from the CYCLOOXYGENASE (COX) pathway of arachidonic acid metabolism EXCEPT:</p>
   <div class="quiz-options">
-    <div class="quiz-option" onclick="checkAnswer('q7', this, 3)">A. Autoimmune haemolytic anaemia</div>
-    <div class="quiz-option" onclick="checkAnswer('q7', this, 3)">B. Goodpasture's syndrome</div>
-    <div class="quiz-option" onclick="checkAnswer('q7', this, 3)">C. Myasthenia gravis</div>
-    <div class="quiz-option" onclick="checkAnswer('q7', this, 3)">D. Serum sickness</div>
-    <div class="quiz-option" onclick="checkAnswer('q7', this, 3)">E. Pemphigus vulgaris</div>
+    <div class="quiz-option" onclick="checkAnswer('q7', this, 3)">A. Prostaglandin E₂ — mediates vasodilation and pain sensitisation</div>
+    <div class="quiz-option" onclick="checkAnswer('q7', this, 3)">B. Prostacyclin (PGI₂) — inhibits platelet aggregation</div>
+    <div class="quiz-option" onclick="checkAnswer('q7', this, 3)">C. Thromboxane A₂ — promotes platelet aggregation</div>
+    <div class="quiz-option" onclick="checkAnswer('q7', this, 3)">D. Leukotriene B₄ — potent chemotactic factor for neutrophils</div>
+    <div class="quiz-option" onclick="checkAnswer('q7', this, 3)">E. Prostaglandin D₂ — produced by mast cells</div>
   </div>
   <div class="answer-feedback" id="q7-feedback"></div>
 </div>
 
 <div class="quiz" id="q8">
-  <p><strong>Q8.</strong> Which complement pathway is activated by mannose-binding lectin binding to microbial surfaces?</p>
+  <p><strong>Q8.</strong> A 28-year-old woman with systemic lupus erythematosus (SLE) presents with hypertension, peripheral oedema, and frothy urine. Renal biopsy shows diffuse proliferative glomerulonephritis with granular ("lumpy-bumpy") deposits of IgG, IgM, and C3 along the glomerular basement membrane on immunofluorescence. In contrast to Goodpasture's syndrome (which shows LINEAR IgG deposition), this granular pattern indicates which hypersensitivity reaction?</p>
   <div class="quiz-options">
-    <div class="quiz-option" onclick="checkAnswer('q8', this, 2)">A. Classical pathway</div>
-    <div class="quiz-option" onclick="checkAnswer('q8', this, 2)">B. Alternative pathway</div>
-    <div class="quiz-option" onclick="checkAnswer('q8', this, 2)">C. Lectin pathway</div>
-    <div class="quiz-option" onclick="checkAnswer('q8', this, 2)">D. Terminal pathway</div>
-    <div class="quiz-option" onclick="checkAnswer('q8', this, 2)">E. Common pathway</div>
+    <div class="quiz-option" onclick="checkAnswer('q8', this, 2)">A. Type I — IgE cross-linking on mast cells in the glomerulus</div>
+    <div class="quiz-option" onclick="checkAnswer('q8', this, 2)">B. Type II — anti-GBM antibodies binding directly to glomerular basement membrane</div>
+    <div class="quiz-option" onclick="checkAnswer('q8', this, 2)">C. Type III — immune complex deposition in the glomerular capillary wall</div>
+    <div class="quiz-option" onclick="checkAnswer('q8', this, 2)">D. Type IV — T-cell mediated destruction of glomerular podocytes</div>
+    <div class="quiz-option" onclick="checkAnswer('q8', this, 2)">E. Type V — stimulatory antibodies activating glomerular cell receptors</div>
   </div>
   <div class="answer-feedback" id="q8-feedback"></div>
 </div>
 
 <div class="quiz" id="q9">
-  <p><strong>Q9.</strong> A 45-year-old man has a surgical wound that is healing by primary intention. On day 5 post-operatively, which cell type is <em>most critical</em> for continued healing?</p>
+  <p><strong>Q9.</strong> A 48-year-old man undergoes an uncomplicated open inguinal hernia repair. The wound is closed in layers with absorbable sutures. On postoperative day 7, the wound is clean, dry, and healing well. At this stage of wound healing (the proliferative phase), which type of collagen is PREDOMINANTLY being deposited by fibroblasts in the granulation tissue?</p>
   <div class="quiz-options">
-    <div class="quiz-option" onclick="checkAnswer('q9', this, 1)">A. Neutrophils</div>
-    <div class="quiz-option" onclick="checkAnswer('q9', this, 1)">B. Macrophages</div>
-    <div class="quiz-option" onclick="checkAnswer('q9', this, 1)">C. Fibroblasts</div>
-    <div class="quiz-option" onclick="checkAnswer('q9', this, 1)">D. Lymphocytes</div>
-    <div class="quiz-option" onclick="checkAnswer('q9', this, 1)">E. Myofibroblasts</div>
+    <div class="quiz-option" onclick="checkAnswer('q9', this, 2)">A. Type I collagen — mature, thick fibres with high tensile strength</div>
+    <div class="quiz-option" onclick="checkAnswer('q9', this, 2)">B. Type II collagen — found in hyaline and elastic cartilage</div>
+    <div class="quiz-option" onclick="checkAnswer('q9', this, 2)">C. Type III collagen — thinner fibres; the initial collagen of granulation tissue</div>
+    <div class="quiz-option" onclick="checkAnswer('q9', this, 2)">D. Type IV collagen — mesh-like network of the basement membrane</div>
+    <div class="quiz-option" onclick="checkAnswer('q9', this, 2)">E. Type V collagen — minor component associated with type I fibrils</div>
   </div>
   <div class="answer-feedback" id="q9-feedback"></div>
 </div>
 
 <div class="quiz" id="q10">
-  <p><strong>Q10.</strong> A deficiency of which vitamin would <em>most directly</em> impair collagen cross-linking during wound healing?</p>
+  <p><strong>Q10.</strong> All of the following statements regarding the alternative complement pathway are correct EXCEPT:</p>
   <div class="quiz-options">
-    <div class="quiz-option" onclick="checkAnswer('q10', this, 2)">A. Vitamin A</div>
-    <div class="quiz-option" onclick="checkAnswer('q10', this, 2)">B. Vitamin D</div>
-    <div class="quiz-option" onclick="checkAnswer('q10', this, 2)">C. Vitamin C</div>
-    <div class="quiz-option" onclick="checkAnswer('q10', this, 2)">D. Vitamin E</div>
-    <div class="quiz-option" onclick="checkAnswer('q10', this, 2)">E. Vitamin K</div>
+    <div class="quiz-option" onclick="checkAnswer('q10', this, 3)">A. It can be activated spontaneously by hydrolysis of C3 (the "tickover" mechanism)</div>
+    <div class="quiz-option" onclick="checkAnswer('q10', this, 3)">B. It does not require the presence of antibody for activation</div>
+    <div class="quiz-option" onclick="checkAnswer('q10', this, 3)">C. Properdin (Factor P) stabilises the C3 convertase (C3bBb) on microbial surfaces</div>
+    <div class="quiz-option" onclick="checkAnswer('q10', this, 3)">D. It requires C1q recognition of antigen-antibody complexes</div>
+    <div class="quiz-option" onclick="checkAnswer('q10', this, 3)">E. Factor B and Factor D are unique components of this pathway</div>
   </div>
   <div class="answer-feedback" id="q10-feedback"></div>
 </div>
@@ -361,7 +373,7 @@
 <ol>
   <li><strong>Necrosis vs apoptosis</strong> = membrane rupture + inflammation vs programmed + contained. Know this cold.</li>
   <li><strong>6 necrosis types + classic examples</strong> — coagulative (MI), liquefactive (brain), caseous (TB), fat (pancreatitis), gangrenous (limb), fibrinoid (vasculitis).</li>
-  <li><strong>Hypersensitivity Type I-IV</strong> — IgE/mast cells (I), IgG against cells (II), immune complexes (III), T cells (IV). <em>Type IV is the only one not antibody-mediated.</em></li>
+  <li><strong>Hypersensitivity Type I–IV</strong> — IgE/mast cells (I), IgG against cells (II), immune complexes (III), T cells (IV). <em>Type IV is the only one not antibody-mediated.</em></li>
   <li><strong>Complement:</strong> 3 pathways → C3 convertase → C5 convertase → MAC. C3a/C5a = anaphylatoxins. C3b = opsonin. C5a = chemotaxis.</li>
   <li><strong>Wound healing:</strong> 4 phases (haemostasis → inflammation → proliferation → remodelling). Macrophages are the master regulators. Vitamin C = collagen cross-linking.</li>
   <li><strong>5 cardinal signs</strong> — PRISH. Mediated by histamine, prostaglandins, bradykinin, leukotrienes.</li>
@@ -371,7 +383,7 @@
 
 <section class="resources">
 <h2>Recommended Primary Source</h2>
-<p>📖 <strong>Robbins Basic Pathology</strong>, Chapters 2-3 (Cell Injury, Inflammation, Repair, Hypersensitivity). The examiners write from this.</p>
+<p>📖 <strong>Robbins Basic Pathology</strong>, Chapters 2–3 (Cell Injury, Inflammation, Repair, Hypersensitivity). The examiners write from this.</p>
 <p>🌐 <strong>RCEMLearning</strong> — Basic Sciences module → Cellular Pathology, Immunology, Inflammation sections.</p>
 <p>📄 <strong>Reference:</strong> <a href="../reference/cellular-injury-cheatsheet.html">Cellular Injury Quick-Reference Cheat Sheet</a></p>
 <p>📋 <strong>Plan:</strong> <a href="../PLAN.md">18-Week Study Plan</a></p>
@@ -395,16 +407,50 @@ function checkAnswer(qid, el, correctIdx) {
   // Reset all
   options.forEach(o => { o.classList.remove('correct', 'incorrect', 'reveal-correct'); o.style.pointerEvents = 'none'; });
 
+  const letter = String.fromCharCode(65 + correctIdx);
+
   if (idx === correctIdx) {
     el.classList.add('correct');
     feedback.className = 'answer-feedback correct';
-    feedback.textContent = '✅ Correct! Well done.';
+    feedback.innerHTML = getCorrectFeedback(qid);
   } else {
     el.classList.add('incorrect');
     options[correctIdx].classList.add('reveal-correct');
     feedback.className = 'answer-feedback incorrect';
-    feedback.textContent = '❌ Not quite. The correct answer is highlighted in green.';
+    feedback.innerHTML = getIncorrectFeedback(qid, letter);
   }
+}
+
+function getCorrectFeedback(qid) {
+  const fb = {
+    q1: '✅ <strong>Correct! Coagulative necrosis.</strong> The classic pattern seen in myocardial infarction. Ischaemia causes protein denaturation (including lysosomal enzymes), which prevents enzymatic digestion and preserves tissue architecture as a "ghost outline." The firm, pale appearance with preserved architecture is characteristic of infarction in solid organs (heart, kidney, spleen).',
+    q2: '✅ <strong>Correct! Complement C5a.</strong> C5a is the most potent chemotactic factor for neutrophils. It is cleaved from C5 during complement activation (by C5 convertase) and acts as both an anaphylatoxin and a powerful chemoattractant — establishing a concentration gradient for neutrophils to follow to the site of infection. The exam explicitly tests C5a as <em>the most potent</em> chemotactic factor.',
+    q3: '✅ <strong>Correct! C3a and C5a</strong> (and C4a to a lesser extent) are the complement anaphylatoxins. These small fragments are cleaved from C3, C4, and C5 during complement activation and can directly bind to receptors on mast cells, triggering degranulation with release of histamine, tryptase, and other preformed mediators — producing urticaria, angioedema, bronchospasm, and even anaphylaxis.',
+    q4: '✅ <strong>Correct! Inflammation is NOT a feature of apoptosis.</strong> This is the defining distinction from necrosis. In apoptosis, the cell membrane remains intact until late, and the cell fragments into membrane-bound apoptotic bodies that are rapidly phagocytosed by macrophages before their contents can leak. This "clean" programmed cell death avoids triggering the inflammatory response.',
+    q5: '✅ <strong>Correct! CD4⁺ Th1 lymphocytes.</strong> Type IV hypersensitivity (delayed-type) is mediated by T cells — not antibodies. Upon re-exposure to the antigen, sensitised Th1 cells release cytokines (particularly IFN-γ) which activate macrophages and recruit other inflammatory cells. This T-cell driven process takes 48–72 hours, hence "delayed-type hypersensitivity." Type IV is the ONLY hypersensitivity type not antibody-mediated.',
+    q6: '✅ <strong>Correct! Dry gangrenous necrosis.</strong> This occurs when arterial blood supply is progressively compromised (peripheral arterial disease + diabetes) without superimposed infection. The tissue becomes desiccated, black (haemoglobin breakdown → iron sulphide), and mummified with a clear line of demarcation. The absence of pus and systemic signs distinguishes dry gangrene from wet gangrene (which involves bacterial superinfection).',
+    q7: '✅ <strong>Correct! Leukotriene B₄</strong> is NOT derived from the COX pathway — it comes from the LIPOXYGENASE (LOX) pathway. Arachidonic acid (released by phospholipase A₂) is metabolised by two pathways: COX → prostaglandins + thromboxane A₂; LOX → leukotrienes + lipoxins. This COX vs. LOX distinction is a high-yield exam topic.',
+    q8: '✅ <strong>Correct! Type III (immune complex-mediated) hypersensitivity.</strong> The granular ("lumpy-bumpy") immunofluorescence pattern is the hallmark of immune complex deposition — pre-formed antigen-antibody complexes circulate and deposit in the glomerular capillary wall, activating complement. This contrasts with Goodpasture\'s (Type II), where anti-GBM antibodies bind DIRECTLY to basement membrane antigens, producing LINEAR staining on immunofluorescence. Linear vs. granular on renal biopsy is a classic exam discriminator.',
+    q9: '✅ <strong>Correct! Type III collagen</strong> (reticulin) is deposited first by fibroblasts during the proliferative phase. It forms thinner fibres and provides the early framework of granulation tissue. During the remodelling phase (week 3 onwards), type III is gradually replaced by type I collagen, which has higher tensile strength. At day 7, the wound is firmly in the proliferative phase and type III predominates.',
+    q10: '✅ <strong>Correct! The alternative pathway does NOT require C1q.</strong> C1q is the recognition unit of the CLASSICAL pathway, which binds to antibody-antigen complexes. The alternative pathway is antibody-independent and relies on spontaneous C3 hydrolysis ("tickover") and surface-bound C3b for activation. All other statements are genuine features of the alternative pathway.'
+  };
+  return fb[qid] || '✅ Correct!';
+}
+
+function getIncorrectFeedback(qid, letter) {
+  const fb = {
+    q1: '❌ <strong>Incorrect. The correct answer is C — Coagulative necrosis.</strong> This is the characteristic pattern of infarction in solid organs (heart, kidney, spleen) where ischaemia denatures proteins including lysosomal enzymes, preventing enzymatic digestion and preserving tissue architecture. Liquefactive necrosis (A) occurs in the brain and abscesses. Caseous necrosis (B) is typical of tuberculosis. Fat necrosis (D) is seen in pancreatitis. Fibrinoid necrosis (E) affects blood vessels in malignant hypertension and vasculitis.',
+    q2: '❌ <strong>Incorrect. The correct answer is E — Complement C5a.</strong> C5a is the most potent chemotactic factor for neutrophils, directing their migration along a concentration gradient to the site of infection. Histamine (A) primarily causes vasodilation and increased vascular permeability — not chemotaxis. PGE₂ (B) mediates vasodilation and pain sensitisation. LTB₄ (C) is chemotactic but LESS potent than C5a — the exam explicitly tests C5a as the most potent. Bradykinin (D) causes pain and increased permeability but has minimal chemotactic activity.',
+    q3: '❌ <strong>Incorrect. The correct answer is C — C3a and C5a.</strong> These (along with C4a) are the complement anaphylatoxins — named because they trigger mast cell degranulation, producing an anaphylaxis-like picture. C1q (A) is the classical pathway recognition unit. C3b (B) is the key opsonin. C5b-C6-C7 (D) are early MAC components. Factor H and Factor I (E) are regulatory proteins that INHIBIT complement activation.',
+    q4: '❌ <strong>Incorrect. The correct answer is D — Provocation of a robust acute inflammatory response.</strong> This is a feature of NECROSIS, not apoptosis. When necrotic cells rupture, they release DAMPs (damage-associated molecular patterns) that trigger inflammation. Apoptosis is fundamentally "clean" programmed cell death — the membrane stays intact, contents are contained within apoptotic bodies, and these are silently cleared by phagocytes. All other options (A, B, C, E) are genuine features of apoptosis.',
+    q5: '❌ <strong>Incorrect. The correct answer is C — CD4⁺ Th1 lymphocytes.</strong> Type IV hypersensitivity is T-cell mediated (not antibody-mediated), and CD4⁺ Th1 cells are the primary orchestrators — they recognise the antigen, release IFN-γ, and activate macrophages. Mast cells with IgE (A) mediate Type I (immediate) hypersensitivity — causing urticaria within minutes, not a rash at 48 hours. B cells producing IgG (B) mediate Type II. Neutrophils recruited by immune complexes (D) mediate Type III. Eosinophils (E) are associated with parasitic infections and some allergic responses, not Type IV.',
+    q6: '❌ <strong>Incorrect. The correct answer is E — Gangrenous necrosis (dry gangrene).</strong> This is coagulative necrosis occurring in a limb with secondary desiccation. The black colour comes from haemoglobin breakdown (iron sulphide), and the mummification with clear line of demarcation is classic. While coagulative necrosis (A) describes the cellular pattern, "gangrenous" is the correct clinical-pathological term for this presentation of an entire extremity. Liquefactive necrosis (B) produces liquid pus. Caseous necrosis (C) is TB. Fat necrosis (D) shows chalky white deposits, not black/dry tissue.',
+    q7: '❌ <strong>Incorrect. The correct answer is D — Leukotriene B₄.</strong> LTB₄ is produced by the LIPOXYGENASE (LOX) pathway, not the COX pathway. The COX pathway produces prostaglandins (PGE₂, PGI₂, PGD₂) and thromboxane A₂. The LOX pathway produces leukotrienes (LTB₄ is chemotactic; LTC₄/D₄/E₄ are the slow-reacting substance of anaphylaxis). All other options (A, B, C, E) are genuine COX pathway products.',
+    q8: '❌ <strong>Incorrect. The correct answer is C — Type III (immune complex-mediated) hypersensitivity.</strong> The granular ("lumpy-bumpy") immunofluorescence pattern is the hallmark of immune complex deposition. In SLE, pre-formed antigen-antibody complexes deposit in the glomerular capillary wall, activating complement and attracting neutrophils. Type II (B) with anti-GBM antibodies would produce LINEAR staining (Goodpasture\'s syndrome). The linear vs. granular distinction on renal biopsy immunofluorescence is a classic exam discriminator between Type II and Type III.',
+    q9: '❌ <strong>Incorrect. The correct answer is C — Type III collagen.</strong> In wound healing, fibroblasts initially deposit type III collagen during the proliferative phase (days 4–21), forming the early scaffold of granulation tissue. Only later, during the remodelling phase (week 3 to 1 year), is type III replaced by type I collagen (A) with greater tensile strength. Type II collagen (B) is cartilage-specific. Type IV (D) is basement membrane. Type V (E) is a minor fibrillar collagen.',
+    q10: '❌ <strong>Incorrect. The correct answer is D — The alternative pathway does NOT require C1q.</strong> C1q is the recognition component of the CLASSICAL pathway, which binds to antibody-antigen complexes. The alternative pathway is antibody-independent and relies on spontaneous C3 hydrolysis (tickover) and surface-bound C3b for activation. All other statements are correct: tickover activation (A), antibody-independent (B), properdin stabilises C3bBb (C), and Factor B + Factor D are unique to this pathway (E).'
+  };
+  return fb[qid] || '❌ Incorrect. The correct answer is ' + letter + '. Review the lesson content above.';
 }
 </script>
 

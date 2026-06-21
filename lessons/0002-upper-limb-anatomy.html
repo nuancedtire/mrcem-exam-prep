@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MRCEM Primary — Lesson 2: Upper Limb Anatomy</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  .quiz-options { display: flex; flex-direction: column; gap: 0.5rem; margin: 1rem 0; }
+  .quiz-option { padding: 0.75rem 1rem; border: 2px solid #d1d5db; border-radius: 8px; cursor: pointer; transition: all 0.15s; background: #fff; }
+  .quiz-option:hover { border-color: #6366f1; background: #eef2ff; }
+  .quiz-option.correct { border-color: #059669; background: #d1fae5; }
+  .quiz-option.incorrect { border-color: #dc2626; background: #fee2e2; }
+  .quiz-option.reveal-correct { border-color: #059669; background: #d1fae5; }
+  .answer-feedback { display: none; margin-top: 0.75rem; padding: 0.75rem 1rem; border-radius: 8px; font-size: 0.9rem; line-height: 1.55; }
+  .answer-feedback.correct { display: block; background: #d1fae5; color: #065f46; }
+  .answer-feedback.incorrect { display: block; background: #fee2e2; color: #991b1b; }
+  .flashcard { border: 2px solid #e5e7eb; border-radius: 12px; padding: 2rem; margin: 1.5rem 0; text-align: center; cursor: pointer; user-select: none; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); }
+  .flashcard .front { font-weight: 600; font-size: 1.1rem; }
+  .flashcard .back { display: none; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #e5e7eb; color: #4b5563; }
+  .flashcard.flipped .front { display: none; }
+  .flashcard.flipped .back { display: block; }
+  .key-point { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 1rem 1.25rem; margin: 1rem 0; border-radius: 0 8px 8px 0; }
+  .exam-tip { background: #e0e7ff; border-left: 4px solid #6366f1; padding: 1rem 1.25rem; margin: 1rem 0; border-radius: 0 8px 8px 0; }
+  .blueprint-context { background: #dbeafe; border-left: 4px solid #2563eb; padding: 1rem 1.25rem; margin: 1.25rem 0; border-radius: 0 8px 8px 0; font-size: 0.92rem; }
+  .blueprint-context strong { color: #1e40af; }
+  .exam-pattern { background: #fce7f3; border-left: 4px solid #db2777; padding: 1rem 1.25rem; margin: 1.25rem 0; border-radius: 0 8px 8px 0; font-size: 0.92rem; }
+  .exam-pattern strong { color: #9d174d; }
+  .brachial-plexus { background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 1.25rem; margin: 1rem 0; font-family: "Courier New", monospace; font-size: 0.82rem; line-height: 1.4; overflow-x: auto; white-space: pre; }
+</style>
+</head>
+<body>
+<div class="lesson-container">
+
+<header>
+  <p class="lesson-number">Lesson 0002</p>
+  <h1>Upper Limb Anatomy</h1>
+  <p class="lesson-meta">MRCEM Primary · Phase 1 Foundations · Week 1</p>
+</header>
+
+<div class="blueprint-context">
+  <strong>🗺️ MRCEM Blueprint Context:</strong> Upper Limb Anatomy represents ~8–10 of the 60 Anatomy questions (~5% of total exam). Combined with Lower Limb (~8Q), these two subcategories are the highest-yield anatomy topics. You cannot afford to lose easy marks here — upper limb anatomy questions are highly predictable and reward systematic study.
+</div>
+
+<section>
+<h2>Why This Matters</h2>
+<p>Every shift in the Emergency Department brings upper limb pathology: the dislocated shoulder at 2am, the Colles' fracture in the elderly fall, the hand laceration needing a nerve block. You cannot safely perform a shoulder reduction without understanding the axillary nerve. You cannot assess a forearm fracture without knowing which nerve runs with which artery. <strong>MRCEM Primary tests anatomy as the foundation of clinical competence</strong> — not trivia. This lesson covers the brachial plexus, shoulder, arm, forearm, hand, nerve lesions, and blood supply that the exam expects you to know cold.</p>
+</section>
+
+<section>
+<h2>Knowledge: The Core Framework</h2>
+
+<!-- ====== BRACHIAL PLEXUS ====== -->
+<h3>1. The Brachial Plexus — HIGHEST-YIELD TOPIC</h3>
+<p>The brachial plexus is tested in <em>every</em> MRCEM sitting. It supplies all motor and sensory innervation to the upper limb. Learn it systematically: <strong>Roots → Trunks → Divisions → Cords → Branches.</strong></p>
+
+<div class="brachial-plexus">
+                       ROOTS (C5–T1)
+                          |
+          ╔═══════════════╩═══════════════╗
+          |               |               |
+       UPPER TRUNK    MIDDLE TRUNK    LOWER TRUNK
+       (C5 + C6)         (C7)         (C8 + T1)
+          |               |               |
+     ┌────┴────┐     ┌────┴────┐     ┌────┴────┐
+   ANTERIOR  POST.  ANTERIOR  POST.  ANTERIOR  POST.
+   DIVISION  DIV.   DIVISION  DIV.   DIVISION  DIV.
+      |        |        |        |        |        |
+      └───┬────┘        └───┬────┘        └───┬────┘
+          |                 |                 |
+     LATERAL CORD      POSTERIOR CORD     MEDIAL CORD
+     (C5,C6,C7 ant)   (all post divs)   (C8,T1 ant)
+          |                 |                 |
+    ┌─────┴─────┐     ┌─────┴─────┐     ┌─────┴─────┐
+ Musculocut. n. |   Axillary n.  |    Ulnar n.    |
+  Lateral root  |   Radial n.    |  Medial root   |
+  of median n.  |  Thoracodorsal |  of median n.  |
+                |  Subscapular   | Medial cutan.  |
+                |                | of arm+forearm |
+                └───────┬────────┘                |
+                        |                         |
+                    MEDIAN NERVE
+              (lateral + medial roots)
+</div>
+
+<p class="mnemonic"><strong>🧠 Mnemonic: Randy Travis Drinks Cold Beer</strong><br>
+<strong>R</strong>oots (C5–T1) → <strong>T</strong>runks (Upper, Middle, Lower) → <strong>D</strong>ivisions (Anterior, Posterior) → <strong>C</strong>ords (Lateral, Posterior, Medial) → <strong>B</strong>ranches</p>
+
+<div class="key-point">
+  <strong>⚡ Cords — named by their relation to the AXILLARY ARTERY:</strong><br>
+  <strong>Lateral cord</strong> = lateral to axillary artery (C5, C6, C7 anterior divisions)<br>
+  <strong>Posterior cord</strong> = posterior to axillary artery (all posterior divisions: C5–T1)<br>
+  <strong>Medial cord</strong> = medial to axillary artery (anterior division of lower trunk: C8, T1)<br>
+  This is a <em>classic</em> MRCEM question: "The lateral cord of the brachial plexus is formed by…" → answer: anterior divisions of upper and middle trunks.
+</div>
+
+<h4>Terminal Branches and Their Root Values</h4>
+<table>
+  <tr><th>Nerve</th><th>Roots</th><th>Cord Origin</th><th>Key Motor Supply</th></tr>
+  <tr><td><strong>Musculocutaneous</strong></td><td>C5, C6, C7</td><td>Lateral cord</td><td>Anterior arm: biceps, brachialis, coracobrachialis. Continues as <strong>lateral cutaneous nerve of forearm</strong></td></tr>
+  <tr><td><strong>Axillary</strong></td><td>C5, C6</td><td>Posterior cord</td><td>Deltoid + teres minor. Sensory: <strong>regimental badge area</strong> over deltoid</td></tr>
+  <tr><td><strong>Radial</strong></td><td>C5–T1</td><td>Posterior cord</td><td>ALL posterior compartment muscles of arm + forearm (triceps, extensors, brachioradialis, supinator). Sensory: posterior arm/forearm, dorsum of hand (anatomical snuffbox area)</td></tr>
+  <tr><td><strong>Median</strong></td><td>C5–T1</td><td>Lateral + Medial cords</td><td>Most anterior forearm flexors (except FCU + medial FDP), thenar eminence (LOAF muscles: Lateral 2 lumbricals, Opponens pollicis, Abductor pollicis brevis, Flexor pollicis brevis). Sensory: lateral 3½ fingers palmar side</td></tr>
+  <tr><td><strong>Ulnar</strong></td><td>C8, T1 (C7)</td><td>Medial cord</td><td>FCU, medial FDP, hypothenar eminence, interossei, adductor pollicis, medial 2 lumbricals. Sensory: medial 1½ fingers</td></tr>
+</table>
+
+<div class="flashcard" onclick="this.classList.toggle('flipped')">
+  <div class="front">🔥 Quick recall: Name the 5 terminal branches of the brachial plexus and their cord of origin</div>
+  <div class="back">
+    <strong>Musculocutaneous</strong> — Lateral cord<br>
+    <strong>Axillary</strong> — Posterior cord<br>
+    <strong>Radial</strong> — Posterior cord<br>
+    <strong>Median</strong> — Lateral + Medial cords<br>
+    <strong>Ulnar</strong> — Medial cord
+  </div>
+</div>
+
+<div class="exam-tip">
+  <strong>🧠 Exam pattern:</strong> MRCEM frequently tests the <strong>root values</strong> of specific nerves. Know that <strong>C5–C6 = upper trunk lesions</strong> affect the axillary, musculocutaneous, and suprascapular nerves (Erb-Duchenne palsy — "waiter's tip" position). <strong>C8–T1 = lower trunk lesions</strong> affect ulnar nerve and medial part of median nerve (Klumpke's palsy — claw hand). The <strong>radial nerve (C5–T1)</strong> is the largest terminal branch and can be injured at multiple sites.
+</div>
+
+<!-- ====== SHOULDER JOINT ====== -->
+<h3>2. The Shoulder Joint — Rotator Cuff and Stability</h3>
+<p>The glenohumeral joint sacrifices stability for mobility. The <strong>rotator cuff (SITS muscles)</strong> is the primary dynamic stabiliser — it compresses the humeral head into the glenoid fossa.</p>
+
+<table>
+  <tr><th>Muscle</th><th>Roots</th><th>Nerve</th><th>Action</th><th>Notes</th></tr>
+  <tr><td><strong>S</strong>upraspinatus</td><td>C5, C6</td><td>Suprascapular n.</td><td>Initiates abduction (0–15°)</td><td>Most commonly torn tendon. Runs under coracoacromial arch</td></tr>
+  <tr><td><strong>I</strong>nfraspinatus</td><td>C5, C6</td><td>Suprascapular n.</td><td>External rotation</td><td>Posterior cuff. Power external rotator</td></tr>
+  <tr><td><strong>T</strong>eres minor</td><td>C5, C6</td><td>Axillary n.</td><td>External rotation</td><td>Posterior. Intact in most massive cuff tears</td></tr>
+  <tr><td><strong>S</strong>ubscapularis</td><td>C5, C6</td><td>Upper + Lower subscapular n.</td><td>Internal rotation</td><td>Anterior cuff. Largest rotator cuff tendon</td></tr>
+</table>
+
+<div class="key-point">
+  <strong>⚡ Deltoid:</strong> NOT a rotator cuff muscle. Innervated by the <strong>axillary nerve (C5, C6)</strong>. Abducts shoulder from 15°–90°. Loss of deltoid → cannot sustain abduction above 15° (supraspinatus can only initiate it). The <strong>regimental badge area</strong> over the lateral deltoid is the autonomous sensory zone of the axillary nerve — test it after shoulder dislocation.
+</div>
+
+<div class="exam-tip">
+  <strong>🧠 ED relevance:</strong> Anterior shoulder dislocation can injure the <strong>axillary nerve</strong> as it passes through the quadrangular space. ALWAYS test the regimental badge sensation and deltoid power before and after reduction. Document it. The axillary nerve wraps around the surgical neck of humerus — also vulnerable in proximal humeral fractures.
+</div>
+
+<!-- ====== ARM COMPARTMENTS ====== -->
+<h3>3. The Arm — Anterior vs Posterior Compartments</h3>
+<table>
+  <tr><th>Compartment</th><th>Muscles</th><th>Nerve</th><th>Action</th></tr>
+  <tr>
+    <td><strong>Anterior (Flexor)</strong></td>
+    <td>Biceps brachii, Brachialis, Coracobrachialis</td>
+    <td><strong>Musculocutaneous n.</strong> (C5–C7)</td>
+    <td>Elbow flexion + supination (biceps). Brachialis is the <em>prime mover</em> of elbow flexion in all positions.</td>
+  </tr>
+  <tr>
+    <td><strong>Posterior (Extensor)</strong></td>
+    <td>Triceps brachii (long, lateral, medial heads)</td>
+    <td><strong>Radial n.</strong> (C5–T1)</td>
+    <td>Elbow extension. Long head crosses the shoulder joint.</td>
+  </tr>
+</table>
+
+<div class="key-point">
+  <strong>⚡ High-yield fact:</strong> The musculocutaneous nerve pierces the coracobrachialis muscle (its first branch), then runs between biceps and brachialis. Injury → weak elbow flexion (biceps + brachialis) + sensory loss over lateral forearm (lateral cutaneous nerve of forearm).
+</div>
+
+<!-- ====== FOREARM ====== -->
+<h3>4. The Forearm — Flexors and Extensors</h3>
+<table>
+  <tr><th>Compartment</th><th>Key Muscles</th><th>Nerve Supply</th><th>Key Points</th></tr>
+  <tr>
+    <td><strong>Anterior (Flexor-Pronator)</strong></td>
+    <td>
+      Superficial: pronator teres, FCR, palmaris longus, FCU<br>
+      Intermediate: FDS<br>
+      Deep: FDP, FPL, pronator quadratus
+    </td>
+    <td>
+      <strong>Median n.</strong> — most flexors<br>
+      <strong>Ulnar n.</strong> — FCU + medial FDP (ring + little finger tendons)
+    </td>
+    <td>All anterior forearm muscles are supplied by median n. EXCEPT FCU and medial FDP (ulnar). This "1½ muscle" exception is a classic exam question.</td>
+  </tr>
+  <tr>
+    <td><strong>Posterior (Extensor)</strong></td>
+    <td>
+      Superficial: brachioradialis, ECRL, ECRB, ED, EDM, ECU<br>
+      Deep: supinator, APL, EPB, EPL, EI
+    </td>
+    <td><strong>Radial n.</strong> (or its deep branch → posterior interosseous n.)</td>
+    <td>Brachioradialis is a radial nerve muscle but flexes the elbow — its attachment to the lateral supracondylar ridge makes it a flexor despite being in the posterior compartment.</td>
+  </tr>
+</table>
+
+<div class="exam-pattern">
+  <strong>🔬 Recalled Exam Pattern:</strong> The exam loves asking "Which muscle in the anterior forearm is NOT innervated by the median nerve?" The answer is flexor carpi ulnaris (FCU) and the medial half of flexor digitorum profundus (FDP to ring + little fingers) — both supplied by the ulnar nerve. Similarly, "which thenar muscle is innervated by the ulnar nerve?" → adductor pollicis (all other thenar muscles are median). These exceptions are the highest-yield facts in forearm anatomy.
+</div>
+
+<!-- ====== HAND ====== -->
+<h3>5. The Hand — Intrinsic Muscles and Sensory Territories</h3>
+<table>
+  <tr><th>Structure</th><th>Nerve Supply</th><th>Components</th><th>Clinical Test</th></tr>
+  <tr>
+    <td><strong>Thenar eminence</strong></td>
+    <td><strong>Median n.</strong> (recurrent branch)</td>
+    <td>Abductor pollicis brevis, Opponens pollicis, Flexor pollicis brevis (superficial head)</td>
+    <td>Thumb abduction — "lift thumb to the ceiling with palm flat"</td>
+  </tr>
+  <tr>
+    <td><strong>Hypothenar eminence</strong></td>
+    <td><strong>Ulnar n.</strong></td>
+    <td>Abductor digiti minimi, Opponens digiti minimi, Flexor digiti minimi</td>
+    <td>Little finger abduction against resistance</td>
+  </tr>
+  <tr>
+    <td><strong>Interossei</strong></td>
+    <td><strong>Ulnar n.</strong></td>
+    <td>4 dorsal (DAB — <strong>D</strong>orsal <strong>AB</strong>duct), 3 palmar (PAD — <strong>P</strong>almar <strong>AD</strong>duct)</td>
+    <td>Finger abduction/adduction testing</td>
+  </tr>
+  <tr>
+    <td><strong>Lumbricals</strong></td>
+    <td>Lateral 2: <strong>Median n.</strong><br>Medial 2: <strong>Ulnar n.</strong></td>
+    <td>Flex MCP joints, extend IP joints</td>
+    <td>Loss → intrinsic-minus hand (clawing)</td>
+  </tr>
+  <tr>
+    <td><strong>Adductor pollicis</strong></td>
+    <td><strong>Ulnar n.</strong></td>
+    <td>Adducts thumb</td>
+    <td><strong>Froment's sign</strong> — paper grip test</td>
+  </tr>
+</table>
+
+<h4>Carpal Tunnel — Contents</h4>
+<p>The carpal tunnel is a fibro-osseous canal bounded by carpal bones (floor) and the flexor retinaculum (roof). It contains <strong>9 tendons + 1 nerve:</strong></p>
+<ul>
+  <li><strong>4 tendons of FDS</strong> (flexor digitorum superficialis)</li>
+  <li><strong>4 tendons of FDP</strong> (flexor digitorum profundus)</li>
+  <li><strong>1 tendon of FPL</strong> (flexor pollicis longus)</li>
+  <li><strong>Median nerve</strong> — the most superficial structure, immediately under the flexor retinaculum</li>
+</ul>
+<p><strong>NOT in the carpal tunnel:</strong> palmaris longus, FCU, ulnar nerve, ulnar artery, radial artery.</p>
+
+<div class="flashcard" onclick="this.classList.toggle('flipped')">
+  <div class="front">🔥 Quick recall: The carpal tunnel contains how many structures? Which nerve runs through it?</div>
+  <div class="back">
+    <strong>10 structures:</strong> 4 FDS tendons + 4 FDP tendons + 1 FPL tendon + <strong>median nerve</strong>.<br>
+    The ulnar nerve and artery pass SUPERFICIAL to the flexor retinaculum (through Guyon's canal), NOT through the carpal tunnel.<br>
+    Palmaris longus (if present) also runs superficial to the retinaculum.
+  </div>
+</div>
+
+<!-- ====== NERVE LESIONS ====== -->
+<h3>6. Nerve Lesions — THE HIGHEST-YIELD SECTION</h3>
+<p>MRCEM Primary <em>loves</em> nerve lesion questions. You must know the classic presenting signs, the anatomical level of injury, and the distinguishing features for each nerve.</p>
+
+<table>
+  <tr><th>Nerve</th><th>Classic Deformity</th><th>Motor Loss</th><th>Sensory Loss</th><th>Common Scenarios</th></tr>
+  <tr>
+    <td><strong>Radial n.</strong></td>
+    <td><strong>Wrist drop</strong></td>
+    <td>Extensors of wrist, fingers, thumb. Triceps spared if injury is at spiral groove (mid-humeral shaft)</td>
+    <td>Posterior arm/forearm, dorsum of hand lateral 3½ fingers (not fingertips)</td>
+    <td><strong>Saturday night palsy</strong> (arm draped over chair), humeral shaft fracture, tight plaster cast</td>
+  </tr>
+  <tr>
+    <td><strong>Median n.</strong> (high)</td>
+    <td><strong>Ape hand / thenar wasting</strong></td>
+    <td>Thenar muscles (LOAF), forearm flexors except FCU + medial FDP. Loss of forearm pronation</td>
+    <td>Lateral 3½ fingers (palmar + dorsal tips)</td>
+    <td>Supracondylar fracture (especially with anterior interosseous branch), carpal tunnel syndrome (low lesion)</td>
+  </tr>
+  <tr>
+    <td><strong>Ulnar n.</strong></td>
+    <td><strong>Claw hand</strong> (partial — ring + little fingers)</td>
+    <td>Hypothenar, interossei, adductor pollicis, FCU, medial FDP, medial 2 lumbricals</td>
+    <td>Medial 1½ fingers (both palmar + dorsal)</td>
+    <td>Elbow trauma (cubital tunnel), medial epicondyle fracture</td>
+  </tr>
+  <tr>
+    <td><strong>Axillary n.</strong></td>
+    <td><strong>Deltoid wasting</strong> → loss of shoulder contour</td>
+    <td>Deltoid + teres minor → weak abduction (15–90°)</td>
+    <td>Regimental badge area</td>
+    <td>Anterior shoulder dislocation, proximal humeral fracture (surgical neck)</td>
+  </tr>
+  <tr>
+    <td><strong>Musculocutaneous n.</strong></td>
+    <td>Weak elbow flexion</td>
+    <td>Biceps, brachialis, coracobrachialis</td>
+    <td>Lateral forearm (lateral cutaneous n.)</td>
+    <td>Rare in isolation. Usually part of lateral cord / upper trunk injury</td>
+  </tr>
+  <tr>
+    <td><strong>Long thoracic n.</strong></td>
+    <td><strong>Winged scapula</strong></td>
+    <td>Serratus anterior → scapula cannot be held against thoracic wall</td>
+    <td>None (pure motor)</td>
+    <td>Axillary surgery (mastectomy + node clearance), heavy rucksack ("rucksack palsy")</td>
+  </tr>
+</table>
+
+<div class="key-point">
+  <strong>⚡ Key discriminator — Claw hand:</strong><br>
+  <strong>Ulnar claw</strong> = hyperextension at MCP + flexion at IP of <strong>ring + little fingers only</strong>. Worse at rest. Ulnar nerve lesion at wrist (low) produces a MORE obvious claw than at elbow (high) — because the FDP to ring/little fingers is also paralysed in a high lesion, reducing the flexor tone that causes the claw.<br>
+  <strong>Median claw</strong> = when patient tries to make a fist, index + middle fingers cannot flex (the "hand of benediction" or "preacher's hand"). This is only seen with HIGH median nerve lesions.
+</div>
+
+<div class="flashcard" onclick="this.classList.toggle('flipped')">
+  <div class="front">🔥 Quick recall: Froment's sign tests which nerve? Describe the test and what a positive result looks like.</div>
+  <div class="back">
+    <strong>Froment's sign tests the ULNAR nerve</strong> (specifically adductor pollicis).<br>
+    The patient holds a piece of paper between thumb and lateral border of index finger. The examiner tries to pull it away.<br>
+    <strong>Positive test:</strong> the patient flexes the IP joint of the thumb (using FPL, a median nerve muscle) to compensate for the weak adductor pollicis. This thumb IP flexion is Froment's sign and indicates ulnar nerve palsy.
+  </div>
+</div>
+
+<!-- ====== BLOOD SUPPLY ====== -->
+<h3>7. Blood Supply to the Upper Limb</h3>
+<p>The arterial tree of the upper limb is a continuous vessel that changes name at anatomical landmarks:</p>
+<div style="text-align:center; margin: 1rem 0; font-size: 0.95rem; font-family: system-ui, sans-serif;">
+  <strong>Subclavian a.</strong> (passes over 1st rib) → <strong>Axillary a.</strong> (lateral border of 1st rib to inferior border of teres major) → <strong>Brachial a.</strong> (arm) → bifurcates at the cubital fossa into <strong>Radial a.</strong> (lateral) + <strong>Ulnar a.</strong> (medial) → join at the hand as the superficial + deep palmar arches.
+</div>
+
+<div class="key-point">
+  <strong>⚡ Allen's Test:</strong> Compress both radial and ulnar arteries at the wrist, have the patient clench and open their fist repeatedly until the hand blanches. Release ONE artery and observe capillary refill. Repeat for the other artery. This tests <strong>patency of the palmar arch</strong> and collateral circulation. Essential before radial artery cannulation or harvesting the radial artery for CABG.
+</div>
+
+<div class="exam-tip">
+  <strong>🧠 Exam pattern:</strong> The exam may ask about the <strong>relation of nerves to arteries</strong> in the arm. The median nerve crosses anterior to the brachial artery in the cubital fossa (medial to lateral). The ulnar nerve runs with the superior ulnar collateral artery posterior to the medial epicondyle. The radial nerve (posterior interosseous branch) passes through the supinator muscle (arcade of Frohse) — a potential entrapment site.
+</div>
+
+</section>
+
+<section>
+<h2>Skills: Retrieval Practice</h2>
+<p>Answer each question <em>from memory</em> before clicking. Retrieval builds storage strength. These are constructed to real MRCEM difficulty — clinical vignettes testing nerve localisation and anatomical reasoning, not simple recall.</p>
+
+<!-- Q1: Saturday Night Palsy / Radial Nerve -->
+<div class="quiz" id="q1">
+  <p><strong>Q1.</strong> A 42-year-old man presents to the Emergency Department unable to extend his right wrist or fingers. He attended a party the previous evening and recalls falling asleep with his right arm draped over the back of a wooden chair. On examination, he has loss of sensation over the dorsum of the right hand and the posterior forearm. Triceps power is preserved. Which nerve has been injured, and at what level?</p>
+  <div class="quiz-options">
+    <div class="quiz-option" onclick="checkAnswer('q1', this, 2)">A. Median nerve — compressed within the carpal tunnel at the wrist</div>
+    <div class="quiz-option" onclick="checkAnswer('q1', this, 2)">B. Ulnar nerve — compressed in the cubital tunnel at the elbow</div>
+    <div class="quiz-option" onclick="checkAnswer('q1', this, 2)">C. Radial nerve — compressed against the humerus at the spiral groove</div>
+    <div class="quiz-option" onclick="checkAnswer('q1', this, 2)">D. Axillary nerve — compressed in the quadrangular space</div>
+    <div class="quiz-option" onclick="checkAnswer('q1', this, 2)">E. Posterior interosseous nerve — compressed at the arcade of Frohse</div>
+  </div>
+  <div class="answer-feedback" id="q1-feedback"></div>
+</div>
+
+<!-- Q2: Carpal Tunnel / Median Nerve -->
+<div class="quiz" id="q2">
+  <p><strong>Q2.</strong> A 52-year-old woman who works as a data entry clerk presents with a 6-month history of nocturnal paraesthesia affecting the thumb, index, middle, and radial half of the ring finger of her right hand. She shakes her hand to relieve the symptoms. On examination, there is wasting of the thenar eminence and weakness of thumb abduction. Tinel's test over the wrist is positive. Which nerve is affected?</p>
+  <div class="quiz-options">
+    <div class="quiz-option" onclick="checkAnswer('q2', this, 0)">A. Median nerve — compressed within the carpal tunnel</div>
+    <div class="quiz-option" onclick="checkAnswer('q2', this, 0)">B. Ulnar nerve — compressed within Guyon's canal</div>
+    <div class="quiz-option" onclick="checkAnswer('q2', this, 0)">C. Radial nerve — compressed at the spiral groove</div>
+    <div class="quiz-option" onclick="checkAnswer('q2', this, 0)">D. Anterior interosseous nerve — compressed in the proximal forearm</div>
+    <div class="quiz-option" onclick="checkAnswer('q2', this, 0)">E. Posterior interosseous nerve — compressed at the arcade of Frohse</div>
+  </div>
+  <div class="answer-feedback" id="q2-feedback"></div>
+</div>
+
+<!-- Q3: Brachial Plexus Localization -->
+<div class="quiz" id="q3">
+  <p><strong>Q3.</strong> A 24-year-old motorcyclist is brought to the ED following a high-speed collision. He has an obvious fracture of the middle third of the right clavicle. On neurological examination, he cannot abduct his right shoulder beyond 15° and has markedly weak elbow flexion. Sensation is reduced over the lateral aspect of the upper arm (regimental badge area) and the lateral forearm. This clinical picture is MOST consistent with an injury to which part of the brachial plexus?</p>
+  <div class="quiz-options">
+    <div class="quiz-option" onclick="checkAnswer('q3', this, 0)">A. Upper trunk (C5, C6) — Erb-Duchenne type palsy</div>
+    <div class="quiz-option" onclick="checkAnswer('q3', this, 0)">B. Middle trunk (C7) — isolated radial nerve territory loss</div>
+    <div class="quiz-option" onclick="checkAnswer('q3', this, 0)">C. Lower trunk (C8, T1) — Klumpke type palsy</div>
+    <div class="quiz-option" onclick="checkAnswer('q3', this, 0)">D. Posterior cord — affecting axillary + radial nerves equally</div>
+    <div class="quiz-option" onclick="checkAnswer('q3', this, 0)">E. Medial cord — ulnar + medial median nerve deficit</div>
+  </div>
+  <div class="answer-feedback" id="q3-feedback"></div>
+</div>
+
+<!-- Q4: All EXCEPT — Median Nerve Innervation -->
+<div class="quiz" id="q4">
+  <p><strong>Q4.</strong> All of the following muscles in the forearm and hand are innervated by the MEDIAN nerve EXCEPT:</p>
+  <div class="quiz-options">
+    <div class="quiz-option" onclick="checkAnswer('q4', this, 3)">A. Pronator teres — the primary pronator of the forearm</div>
+    <div class="quiz-option" onclick="checkAnswer('q4', this, 3)">B. Abductor pollicis brevis — the most superficial thenar muscle</div>
+    <div class="quiz-option" onclick="checkAnswer('q4', this, 3)">C. Lateral two lumbricals — flex MCP and extend IP joints of index + middle fingers</div>
+    <div class="quiz-option" onclick="checkAnswer('q4', this, 3)">D. Flexor carpi ulnaris — the most medial superficial forearm flexor</div>
+    <div class="quiz-option" onclick="checkAnswer('q4', this, 3)">E. Flexor digitorum superficialis — the intermediate layer flexor of the forearm</div>
+  </div>
+  <div class="answer-feedback" id="q4-feedback"></div>
+</div>
+
+<!-- Q5: Ulnar Nerve Lesion -->
+<div class="quiz" id="q5">
+  <p><strong>Q5.</strong> A 16-year-old boy sustains a fracture of the medial epicondyle of the humerus while arm-wrestling. Three months later, he complains of difficulty gripping objects and a change in the appearance of his hand. On examination, there is wasting of the hypothenar eminence, dorsal interosseous guttering, and hyperextension at the metacarpophalangeal joints of the ring and little fingers with flexion at the interphalangeal joints — a "claw hand" deformity. When asked to grip a piece of paper between his thumb and index finger, the examiner can easily pull it away, and the patient flexes the interphalangeal joint of his thumb to compensate. Which nerve is injured?</p>
+  <div class="quiz-options">
+    <div class="quiz-option" onclick="checkAnswer('q5', this, 1)">A. Median nerve — compressed within the carpal tunnel</div>
+    <div class="quiz-option" onclick="checkAnswer('q5', this, 1)">B. Ulnar nerve — injured at the cubital tunnel behind the medial epicondyle</div>
+    <div class="quiz-option" onclick="checkAnswer('q5', this, 1)">C. Radial nerve — compressed at the spiral groove of the humerus</div>
+    <div class="quiz-option" onclick="checkAnswer('q5', this, 1)">D. Anterior interosseous nerve — a pure motor branch of the median nerve</div>
+    <div class="quiz-option" onclick="checkAnswer('q5', this, 1)">E. Posterior interosseous nerve — the deep terminal branch of the radial nerve</div>
+  </div>
+  <div class="answer-feedback" id="q5-feedback"></div>
+</div>
+
+<!-- Q6: Rotator Cuff Anatomy -->
+<div class="quiz" id="q6">
+  <p><strong>Q6.</strong> A 55-year-old recreational tennis player presents with progressive shoulder pain and weakness, particularly when serving. Clinical examination reveals a positive "empty can" test (pain and weakness with resisted shoulder abduction at 90° in the plane of the scapula with thumbs pointing downward). An MRI scan confirms a full-thickness tear of the supraspinatus tendon. Through which space does the supraspinatus tendon pass to insert onto the greater tuberosity of the humerus?</p>
+  <div class="quiz-options">
+    <div class="quiz-option" onclick="checkAnswer('q6', this, 2)">A. Quadrangular space — bounded by teres minor, teres major, long head of triceps, and humerus</div>
+    <div class="quiz-option" onclick="checkAnswer('q6', this, 2)">B. Triangular space — transmitting the circumflex scapular vessels</div>
+    <div class="quiz-option" onclick="checkAnswer('q6', this, 2)">C. Subacromial space — between the coracoacromial arch and the humeral head</div>
+    <div class="quiz-option" onclick="checkAnswer('q6', this, 2)">D. Triangular interval — transmitting the radial nerve and profunda brachii artery</div>
+    <div class="quiz-option" onclick="checkAnswer('q6', this, 2)">E. Cubital fossa — the triangular depression anterior to the elbow joint</div>
+  </div>
+  <div class="answer-feedback" id="q6-feedback"></div>
+</div>
+
+<!-- Q7: Long Thoracic Nerve -->
+<div class="quiz" id="q7">
+  <p><strong>Q7.</strong> A 48-year-old woman undergoes a left mastectomy with axillary lymph node clearance for invasive ductal carcinoma. At her 6-week follow-up appointment, she complains that her left shoulder blade "sticks out" when she pushes against a wall. On examination, with the patient facing a wall and pushing with both hands, the medial border of the left scapula is prominently elevated away from the thoracic wall. There is no sensory deficit and no weakness of shoulder abduction or elbow flexion. Which nerve has been injured?</p>
+  <div class="quiz-options">
+    <div class="quiz-option" onclick="checkAnswer('q7', this, 1)">A. Accessory nerve (CN XI) — innervating the trapezius muscle</div>
+    <div class="quiz-option" onclick="checkAnswer('q7', this, 1)">B. Long thoracic nerve — innervating the serratus anterior muscle</div>
+    <div class="quiz-option" onclick="checkAnswer('q7', this, 1)">C. Dorsal scapular nerve — innervating the rhomboid muscles</div>
+    <div class="quiz-option" onclick="checkAnswer('q7', this, 1)">D. Thoracodorsal nerve — innervating the latissimus dorsi muscle</div>
+    <div class="quiz-option" onclick="checkAnswer('q7', this, 1)">E. Suprascapular nerve — innervating the supraspinatus and infraspinatus</div>
+  </div>
+  <div class="answer-feedback" id="q7-feedback"></div>
+</div>
+
+<!-- Q8: Complex Vignette — Wrist Drop vs PIN vs High Radial -->
+<div class="quiz" id="q8">
+  <p><strong>Q8.</strong> A 68-year-old man with a history of a left humeral shaft fracture 10 weeks ago (treated conservatively with a plaster cast) is referred because the fracture has united but he cannot extend his wrist or fingers. On examination, he has a complete wrist drop, cannot extend his fingers at the metacarpophalangeal joints, and has sensory loss over the dorsum of the hand and the posterior forearm. However, he CAN extend his elbow normally. Which of the following statements BEST explains why elbow extension is preserved in this radial nerve injury?</p>
+  <div class="quiz-options">
+    <div class="quiz-option" onclick="checkAnswer('q8', this, 1)">A. The triceps is innervated by the axillary nerve, not the radial nerve</div>
+    <div class="quiz-option" onclick="checkAnswer('q8', this, 1)">B. The branches to the triceps arise from the radial nerve proximal to the spiral groove</div>
+    <div class="quiz-option" onclick="checkAnswer('q8', this, 1)">C. The triceps receives dual innervation from both the radial nerve and the ulnar nerve</div>
+    <div class="quiz-option" onclick="checkAnswer('q8', this, 1)">D. The long head of triceps is innervated by the axillary nerve passing through the quadrangular space</div>
+    <div class="quiz-option" onclick="checkAnswer('q8', this, 1)">E. Triceps function returns first after radial nerve injury due to collateral sprouting</div>
+  </div>
+  <div class="answer-feedback" id="q8-feedback"></div>
+</div>
+
+</section>
+
+<section>
+<h2>Key Takeaways</h2>
+<ol>
+  <li><strong>Brachial plexus = roots, trunks, divisions, cords, branches</strong> (Randy Travis Drinks Cold Beer). Know the root values of every major nerve — this is the single highest-yield anatomy topic.</li>
+  <li><strong>Radial nerve = wrist drop.</strong> Injury at spiral groove spares triceps (branches arise above the groove). Saturday night palsy is a classic ED presentation.</li>
+  <li><strong>Median nerve = carpal tunnel / ape hand / thenar wasting.</strong> Supplies LOAF muscles in the hand. Sensory: lateral 3½ fingers (palmar).</li>
+  <li><strong>Ulnar nerve = claw hand / Froment's sign.</strong> Supplies all interossei, hypothenar muscles, adductor pollicis, FCU, medial FDP. Sensory: medial 1½ fingers (both palmar AND dorsal).</li>
+  <li><strong>Axillary nerve = deltoid paralysis.</strong> Vulnerable in anterior shoulder dislocation and proximal humeral fractures. Test the regimental badge area.</li>
+  <li><strong>Long thoracic nerve = winged scapula.</strong> A pure motor nerve (C5, C6, C7) supplying serratus anterior. Classic post-mastectomy/axillary surgery complication.</li>
+  <li><strong>Musculocutaneous nerve = anterior compartment of arm.</strong> Pierces coracobrachialis, supplies biceps + brachialis, continues as lateral cutaneous nerve of forearm.</li>
+  <li><strong>Rotator cuff = SITS</strong> (Supraspinatus, Infraspinatus, Teres minor, Subscapularis). Supraspinatus initiates abduction. Infraspinatus + teres minor = external rotation. Subscapularis = internal rotation.</li>
+  <li><strong>Anterior forearm exceptions:</strong> FCU and medial FDP are ulnar nerve — everything else is median. This "1½ exception" is exam gold.</li>
+  <li><strong>Allen's test</strong> before radial artery cannulation. Tests patency of the palmar arch. Subclavian → axillary → brachial → radial/ulnar.</li>
+</ol>
+</section>
+
+<section class="resources">
+<h2>Recommended Primary Source</h2>
+<p>📖 <strong>Netter's Atlas of Human Anatomy</strong> (Frank H. Netter) — the gold standard for anatomical plates. Upper limb plates are the most-studied pages for MRCEM Primary.</p>
+<p>📖 <strong>Robbins Basic Pathology</strong>, Chapter 28 (Peripheral Nerve and Skeletal Muscle) — for nerve injury classification (neurapraxia, axonotmesis, neurotmesis).</p>
+<p>🌐 <strong>RCEMLearning</strong> — Basic Sciences module → Anatomy → Upper Limb. Pay special attention to the brachial plexus video/animation.</p>
+<p>📋 <strong>Plan:</strong> <a href="../PLAN.md">18-Week Study Plan</a></p>
+<p>🔬 <strong>Real exam intel:</strong> The MRCEM Primary anatomy exam tests <em>applied</em> anatomy, not dry rote recall. Expect nerve lesion vignettes where you must localise the lesion based on the pattern of motor AND sensory loss. "All EXCEPT" format is common. Root values are tested more than muscle names. Pass rate ~25%, pass mark ~108/180.</p>
+</section>
+
+<footer>
+  <p>💬 <strong>Stuck on something?</strong> Ask me follow-up questions. The brachial plexus is complex — let's work through it together.</p>
+  <p class="lesson-number">Lesson 0002 · Phase 1 Foundations · <a href="0003-lower-limb-anatomy.html">Next: Lesson 3 →</a></p>
+</footer>
+
+</div>
+
+<script>
+function checkAnswer(qid, el, correctIdx) {
+  const quiz = document.getElementById(qid);
+  const options = quiz.querySelectorAll('.quiz-option');
+  const feedback = document.getElementById(qid + '-feedback');
+  const idx = Array.from(options).indexOf(el);
+
+  // Reset all
+  options.forEach(o => { o.classList.remove('correct', 'incorrect', 'reveal-correct'); o.style.pointerEvents = 'none'; });
+
+  const letter = String.fromCharCode(65 + correctIdx);
+
+  if (idx === correctIdx) {
+    el.classList.add('correct');
+    feedback.className = 'answer-feedback correct';
+    feedback.innerHTML = getCorrectFeedback(qid);
+  } else {
+    el.classList.add('incorrect');
+    options[correctIdx].classList.add('reveal-correct');
+    feedback.className = 'answer-feedback incorrect';
+    feedback.innerHTML = getIncorrectFeedback(qid, letter);
+  }
+}
+
+function getCorrectFeedback(qid) {
+  const fb = {
+    q1: '✅ <strong>Correct! Radial nerve at the spiral groove.</strong> This is the classic "Saturday night palsy." The radial nerve runs in the spiral (radial) groove on the posterior aspect of the humeral shaft. Compression at this level causes wrist drop (paralysis of extensor muscles of wrist, fingers, and thumb) with sensory loss over the dorsum of the hand and posterior forearm. Crucially, <strong>triceps power is preserved</strong> because the branches to the triceps arise from the radial nerve in the axilla, <em>proximal</em> to the spiral groove. A posterior interosseous nerve (PIN) lesion would spare wrist extension (ECRL is innervated above the PIN takeoff) and produce no sensory loss.',
+    q2: '✅ <strong>Correct! Median nerve — carpal tunnel syndrome.</strong> The key features are: (1) sensory disturbance in the median nerve distribution (lateral 3½ fingers on palmar side), (2) nocturnal symptoms (classic for carpal tunnel — wrist flexion during sleep increases tunnel pressure), (3) thenar wasting (chronic compression damages the recurrent motor branch), (4) positive Tinel\'s sign. The ulnar nerve (Guyon\'s canal) would affect the little finger and hypothenar eminence. Anterior interosseous nerve is a pure motor branch with no sensory loss.',
+    q3: '✅ <strong>Correct! Upper trunk (C5, C6) — Erb-Duchenne palsy.</strong> This is the classic presentation of an upper trunk brachial plexus injury. The upper trunk is formed by the union of C5 and C6 roots. Injury produces: (1) loss of shoulder abduction beyond 15° (axillary nerve → deltoid, and suprascapular nerve → supraspinatus), (2) weak elbow flexion (musculocutaneous nerve → biceps + brachialis), (3) sensory loss over the regimental badge area (axillary nerve) and lateral forearm (musculocutaneous → lateral cutaneous nerve of forearm). Clavicle fractures can injure the trunks/divisions of the brachial plexus as they pass behind the clavicle. Middle trunk (C7) would primarily affect radial nerve territory. Lower trunk (C8, T1) = Klumpke\'s palsy with claw hand.',
+    q4: '✅ <strong>Correct! Flexor carpi ulnaris (FCU) is innervated by the ULNAR nerve, not the median nerve.</strong> This is the classic "1½ exception" in forearm anatomy: FCU and the medial half of FDP (supplying the ring and little fingers) are innervated by the ulnar nerve. ALL other anterior forearm muscles are median nerve. All other options are genuinely median-innervated: pronator teres (A), abductor pollicis brevis (B — via the recurrent motor branch), lateral two lumbricals (C), and FDS (E).',
+    q5: '✅ <strong>Correct! Ulnar nerve — injured at the cubital tunnel.</strong> The ulnar nerve passes posterior to the medial epicondyle in the cubital tunnel. Fractures of the medial epicondyle are a classic cause of ulnar nerve injury. The clinical picture — hypothenar wasting, dorsal interosseous guttering, clawing of ring and little fingers, and Froment\'s sign (thumb IP flexion compensating for weak adductor pollicis) — is pathognomonic for ulnar nerve palsy. The claw hand in ulnar nerve lesions is due to paralysis of the interossei and medial two lumbricals (which normally flex MCP joints and extend IP joints), leaving the extrinsic long flexors and extensors unopposed.',
+    q6: '✅ <strong>Correct! Subacromial space.</strong> The supraspinatus tendon passes through the narrow subacromial space, bounded superiorly by the coracoacromial arch (acromion, coracoacromial ligament, coracoid process) and inferiorly by the humeral head. This is the most common site of rotator cuff impingement and tear. The quadrangular space (A) transmits the axillary nerve and posterior circumflex humeral vessels. The triangular space (B) transmits the circumflex scapular vessels. The triangular interval (D) transmits the radial nerve and profunda brachii artery. The cubital fossa (E) contains the biceps tendon, brachial artery, and median nerve.',
+    q7: '✅ <strong>Correct! Long thoracic nerve — serratus anterior palsy.</strong> The long thoracic nerve arises from the roots of C5, C6, and C7 of the brachial plexus and runs on the superficial surface of serratus anterior. It is vulnerable to injury during axillary surgery (mastectomy + node clearance). Serratus anterior holds the scapula against the thoracic wall; when paralysed, the medial border of the scapula "wings" away from the chest wall, especially when pushing against resistance. The absence of sensory loss (pure motor nerve), preservation of shoulder abduction (supraspinatus + deltoid intact), and preservation of elbow flexion (biceps intact) point away from upper trunk or axillary nerve injury.',
+    q8: '✅ <strong>Correct! The branches to the triceps arise proximal to the spiral groove.</strong> This is a crucial anatomical concept for localising radial nerve injuries. The radial nerve gives off its muscular branches to the three heads of triceps in the axilla, BEFORE it enters the spiral groove on the posterior humeral shaft. Therefore, a mid-shaft humeral fracture (which injures the radial nerve IN the spiral groove) produces wrist drop + finger drop + sensory loss but SPARES triceps function. Elbow extension is preserved. A very high radial nerve injury (in the axilla, e.g. from crutch palsy) would ALSO paralyse triceps. The axillary nerve (A and D) innervates deltoid and teres minor — nothing to do with triceps. Dual innervation (C) and collateral sprouting (E) are incorrect.'
+  };
+  return fb[qid] || '✅ Correct!';
+}
+
+function getIncorrectFeedback(qid, letter) {
+  const fb = {
+    q1: '❌ <strong>Incorrect. The correct answer is C — Radial nerve at the spiral groove.</strong> Wrist drop + finger drop = radial nerve. Median nerve (A) lesions produce thenar wasting and loss of thumb abduction. Ulnar nerve (B) lesions produce claw hand. Axillary nerve (D) affects deltoid only. Posterior interosseous nerve (E) is a pure motor branch — it produces finger drop but SPARES wrist extension (ECRL innervated above PIN takeoff) and there is NO sensory loss. "Saturday night palsy" specifically refers to radial nerve compression at the spiral groove from prolonged pressure (e.g. arm draped over chair).',
+    q2: '❌ <strong>Incorrect. The correct answer is A — Median nerve (carpal tunnel syndrome).</strong> The defining features are: paraesthesia in the lateral 3½ fingers (median nerve sensory territory), nocturnal exacerbation, thenar wasting, positive Tinel\'s sign. Ulnar nerve in Guyon\'s canal (B) would cause wasting of hypothenar (not thenar) muscles and sensory loss in the medial 1½ fingers. Radial nerve (C) causes wrist drop. Anterior interosseous nerve (D) is a pure motor branch — causes weakness of thumb IP flexion and index DIP flexion ("OK sign" weakness) with NO sensory loss. Posterior interosseous nerve (E) causes finger extension weakness with no sensory loss.',
+    q3: '❌ <strong>Incorrect. The correct answer is A — Upper trunk (C5, C6) Erb-Duchenne palsy.</strong> Loss of shoulder abduction (axillary + suprascapular nerves, both C5-C6) + weak elbow flexion (musculocutaneous nerve, C5-C7) + sensory loss in regimental badge area and lateral forearm = upper trunk lesion. Middle trunk (B, C7) would primarily affect the radial nerve and produce wrist drop. Lower trunk (C, C8-T1) = Klumpke\'s palsy with claw hand from ulnar nerve deficit. Posterior cord (D) injury would cause wrist drop (radial) + deltoid weakness (axillary) but would NOT affect elbow flexion (musculocutaneous is from lateral cord). Medial cord (E) would cause ulnar nerve deficit (claw hand) but no loss of shoulder abduction.',
+    q4: '❌ <strong>Incorrect. The correct answer is D — Flexor carpi ulnaris.</strong> FCU is innervated by the ULNAR nerve, not the median nerve. This is the classic "1½ exception": in the anterior forearm, the median nerve supplies everything except FCU and the medial half of FDP (to ring and little fingers), which are ulnar. Pronator teres (A) is median. Abductor pollicis brevis (B) is median via the recurrent motor branch. Lateral two lumbricals (C) are median. FDS (E) is median. Memorise this exception pattern — the exam loves testing it.',
+    q5: '❌ <strong>Incorrect. The correct answer is B — Ulnar nerve.</strong> The claw hand deformity of the ring and little fingers (hyperextension at MCP joints, flexion at IP joints) + hypothenar wasting + dorsal interosseous guttering + positive Froment\'s sign = ulnar nerve palsy. The medial epicondyle fracture is the classic mechanism because the ulnar nerve passes posterior to the medial epicondyle in the cubital tunnel. Median nerve (A) lesions produce thenar wasting and "ape hand." Radial nerve (C) causes wrist drop. Anterior interosseous nerve (D) causes "OK sign" weakness (no sensory loss). Posterior interosseous nerve (E) causes finger extension weakness (no sensory loss).',
+    q6: '❌ <strong>Incorrect. The correct answer is C — Subacromial space.</strong> The supraspinatus tendon must pass through the narrow subacromial space (bounded by the coracoacromial arch superiorly and the humeral head inferiorly) to insert onto the greater tuberosity. This is the primary site of rotator cuff impingement. The quadrangular space (A) transmits the axillary nerve and posterior circumflex humeral vessels. The triangular space (B) transmits circumflex scapular vessels. The triangular interval (D) transmits the radial nerve and profunda brachii artery. The cubital fossa (E) is at the anterior elbow.',
+    q7: '❌ <strong>Incorrect. The correct answer is B — Long thoracic nerve.</strong> Winged scapula with no sensory deficit = long thoracic nerve injury (C5-C7 to serratus anterior). The accessory nerve (A, CN XI) supplies trapezius — injury causes shoulder drop with scapular depression and lateral winging, not the medial border prominence seen here. Dorsal scapular nerve (C) supplies rhomboids — injury causes subtle medial border prominence but much less dramatic winging. Thoracodorsal nerve (D) supplies latissimus dorsi — injury causes weak shoulder adduction but no winging. Suprascapular nerve (E) supplies supraspinatus and infraspinatus — injury causes weak abduction and external rotation.',
+    q8: '❌ <strong>Incorrect. The correct answer is B — Branches to triceps arise proximal to the spiral groove.</strong> The radial nerve gives off branches to all three heads of triceps in the axilla, before entering the spiral groove. Mid-shaft humeral fractures injure the nerve AT the spiral groove, so triceps is spared (branches already given off). The axillary nerve (A, D) supplies deltoid and teres minor, never triceps. There is no dual innervation from the ulnar nerve (C). Collateral sprouting (E) is a theoretical mechanism of reinnervation but does not explain the acute preservation of triceps. A very high radial nerve injury in the axilla (e.g. crutch palsy) WOULD paralyse triceps — this is how you distinguish axillary-level vs spiral-groove-level radial nerve injuries.'
+  };
+  return fb[qid] || '❌ Incorrect. The correct answer is ' + letter + '. Review the lesson content above.';
+}
+</script>
+
+</body>
+</html>
