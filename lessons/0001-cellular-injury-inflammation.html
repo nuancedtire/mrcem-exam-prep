@@ -6,29 +6,11 @@
 <title>MRCEM Primary — Lesson 1: Cellular Injury, Inflammation &amp; Immune Response</title>
 <link rel="stylesheet" href="../assets/style.css">
 <style>
-  .quiz-options { display: flex; flex-direction: column; gap: 0.5rem; margin: 1rem 0; }
-  .quiz-option { padding: 0.75rem 1rem; border: 2px solid #d1d5db; border-radius: 8px; cursor: pointer; transition: all 0.15s; background: #fff; }
-  .quiz-option:hover { border-color: #6366f1; background: #eef2ff; }
-  .quiz-option.correct { border-color: #059669; background: #d1fae5; }
-  .quiz-option.incorrect { border-color: #dc2626; background: #fee2e2; }
-  .quiz-option.reveal-correct { border-color: #059669; background: #d1fae5; }
-  .answer-feedback { display: none; margin-top: 0.75rem; padding: 0.75rem 1rem; border-radius: 8px; font-size: 0.9rem; line-height: 1.55; }
-  .answer-feedback.correct { display: block; background: #d1fae5; color: #065f46; }
-  .answer-feedback.incorrect { display: block; background: #fee2e2; color: #991b1b; }
-  .flashcard { border: 2px solid #e5e7eb; border-radius: 12px; padding: 2rem; margin: 1.5rem 0; text-align: center; cursor: pointer; user-select: none; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); }
-  .flashcard .front { font-weight: 600; font-size: 1.1rem; }
-  .flashcard .back { display: none; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #e5e7eb; color: #4b5563; }
-  .flashcard.flipped .front { display: none; }
-  .flashcard.flipped .back { display: block; }
-  .key-point { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 1rem 1.25rem; margin: 1rem 0; border-radius: 0 8px 8px 0; }
-  .exam-tip { background: #e0e7ff; border-left: 4px solid #6366f1; padding: 1rem 1.25rem; margin: 1rem 0; border-radius: 0 8px 8px 0; }
-  .blueprint-context { background: #dbeafe; border-left: 4px solid #2563eb; padding: 1rem 1.25rem; margin: 1.25rem 0; border-radius: 0 8px 8px 0; font-size: 0.92rem; }
-  .blueprint-context strong { color: #1e40af; }
-  .exam-pattern { background: #fce7f3; border-left: 4px solid #db2777; padding: 1rem 1.25rem; margin: 1.25rem 0; border-radius: 0 8px 8px 0; font-size: 0.92rem; }
-  .exam-pattern strong { color: #9d174d; }
+  /* All component styles now in ../assets/style.css */
 </style>
 </head>
 <body>
+<div class="reading-progress" id="readingProgress"></div>
 <div class="lesson-container">
 
 <header>
@@ -429,12 +411,21 @@
 </div>
 </section>
 
-<footer>
-  <p>💬 <strong>Stuck on something?</strong> Ask me follow-up questions. I'm your teacher — anything unclear, let's work through it.</p>
-  <p class="lesson-number">Lesson 0001 · Phase 1 Foundations · <a href="0002-upper-limb-anatomy.html">Next: Lesson 2 →</a> · <a href="../index.html">Course Home</a></p>
-</footer>
+</div><!-- /lesson-container -->
 
-</div>
+<div class="nav-spacer"></div>
+<nav class="lesson-nav" id="lessonNav">
+  <div class="lesson-nav-inner">
+    <span class="nav-pill disabled"><span class="arrow arrow-left">←</span> First Lesson</span>
+    <div class="nav-center">
+      <span class="nav-progress">0001 / 035</span>
+      <a href="../index.html" class="nav-home">Course Home</a>
+    </div>
+    <a href="0002-upper-limb-anatomy.html" class="nav-pill">Upper Limb <span class="arrow arrow-right">→</span></a>
+  </div>
+</nav>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">↑</button>
 
 <script>
 function checkAnswer(qid, el, correctIdx) {
@@ -491,6 +482,45 @@ function getIncorrectFeedback(qid, letter) {
   };
   return fb[qid] || '❌ Incorrect. The correct answer is ' + letter + '. Review the lesson content above.';
 }
+</script>
+
+<!-- ═══ Shared Interactions ═══════════════════════════════════════ -->
+<script>
+(function() {
+  // ── Flashcard toggle ────────────────────────────────────────
+  document.querySelectorAll('.flashcard').forEach(card => {
+    card.addEventListener('click', () => card.classList.toggle('flipped'));
+  });
+
+  // ── Reading progress bar ────────────────────────────────────
+  const progressBar = document.getElementById('readingProgress');
+  if (progressBar) {
+    window.addEventListener('scroll', () => {
+      const docH = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docH > 0 ? Math.min((window.scrollY / docH) * 100, 100) : 0;
+      progressBar.style.width = pct + '%';
+    }, { passive: true });
+  }
+
+  // ── Nav bar scroll shadow ───────────────────────────────────
+  const nav = document.getElementById('lessonNav');
+  if (nav) {
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 100);
+    }, { passive: true });
+  }
+
+  // ── Back to top ─────────────────────────────────────────────
+  const btn = document.getElementById('backToTop');
+  if (btn) {
+    window.addEventListener('scroll', () => {
+      btn.classList.toggle('visible', window.scrollY > 400);
+    }, { passive: true });
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+})();
 </script>
 
 </body>
