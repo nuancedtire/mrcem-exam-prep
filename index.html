@@ -15,15 +15,28 @@
   .phase-card { border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; margin: 1rem 0; background: #fff; }
   .phase-card h3 { margin-top: 0; }
   .phase-card .dates { font-family: system-ui, sans-serif; font-size: 0.85rem; color: #64748b; }
-  .lesson-list { list-style: none; margin: 0; padding: 0; }
-  .lesson-list li { display: flex; align-items: baseline; gap: 0.75rem; padding: 0.6rem 0; border-bottom: 1px solid #f1f5f9; }
-  .lesson-list .num { font-family: system-ui, sans-serif; font-size: 0.8rem; font-weight: 600; color: #4f46e5; min-width: 3rem; }
+  .lesson-list { list-style: none; margin: 0.75rem 0 0; padding: 0; }
+  .lesson-list li { display: flex; align-items: baseline; gap: 0.75rem; padding: 0.55rem 0; border-bottom: 1px solid #f1f5f9; }
+  .lesson-list li:last-child { border-bottom: none; }
+  .lesson-list .num { font-family: system-ui, sans-serif; font-size: 0.78rem; font-weight: 600; color: #4f46e5; min-width: 3rem; }
   .lesson-list .title { flex: 1; }
-  .lesson-list .status { font-family: system-ui, sans-serif; font-size: 0.75rem; padding: 0.2rem 0.6rem; border-radius: 100px; }
+  .lesson-list a { color: #1e293b; text-decoration: none; }
+  .lesson-list a:hover { color: #4f46e5; text-decoration: underline; }
+  .lesson-list .status { font-family: system-ui, sans-serif; font-size: 0.72rem; padding: 0.15rem 0.55rem; border-radius: 100px; white-space: nowrap; }
   .status.ready { background: #d1fae5; color: #065f46; }
   .status.upcoming { background: #f1f5f9; color: #64748b; }
   .deadline-banner { background: #fef3c7; border: 1px solid #f59e0b; border-radius: 12px; padding: 1.25rem 1.5rem; margin: 2rem 0; font-family: system-ui, sans-serif; }
   .deadline-banner strong { color: #92400e; }
+  .blueprint-summary { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.25rem 1.5rem; margin: 1.5rem 0; font-family: system-ui, sans-serif; font-size: 0.9rem; }
+  .blueprint-summary table { width: 100%; border-collapse: collapse; margin-top: 0.75rem; }
+  .blueprint-summary th, .blueprint-summary td { text-align: left; padding: 0.35rem 0.5rem; border-bottom: 1px solid #f1f5f9; }
+  .blueprint-summary th { font-size: 0.78rem; color: #64748b; text-transform: uppercase; }
+  .blueprint-bar { height: 6px; border-radius: 3px; margin-bottom: 0.15rem; }
+  .nav-links { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 1rem 0; }
+  .nav-btn { display: inline-block; padding: 0.5rem 1rem; background: #4f46e5; color: #fff; border-radius: 8px; text-decoration: none; font-size: 0.85rem; font-family: system-ui, sans-serif; }
+  .nav-btn:hover { background: #4338ca; }
+  .nav-btn.secondary { background: #f1f5f9; color: #4f46e5; }
+  .nav-btn.secondary:hover { background: #e2e8f0; }
 </style>
 </head>
 <body>
@@ -32,8 +45,14 @@
 <header class="course-hero">
   <p class="lesson-number">MRCEM Primary Exam Preparation</p>
   <h1>Pass the MRCEM Primary</h1>
-  <p class="subtitle">18-week structured course · Exam: 27 October 2026</p>
+  <p class="subtitle">18-week blueprint-aligned course · Exam: 27 October 2026</p>
 </header>
+
+<div class="nav-links">
+  <a href="lessons/0001-cellular-injury-inflammation.html" class="nav-btn">📖 Start Lesson 1</a>
+  <a href="lessons/0002-upper-limb-anatomy.html" class="nav-btn secondary">Lesson 2: Upper Limb</a>
+  <a href="PLAN.md" class="nav-btn secondary">📋 Study Plan</a>
+</div>
 
 <div class="countdown">
   <div class="days" id="countdown-days">—</div>
@@ -42,48 +61,105 @@
 
 <div class="deadline-banner">
   ⚠️ <strong>Applications open 15 July 2026 at 10am UK</strong> — close 22 July at 4pm.<br>
-  Join RCEM <strong>before 14 July</strong> for the £429 member rate (saves £96).
+  RCEM membership must be active <strong>before 14 July</strong> for the £429 member rate (saves £96).
 </div>
 
 <section>
-<h2>The Plan</h2>
-
-<div class="phase-card">
-  <h3>Phase 1: Foundations</h3>
-  <p class="dates">Weeks 1–6 · 20 June – 1 August</p>
-  <p>Core anatomy, physiology, and cellular foundations across all major systems.</p>
-  <ul class="lesson-list">
-    <li><span class="num">0001</span><span class="title"><a href="lessons/0001-cellular-injury-inflammation.html">Cellular Injury, Inflammation &amp; Immune Response</a></span><span class="status ready">ready</span></li>
-    <li><span class="num">0002</span><span class="title">Acute Inflammation Mediators &amp; Wound Healing</span><span class="status upcoming">upcoming</span></li>
-    <li><span class="num">0003</span><span class="title">Cardiovascular Anatomy</span><span class="status upcoming">upcoming</span></li>
-  </ul>
+<h2>The Blueprint</h2>
+<div class="blueprint-summary">
+  <p>Every lesson is mapped to the <strong>official MRCEM Primary blueprint</strong> (Nov 2023). 180 SBAs, 3 hours, Angoff standard-set. Pass rate ~25%.</p>
+  <table>
+    <tr><th>Category</th><th>Questions</th><th>Weight</th><th>Status</th></tr>
+    <tr>
+      <td>🦴 Anatomy</td><td>60</td><td>33%</td>
+      <td><div class="blueprint-bar" style="width: 100%; background: linear-gradient(90deg, #4f46e5 8%, #e2e8f0 8%);"></div></td>
+    </tr>
+    <tr>
+      <td>🫁 Physiology</td><td>60</td><td>33%</td>
+      <td><div class="blueprint-bar" style="width: 100%; background: linear-gradient(90deg, #4f46e5 5%, #e2e8f0 5%);"></div></td>
+    </tr>
+    <tr><td>💊 Pharmacology</td><td>24</td><td>13%</td><td><div class="blueprint-bar" style="width: 100%; background: #e2e8f0;"></div></td></tr>
+    <tr><td>🦠 Microbiology</td><td>17</td><td>9%</td><td><div class="blueprint-bar" style="width: 100%; background: #e2e8f0;"></div></td></tr>
+    <tr><td>🔬 Pathology</td><td>9</td><td>5%</td><td><div class="blueprint-bar" style="width: 100%; background: linear-gradient(90deg, #059669 60%, #e2e8f0 60%);"></div></td></tr>
+    <tr><td>📊 EBM</td><td>10</td><td>6%</td><td><div class="blueprint-bar" style="width: 100%; background: #e2e8f0;"></div></td></tr>
+  </table>
 </div>
+</section>
 
-<div class="phase-card">
-  <h3>Phase 2: Clinical Sciences</h3>
-  <p class="dates">Weeks 7–12 · 2 August – 12 September</p>
-  <p>Pathology and pharmacology by system. Disease mechanisms and drug actions.</p>
-</div>
+<section>
+<h2>Phase 1: Foundations + Core Anatomy/Physiology</h2>
+<p class="dates">Weeks 1–6 · 21 June – 1 August</p>
+<p>Anatomy (33%) and Physiology (33%) dominate. We cover ~55/60 anatomy questions and ~50/60 physiology questions in this phase.</p>
 
-<div class="phase-card">
-  <h3>Phase 3: Consolidation &amp; Gaps</h3>
-  <p class="dates">Weeks 13–16 · 13 September – 10 October</p>
-  <p>Microbiology deep dive, EBM, embryology, full pharmacology review.</p>
-</div>
+<ul class="lesson-list">
+  <li><span class="num">0001</span><span class="title"><a href="lessons/0001-cellular-injury-inflammation.html">Cellular Injury, Inflammation &amp; Immune Response</a></span><span class="status ready">ready</span></li>
+  <li><span class="num">0002</span><span class="title"><a href="lessons/0002-upper-limb-anatomy.html">Upper Limb Anatomy</a></span><span class="status ready">ready</span></li>
+  <li><span class="num">0003</span><span class="title">Lower Limb Anatomy</span><span class="status upcoming">next</span></li>
+  <li><span class="num">0004</span><span class="title">Thorax Anatomy</span><span class="status upcoming">upcoming</span></li>
+  <li><span class="num">0005</span><span class="title">Abdomen Anatomy</span><span class="status upcoming">upcoming</span></li>
+  <li><span class="num">0006</span><span class="title">Head &amp; Neck Anatomy</span><span class="status upcoming">upcoming</span></li>
+  <li><span class="num">0007</span><span class="title">Cardiovascular Physiology</span><span class="status upcoming">upcoming</span></li>
+  <li><span class="num">0008</span><span class="title">Respiratory Physiology</span><span class="status upcoming">upcoming</span></li>
+  <li><span class="num">0009</span><span class="title">CNS Anatomy: Brain &amp; Spinal Cord</span><span class="status upcoming">upcoming</span></li>
+  <li><span class="num">0010</span><span class="title">Cranial Nerve Lesions</span><span class="status upcoming">upcoming</span></li>
+  <li><span class="num">0011</span><span class="title">Renal Physiology</span><span class="status upcoming">upcoming</span></li>
+  <li><span class="num">0012</span><span class="title">GI Physiology</span><span class="status upcoming">upcoming</span></li>
+  <li><span class="num">0013</span><span class="title">Endocrine Physiology</span><span class="status upcoming">upcoming</span></li>
+  <li><span class="num">0014</span><span class="title">Microbiology: Principles</span><span class="status upcoming">upcoming</span></li>
+</ul>
+</section>
 
-<div class="phase-card">
-  <h3>Phase 4: Exam Conditioning</h3>
-  <p class="dates">Weeks 17–18 · 11 October – 26 October</p>
-  <p>Mock exams, timing practice, weak-spot reinforcement. Rest before exam day.</p>
-</div>
+<section>
+<h2>Phase 2: Pharmacology + Microbiology + Pathology</h2>
+<p class="dates">Weeks 7–10 · 2 August – 29 August</p>
+<p>System-based pharmacology mapped to anatomy/physiology already covered. Microbiology deep dive.</p>
+<ul class="lesson-list">
+  <li><span class="num">0015</span><span class="title">Cardiovascular Pharmacology</span><span class="status upcoming">upcoming</span></li>
+  <li><span class="num">0016</span><span class="title">Respiratory Pharmacology</span><span class="status upcoming">upcoming</span></li>
+  <li><span class="num">0017</span><span class="title">CNS Pharmacology</span><span class="status upcoming">upcoming</span></li>
+  <li><span class="num">0018</span><span class="title">Antimicrobials: Pharmacology &amp; Microbiology</span><span class="status upcoming">upcoming</span></li>
+  <li><span class="num">0019</span><span class="title">GI &amp; Endocrine Pharmacology</span><span class="status upcoming">upcoming</span></li>
+  <li><span class="num">0020</span><span class="title">Microbiology: Pathogen Groups</span><span class="status upcoming">upcoming</span></li>
+  <li><span class="num">0021</span><span class="title">Haematology + Remaining Pathology</span><span class="status upcoming">upcoming</span></li>
+  <li><span class="num">0022</span><span class="title">MSK, Anaesthesia &amp; Immunological Pharmacology</span><span class="status upcoming">upcoming</span></li>
+</ul>
+</section>
+
+<section>
+<h2>Phase 3: System Integration</h2>
+<p class="dates">Weeks 11–14 · 30 August – 26 September</p>
+<p>System-based review integrating Anatomy → Physiology → Pathology → Pharmacology. Heavy question practice.</p>
+<ul class="lesson-list">
+  <li><span class="num">0023</span><span class="title">CVS System Integration</span><span class="status upcoming">upcoming</span></li>
+  <li><span class="num">0024</span><span class="title">Respiratory System Integration</span><span class="status upcoming">upcoming</span></li>
+  <li><span class="num">0025</span><span class="title">Neurology System Integration</span><span class="status upcoming">upcoming</span></li>
+  <li><span class="num">0026</span><span class="title">GI, Renal &amp; Endocrine Integration</span><span class="status upcoming">upcoming</span></li>
+  <li><span class="num">0027</span><span class="title">Pharmacology Full Consolidation</span><span class="status upcoming">upcoming</span></li>
+  <li><span class="num">0028</span><span class="title">MSK Anatomy Final Pass</span><span class="status upcoming">upcoming</span></li>
+</ul>
+</section>
+
+<section>
+<h2>Phase 4: EBM + Consolidation + Mock Exams</h2>
+<p class="dates">Weeks 15–18 · 27 September – 26 October</p>
+<p>Evidence Based Medicine (10Q), final consolidation, full mock exams, weak-spot drilling.</p>
+<ul class="lesson-list">
+  <li><span class="num">0029</span><span class="title">EBM: Statistics</span><span class="status upcoming">upcoming</span></li>
+  <li><span class="num">0030</span><span class="title">EBM: Study Methodology &amp; Critical Appraisal</span><span class="status upcoming">upcoming</span></li>
+  <li><span class="num">0031</span><span class="title">Anatomy Final Pass</span><span class="status upcoming">upcoming</span></li>
+  <li><span class="num">0032</span><span class="title">Microbiology Final Pass</span><span class="status upcoming">upcoming</span></li>
+  <li><span class="num">0033</span><span class="title">Pharmacology Rapid Review</span><span class="status upcoming">upcoming</span></li>
+  <li><span class="num">0034</span><span class="title">Mock Exam 1 + Analysis</span><span class="status upcoming">upcoming</span></li>
+  <li><span class="num">0035</span><span class="title">Mock Exam 2 + Final Drills</span><span class="status upcoming">upcoming</span></li>
+</ul>
 </section>
 
 <section>
 <h2>Reference Materials</h2>
 <ul>
   <li><a href="reference/cellular-injury-cheatsheet.html">Cellular Injury &amp; Inflammation Cheat Sheet</a> — print-friendly quick reference</li>
-  <li><a href="PLAN.md">Full 18-Week Plan</a></li>
-  <li><a href="RESOURCES.md">Resource List</a></li>
+  <li><a href="PLAN.md">Full 18-Week Blueprint-Aligned Plan</a></li>
+  <li><a href="RESOURCES.md">Resource List (Robbins, RCEMLearning, PassMedicine)</a></li>
 </ul>
 </section>
 
@@ -94,7 +170,6 @@
 </div>
 
 <script>
-// Countdown timer
 const examDate = new Date('2026-10-27T09:00:00+01:00');
 const el = document.getElementById('countdown-days');
 const label = document.getElementById('countdown-label');
