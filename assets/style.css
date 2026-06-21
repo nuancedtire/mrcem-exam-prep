@@ -1,17 +1,51 @@
 /* MRCEM Primary Exam Prep — Shared Stylesheet */
-/* Tufte-inspired: clean, readable, print-friendly */
+/* Design system: Notion/Linear/every.to inspired — typography-first, micro-interactions, content-focused */
 
+/* ── Design Tokens ────────────────────────────────────────────── */
 :root {
-  --text: #1a1a2e;
-  --muted: #64748b;
+  /* Base */
   --bg: #fafbfc;
-  --card: #ffffff;
+  --surface: #ffffff;
+  --border: #e5e7eb;
+  --border-light: #f3f4f6;
+
+  /* Text */
+  --text: #111827;
+  --text-muted: #6b7280;
+  --text-subtle: #9ca3af;
+
+  /* Accent */
   --accent: #4f46e5;
-  --border: #e2e8f0;
+  --accent-hover: #4338ca;
+  --accent-light: #eef2ff;
+
+  /* Semantic */
+  --success: #059669;
+  --success-bg: #d1fae5;
+  --danger: #dc2626;
+  --danger-bg: #fee2e2;
+  --warning: #d97706;
+  --warning-bg: #fef3c7;
+  --info: #2563eb;
+  --info-bg: #dbeafe;
+  --pink: #db2777;
+  --pink-bg: #fce7f3;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.06);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,0.08);
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+/* ── Reset ────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+/* ── Typography ───────────────────────────────────────────────── */
 body {
   font-family: "Charter", "Georgia", "Times New Roman", serif;
   font-size: 17px;
@@ -19,122 +53,265 @@ body {
   color: var(--text);
   background: var(--bg);
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .lesson-container {
-  max-width: 720px;
+  max-width: 760px;
   margin: 0 auto;
-  padding: 2rem 1.5rem 4rem;
+  padding: 2.5rem 1.5rem 5rem;
 }
 
+/* ── Header ───────────────────────────────────────────────────── */
 header {
   margin-bottom: 2.5rem;
   padding-bottom: 1.5rem;
-  border-bottom: 2px solid var(--border);
+  border-bottom: 1px solid var(--border);
 }
 
 .lesson-number {
-  font-family: system-ui, -apple-system, sans-serif;
-  font-size: 0.8rem;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.78rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   color: var(--accent);
+  margin-bottom: 0.25rem;
 }
 
 h1 {
   font-size: 2.2rem;
   font-weight: 700;
   line-height: 1.2;
-  margin: 0.5rem 0 0.25rem;
+  margin: 0.35rem 0 0.25rem;
+  color: var(--text);
+  letter-spacing: -0.01em;
 }
 
 h2 {
   font-size: 1.4rem;
   font-weight: 600;
-  margin: 2rem 0 0.75rem;
+  margin: 2.25rem 0 0.75rem;
   padding-bottom: 0.4rem;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--border-light);
+  color: var(--text);
 }
 
 h3 {
   font-size: 1.15rem;
   font-weight: 600;
   margin: 1.5rem 0 0.5rem;
-  color: #334155;
+  color: #374151;
 }
 
 p { margin-bottom: 0.85rem; }
-
 p + p { margin-top: -0.25rem; }
 
 ol, ul { margin: 0.5rem 0 0.85rem 1.5rem; }
 li { margin-bottom: 0.35rem; }
 
 .lesson-meta {
-  font-family: system-ui, sans-serif;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   font-size: 0.85rem;
-  color: var(--muted);
+  color: var(--text-muted);
 }
 
-strong { color: #1e1b4b; }
+strong { color: #1f2937; }
 
+/* ── Links ────────────────────────────────────────────────────── */
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.15s ease;
+  background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat;
+  transition: background-size 0.2s ease, color 0.15s ease;
+  padding-bottom: 1px;
+}
+a:hover {
+  background-size: 100% 1px;
+}
+
+/* ── Tables ───────────────────────────────────────────────────── */
 table {
   width: 100%;
   border-collapse: collapse;
   margin: 1rem 0 1.25rem;
   font-size: 0.9rem;
 }
-
 th {
-  background: #f1f5f9;
+  background: #f9fafb;
   font-weight: 600;
   text-align: left;
   padding: 0.6rem 0.75rem;
   border-bottom: 2px solid var(--border);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
 }
-
 td {
   padding: 0.5rem 0.75rem;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--border-light);
   vertical-align: top;
 }
-
 tr:last-child td { border-bottom: none; }
+tr { transition: background 0.15s ease; }
 
+/* ── Callout Boxes ────────────────────────────────────────────── */
+/* Shared pattern: left-border accent + subtle background + rounded right */
+.blueprint-context,
+.exam-pattern,
+.key-point,
+.exam-tip,
 .mnemonic {
-  font-family: system-ui, sans-serif;
-  font-size: 1rem;
-  background: #f0fdf4;
-  border-left: 4px solid #22c55e;
+  padding: 1rem 1.25rem;
+  margin: 1.25rem 0;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  font-size: 0.92rem;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.55;
+}
+.blueprint-context strong,
+.exam-pattern strong,
+.key-point strong,
+.exam-tip strong,
+.mnemonic strong { color: inherit; }
+
+.blueprint-context { background: var(--info-bg); border-left: 4px solid var(--info); }
+.blueprint-context strong { color: #1e40af; }
+
+.exam-pattern { background: var(--pink-bg); border-left: 4px solid var(--pink); }
+.exam-pattern strong { color: #9d174d; }
+
+.key-point { background: var(--warning-bg); border-left: 4px solid var(--warning); }
+.key-point strong { color: #92400e; }
+
+.exam-tip { background: var(--accent-light); border-left: 4px solid var(--accent); }
+.exam-tip strong { color: #3730a3; }
+
+.mnemonic { background: #f0fdf4; border-left: 4px solid #22c55e; border-radius: 0 var(--radius-md) var(--radius-md) 0; }
+
+/* ── Quiz Options (base) ──────────────────────────────────────── */
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+.quiz-option {
   padding: 0.75rem 1rem;
-  border-radius: 0 8px 8px 0;
-  margin: 0.75rem 0;
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease, transform 0.1s ease;
+  background: var(--surface);
+  font-size: 0.95rem;
+}
+.quiz-option:hover {
+  border-color: var(--accent);
+  background: var(--accent-light);
+  transform: translateY(-1px);
+}
+.quiz-option:active { transform: translateY(0); }
+.quiz-option.correct {
+  border-color: var(--success);
+  background: var(--success-bg);
+}
+.quiz-option.incorrect {
+  border-color: var(--danger);
+  background: var(--danger-bg);
+}
+.quiz-option.reveal-correct {
+  border-color: var(--success);
+  background: var(--success-bg);
 }
 
+/* ── Answer Feedback ──────────────────────────────────────────── */
+.answer-feedback {
+  display: none;
+  margin-top: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  animation: slideIn 0.2s ease;
+}
+.answer-feedback.correct { display: block; background: var(--success-bg); color: #065f46; }
+.answer-feedback.incorrect { display: block; background: var(--danger-bg); color: #991b1b; }
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Flashcards ───────────────────────────────────────────────── */
+.flashcard {
+  border: 2px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  margin: 1.5rem 0;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+}
+.flashcard:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-1px);
+}
+.flashcard:active { transform: translateY(0); }
+.flashcard .front { font-weight: 600; font-size: 1.1rem; }
+.flashcard .back {
+  display: none;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  color: #4b5563;
+}
+.flashcard.flipped .front { display: none; }
+.flashcard.flipped .back { display: block; }
+
+/* ── Footer ───────────────────────────────────────────────────── */
 footer {
   margin-top: 3rem;
   padding-top: 1.5rem;
-  border-top: 2px solid var(--border);
+  border-top: 1px solid var(--border);
   font-size: 0.9rem;
-  color: var(--muted);
+  color: var(--text-muted);
 }
+footer a { color: var(--accent); }
 
-footer a {
-  color: var(--accent);
-  text-decoration: none;
+/* ── Animations ───────────────────────────────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
 }
+section { animation: fadeIn 0.4s ease both; }
+section:nth-child(1) { animation-delay: 0s; }
+section:nth-child(2) { animation-delay: 0.05s; }
+section:nth-child(3) { animation-delay: 0.1s; }
+section:nth-child(4) { animation-delay: 0.15s; }
+section:nth-child(5) { animation-delay: 0.2s; }
+section:nth-child(6) { animation-delay: 0.25s; }
 
-a { color: var(--accent); text-decoration: none; }
-a:hover { text-decoration: underline; }
-
+/* ── Print ────────────────────────────────────────────────────── */
 @media print {
   body { font-size: 12pt; background: #fff; }
   .lesson-container { max-width: 100%; padding: 0; }
-  .quiz-options { display: none; }
+  .quiz-options, .flashcard, .answer-feedback { display: none; }
+  .blueprint-context, .exam-pattern, .key-point, .exam-tip, .mnemonic {
+    border-left: 2px solid #000;
+    background: #fff;
+    padding: 0.5rem 0.75rem;
+  }
+  section { animation: none; }
 }
 
-/* Cheat sheet specific */
+/* ── Cheatsheet ───────────────────────────────────────────────── */
 .cheatsheet { font-size: 0.9rem; }
 .cheatsheet h2 { font-size: 1.1rem; }
 .cheatsheet table { font-size: 0.8rem; }
