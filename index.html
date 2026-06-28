@@ -6,25 +6,39 @@
 <title>MRCEM Primary — Exam Preparation Course</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 <style>
-  /* ── Dark Hero ──────────────────────────────────── */
+  /* ═══════════════════════════════════════════════════════════════
+     INDEX PAGE — Magazine Redesign v3
+     every.to × Notion × Linear
+     ═══════════════════════════════════════════════════════════════ */
+
+  /* ── Noise texture overlay ───────────────────────────── */
+  .noise-overlay {
+    position: fixed; inset: 0; z-index: 9999; pointer-events: none; opacity: 0.025;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 200px 200px;
+  }
+
+  /* ── Dark Hero — parallax glow ────────────────────────── */
   .hero {
     background: var(--dark);
     color: #fff;
     margin: 0 calc(-50vw + 50%);
-    padding: 4rem 1.5rem 3.5rem;
+    padding: 5rem 1.5rem 4rem;
     text-align: center;
     position: relative;
     overflow: hidden;
+    isolation: isolate;
   }
-  .hero::after {
-    content: "";
+  .hero-glow {
     position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(79,70,229,0.12) 0%, transparent 70%);
+    inset: -50%;
+    background: radial-gradient(ellipse 60% 50% at var(--mx,50%) var(--my,40%), rgba(79,70,229,0.15) 0%, transparent 70%);
     pointer-events: none;
+    z-index: 0;
+    transition: opacity 0.8s ease;
   }
   .hero-inner {
     max-width: 640px;
@@ -32,265 +46,421 @@
     position: relative;
     z-index: 1;
   }
+
+  /* Hero staggered entries */
   .hero .kicker {
     font-family: "Inter", system-ui, sans-serif;
-    font-size: 0.72rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    color: rgba(255,255,255,0.5);
+    font-size: 0.72rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.15em;
+    color: rgba(255,255,255,0.45);
     margin-bottom: 1rem;
+    opacity: 0; animation: heroFadeUp 0.7s 0.05s cubic-bezier(0.2,0,0,1) forwards;
   }
   .hero h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    line-height: 1.1;
-    color: #fff;
-    letter-spacing: -0.03em;
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    font-weight: 700; line-height: 1.08;
+    color: #fff; letter-spacing: -0.03em;
     margin: 0 0 0.75rem;
+    opacity: 0; animation: heroFadeUp 0.7s 0.15s cubic-bezier(0.2,0,0,1) forwards;
   }
   .hero .subtitle {
     font-family: "Inter", system-ui, sans-serif;
     font-size: 1.05rem;
-    color: rgba(255,255,255,0.6);
-    line-height: 1.5;
-    max-width: 480px;
-    margin: 0 auto;
+    color: rgba(255,255,255,0.55); line-height: 1.55;
+    max-width: 500px; margin: 0 auto;
+    opacity: 0; animation: heroFadeUp 0.7s 0.25s cubic-bezier(0.2,0,0,1) forwards;
   }
 
-  /* ── Hero Countdown ─────────────────────────────── */
+  @keyframes heroFadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── Countdown — number flip ──────────────────────────── */
   .hero-countdown {
-    display: flex;
-    align-items: baseline;
-    justify-content: center;
-    gap: 0.3rem;
+    display: flex; align-items: baseline;
+    justify-content: center; gap: 0.4rem;
     margin-top: 2.5rem;
+    opacity: 0; animation: heroFadeUp 0.7s 0.4s cubic-bezier(0.2,0,0,1) forwards;
   }
   .hero-countdown .days {
     font-family: "Inter", system-ui, sans-serif;
-    font-size: 4.5rem;
-    font-weight: 700;
-    line-height: 1;
-    color: #fff;
-    letter-spacing: -0.03em;
+    font-size: clamp(3.5rem, 8vw, 5rem);
+    font-weight: 700; line-height: 1;
+    color: #fff; letter-spacing: -0.03em;
     font-feature-settings: "tnum";
+    position: relative;
+    display: inline-block;
+    transition: transform 0.15s cubic-bezier(0.34,1.56,0.64,1);
+  }
+  .hero-countdown .days.flip {
+    transform: scale(1.08) translateY(-4px);
   }
   .hero-countdown .label {
     font-family: "Inter", system-ui, sans-serif;
-    font-size: 0.85rem;
-    color: rgba(255,255,255,0.45);
-    padding-bottom: 0.2rem;
+    font-size: 0.85rem; color: rgba(255,255,255,0.4);
+    padding-bottom: 0.25rem;
   }
 
-  /* ── Application Banner ─────────────────────────── */
   .app-banner {
     font-family: "Inter", system-ui, sans-serif;
-    font-size: 0.82rem;
-    color: rgba(255,255,255,0.55);
+    font-size: 0.82rem; color: rgba(255,255,255,0.5);
     margin-top: 1.5rem;
+    opacity: 0; animation: heroFadeUp 0.7s 0.55s cubic-bezier(0.2,0,0,1) forwards;
   }
-  .app-banner strong { color: rgba(255,255,255,0.75); }
+  .app-banner strong { color: rgba(255,255,255,0.7); }
 
-  /* ── Content sections (below hero) ──────────────── */
+  /* Hero decorative line */
+  .hero-line {
+    width: 40px; height: 2px;
+    background: rgba(255,255,255,0.15);
+    margin: 2rem auto 0;
+    border-radius: 1px;
+    opacity: 0; animation: heroFadeUp 0.7s 0.65s cubic-bezier(0.2,0,0,1) forwards;
+  }
+
+  /* ── Content Wrap ──────────────────────────────────────── */
   .content-wrap {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
+    max-width: 760px; margin: 0 auto; padding: 0 1.5rem;
   }
 
-  /* ── Section headings ───────────────────────────── */
+  /* ── Sticky Mini-Nav (desktop) ────────────────────────── */
+  .page-nav {
+    display: none;
+    position: fixed; top: 50%; right: max(20px, calc((100vw - 800px) / 2 - 160px));
+    transform: translateY(-50%);
+    z-index: 800;
+    font-family: "Inter", system-ui, sans-serif;
+    flex-direction: column; gap: 0.35rem;
+  }
+  @media (min-width: 1100px) {
+    .page-nav { display: flex; }
+  }
+  .page-nav a {
+    font-size: 0.7rem; color: var(--text-subtle);
+    padding: 0.3rem 0.6rem; border-radius: 4px;
+    transition: all 0.2s ease;
+    background-image: none; background-size: initial;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .page-nav a:hover, .page-nav a.active {
+    color: var(--accent);
+    background: var(--accent-light);
+  }
+
+  /* ── Reading Time ──────────────────────────────────────── */
+  .reading-time {
+    font-family: "Inter", system-ui, sans-serif;
+    font-size: 0.75rem; color: var(--text-subtle);
+    text-align: center; margin: 2rem 0 1rem;
+  }
+
+  /* ── Section headings — magazine rule ──────────────────── */
   .section-heading {
-    font-size: 1.3rem;
-    font-weight: 600;
+    font-size: 1.35rem; font-weight: 600;
     color: var(--text-heading);
-    margin: 3rem 0 1.25rem;
-    text-align: center;
-    position: relative;
+    margin: 3.5rem 0 1.5rem;
+    text-align: center; position: relative;
+    display: flex; align-items: center; gap: 1rem;
   }
+  .section-heading::before,
   .section-heading::after {
-    content: "";
-    display: block;
-    width: 32px;
-    height: 3px;
-    background: var(--accent);
-    margin: 0.75rem auto 0;
-    border-radius: 2px;
-    opacity: 0.5;
+    content: ""; flex: 1; height: 1px;
+    background: var(--border);
+  }
+  .section-heading span {
+    white-space: nowrap;
+    font-family: "Charter", "Georgia", serif;
+    font-size: 1.35rem; font-weight: 600;
+  }
+  .section-heading .dot {
+    display: inline-block; width: 5px; height: 5px;
+    background: var(--accent); border-radius: 50%;
+    margin: 0 0.3rem; vertical-align: middle; opacity: 0.5;
   }
 
-  /* ── Blueprint Card ─────────────────────────────── */
+  /* ── Section reveal (Intersection Observer) ────────────── */
+  .reveal-section {
+    opacity: 0; transform: translateY(24px);
+    transition: opacity 0.7s cubic-bezier(0.2,0,0,1), transform 0.7s cubic-bezier(0.2,0,0,1);
+  }
+  .reveal-section.visible {
+    opacity: 1; transform: translateY(0);
+  }
+  /* Phase card stagger: cards inherit reveal, then get individual delays */
+  .phase-card { transition-delay: calc(var(--card-index, 0) * 0.08s); }
+
+  /* ── Blueprint Card — elevated ─────────────────────────── */
   .blueprint-card {
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
-    padding: 1.5rem 1.75rem;
+    padding: 1.75rem 2rem;
     margin-bottom: 2.5rem;
     box-shadow: var(--shadow-sm);
     font-family: "Inter", system-ui, sans-serif;
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+  }
+  .blueprint-card:hover {
+    box-shadow: var(--shadow-card-hover);
+    transform: translateY(-1px);
   }
   .blueprint-card > p {
-    font-size: 0.88rem;
-    color: var(--text-muted);
-    margin-bottom: 1.25rem;
-    text-align: center;
+    font-size: 0.85rem; color: var(--text-muted);
+    margin-bottom: 1.5rem; text-align: center; line-height: 1.5;
   }
-  .blueprint-card table { border: none; margin: 0; }
+  .blueprint-card table { border: none; margin: 0; border-collapse: collapse; }
   .blueprint-card th {
-    font-size: 0.68rem;
-    padding: 0.35rem 0.5rem 0.5rem;
+    font-size: 0.65rem; padding: 0.4rem 0.6rem 0.65rem;
     background: transparent;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 2px solid var(--border);
+    text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted);
   }
   .blueprint-card td {
-    padding: 0.55rem 0.5rem;
-    font-size: 0.84rem;
+    padding: 0.65rem 0.6rem; font-size: 0.84rem;
+    border-bottom: 1px solid var(--border-light);
+    transition: background 0.15s ease;
   }
-  .blueprint-card tr:hover { background: #fafaf9; }
-  .blueprint-bar {
-    height: 5px;
-    border-radius: 3px;
-    background: var(--border-light);
-    overflow: hidden;
-    min-width: 60px;
-  }
-  .blueprint-bar-fill {
-    height: 100%;
-    border-radius: 3px;
-    background: var(--accent);
-    opacity: 0.6;
+  .blueprint-card tr:last-child td { border-bottom: none; }
+  .blueprint-card tr:hover td { background: #fafaf9; }
+  .blueprint-card tr td:first-child { font-weight: 500; }
+  .blueprint-card tr td:nth-child(3) {
+    font-feature-settings: "tnum"; font-weight: 600;
   }
 
-  /* ── Phase Cards ────────────────────────────────── */
+  /* Animated progress bars */
+  .blueprint-bar {
+    height: 6px; border-radius: 3px;
+    background: var(--border-light);
+    overflow: hidden; min-width: 80px;
+  }
+  .blueprint-bar-fill {
+    height: 100%; border-radius: 3px;
+    background: linear-gradient(90deg, var(--accent), #818cf8);
+    width: 0%;
+    transition: width 1.2s cubic-bezier(0.22,0.61,0.36,1);
+  }
+  .blueprint-bar-fill.animated {
+    /* width set via inline style, transition above handles animation */
+  }
+  .blueprint-card .coverage-label {
+    font-size: 0.7rem; color: var(--text-subtle); font-weight: 400;
+    font-feature-settings: "tnum";
+  }
+
+  /* ── Phase Cards — enhanced ────────────────────────────── */
   .phase-card {
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
-    padding: 1.75rem;
+    padding: 0;
     margin: 1.25rem 0;
     box-shadow: var(--shadow-sm);
-    transition: box-shadow 0.3s ease, transform 0.2s ease;
+    transition: box-shadow 0.35s cubic-bezier(0.2,0,0,1), transform 0.25s cubic-bezier(0.34,1.56,0.64,1);
+    overflow: hidden;
+    cursor: default;
   }
   .phase-card:hover {
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-card-hover);
     transform: translateY(-2px);
   }
-  .phase-card h3 {
-    font-family: "Inter", system-ui, sans-serif;
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: var(--text-heading);
-    margin: 0 0 0.5rem;
+
+  /* Phase header — always visible, clickable */
+  .phase-header {
+    display: flex; align-items: center;
+    gap: 1rem; padding: 1.5rem 1.75rem;
+    cursor: pointer; user-select: none;
+    transition: background 0.2s ease;
   }
-  .phase-card .dates {
+  .phase-header:hover { background: #fafaf9; }
+  .phase-badge {
+    flex-shrink: 0;
+    width: 48px; height: 48px;
+    border-radius: 12px;
+    background: var(--accent-light);
+    color: var(--accent);
+    display: flex; align-items: center; justify-content: center;
     font-family: "Inter", system-ui, sans-serif;
-    font-size: 0.78rem;
-    color: var(--text-muted);
-    margin-bottom: 0.75rem;
+    font-size: 1.1rem; font-weight: 700;
+    font-feature-settings: "tnum";
+    transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1);
   }
-  .phase-card > p {
+  .phase-card:hover .phase-badge {
+    transform: scale(1.08) rotate(-2deg);
+  }
+  .phase-info { flex: 1; min-width: 0; }
+  .phase-info h3 {
     font-family: "Inter", system-ui, sans-serif;
-    font-size: 0.85rem;
-    color: var(--text-muted);
+    font-size: 1rem; font-weight: 600;
+    color: var(--text-heading); margin: 0 0 0.2rem;
+  }
+  .phase-info .dates {
+    font-family: "Inter", system-ui, sans-serif;
+    font-size: 0.75rem; color: var(--text-muted);
+  }
+  .phase-toggle {
+    flex-shrink: 0;
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.3s ease;
+    color: var(--text-subtle);
+    font-size: 0.7rem;
+    background: var(--surface);
+  }
+  .phase-card.expanded .phase-toggle {
+    transform: rotate(180deg);
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--accent-light);
+  }
+  .phase-toggle svg { width: 12px; height: 12px; }
+
+  /* Phase body — collapsible */
+  .phase-body {
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.2,0,0,1), padding 0.5s ease, opacity 0.3s ease;
+    opacity: 0;
+  }
+  .phase-card.expanded .phase-body {
+    max-height: 2000px;
+    padding: 0 1.75rem 1.5rem;
+    opacity: 1;
+  }
+  .phase-body > p {
+    font-family: "Inter", system-ui, sans-serif;
+    font-size: 0.84rem; color: var(--text-muted);
+    line-height: 1.55; margin-bottom: 1rem;
+  }
+  .phase-progress {
+    font-family: "Inter", system-ui, sans-serif;
+    font-size: 0.7rem; color: var(--text-subtle);
     margin-bottom: 1rem;
-    line-height: 1.5;
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .phase-progress-bar {
+    flex: 1; height: 3px; border-radius: 2px;
+    background: var(--border-light); overflow: hidden;
+  }
+  .phase-progress-fill {
+    height: 100%; border-radius: 2px;
+    background: var(--accent);
+    transition: width 0.8s cubic-bezier(0.22,0.61,0.36,1);
   }
 
-  /* ── Lesson List ────────────────────────────────── */
+  /* ── Lesson List — enhanced ────────────────────────────── */
   .lesson-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    list-style: none; margin: 0; padding: 0;
     border-top: 1px solid var(--border-light);
   }
   .lesson-list li {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 0.65rem 0.5rem;
+    display: flex; align-items: center; gap: 0.75rem;
+    padding: 0.6rem 0.5rem;
     border-bottom: 1px solid var(--border-light);
-    transition: background 0.15s ease;
-    margin: 0 -0.5rem;
-    border-radius: var(--radius-sm);
+    transition: background 0.15s ease, transform 0.15s ease;
+    margin: 0 -0.5rem; border-radius: var(--radius-sm);
+    font-family: "Inter", system-ui, sans-serif;
   }
   .lesson-list li:last-child { border-bottom: none; }
-  .lesson-list li:hover { background: #fafaf9; }
+  .lesson-list li:hover {
+    background: #fafaf9;
+    transform: translateX(3px);
+  }
   .lesson-list .num {
-    font-family: "Inter", system-ui, sans-serif;
-    font-size: 0.72rem;
-    font-weight: 600;
+    font-size: 0.7rem; font-weight: 600;
     color: var(--text-subtle);
-    min-width: 2.5rem;
+    min-width: 2.5rem; text-align: right;
     font-feature-settings: "tnum";
-    text-align: right;
   }
   .lesson-list .title {
-    flex: 1;
-    font-size: 0.9rem;
-    font-family: "Inter", system-ui, sans-serif;
+    flex: 1; font-size: 0.88rem;
   }
   .lesson-list a {
-    color: var(--text);
+    color: var(--text); text-decoration: none;
+    background-image: none;
     transition: color 0.15s ease;
   }
-  .lesson-list a:hover { color: var(--accent); }
+  .lesson-list a:hover { color: var(--accent); background-image: none; }
   .lesson-list .no-link { color: var(--text-muted); }
 
-  /* ── Status Badges (Linear-inspired) ────────────── */
+  /* ── Status Badges — refined ────────────────────────────── */
   .status {
     font-family: "Inter", system-ui, sans-serif;
-    font-size: 0.68rem;
-    font-weight: 500;
-    padding: 0.15rem 0.55rem;
-    border-radius: 100px;
-    white-space: nowrap;
-    letter-spacing: 0.02em;
+    font-size: 0.66rem; font-weight: 500;
+    padding: 0.15rem 0.6rem; border-radius: 100px;
+    white-space: nowrap; letter-spacing: 0.02em;
   }
   .status.ready { background: var(--success-bg); color: #065f46; }
-  .status.next { background: var(--accent-light); color: #3730a3; }
+  .status.next { background: #eef2ff; color: #4338ca; }
   .status.upcoming { color: var(--text-subtle); }
 
-  /* ── Reference List ─────────────────────────────── */
+  /* ── Reference List ─────────────────────────────────────── */
   .ref-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    list-style: none; margin: 0; padding: 0;
   }
   .ref-list li {
-    padding: 0.5rem 0;
+    padding: 0.6rem 0;
     font-family: "Inter", system-ui, sans-serif;
     font-size: 0.9rem;
+    border-bottom: 1px solid var(--border-light);
+    transition: padding-left 0.2s ease;
   }
-  .ref-list a { color: var(--text); }
+  .ref-list li:last-child { border-bottom: none; }
+  .ref-list li:hover { padding-left: 0.5rem; }
+  .ref-list a { color: var(--text); background-image: none; }
   .ref-list a:hover { color: var(--accent); }
 
-  /* ── Dark Footer ────────────────────────────────── */
+  /* ── Dark Footer ────────────────────────────────────────── */
   .site-footer {
     background: var(--dark);
-    color: rgba(255,255,255,0.5);
+    color: rgba(255,255,255,0.45);
     font-family: "Inter", system-ui, sans-serif;
-    font-size: 0.82rem;
-    text-align: center;
-    padding: 2.5rem 1.5rem;
+    font-size: 0.82rem; text-align: center;
+    padding: 3rem 1.5rem;
     margin: 4rem calc(-50vw + 50%) 0;
+    position: relative; overflow: hidden;
   }
-  .site-footer a { color: rgba(255,255,255,0.7); }
+  .site-footer::before {
+    content: "";
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(79,70,229,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .site-footer-inner {
+    max-width: 600px; margin: 0 auto; position: relative; z-index: 1;
+  }
+  .site-footer .footer-ornament {
+    font-size: 1.5rem; margin-bottom: 1rem; opacity: 0.3;
+  }
+  .site-footer a { color: rgba(255,255,255,0.6); }
   .site-footer a:hover { color: #fff; }
+  .site-footer .footer-meta {
+    font-size: 0.7rem; color: rgba(255,255,255,0.25);
+    margin-top: 1.25rem;
+  }
 
-  /* ── Responsive ─────────────────────────────────── */
+  /* ── Responsive ─────────────────────────────────────────── */
   @media (max-width: 640px) {
-    .hero { padding: 3rem 1.25rem 2.5rem; }
-    .hero h1 { font-size: 2.2rem; }
-    .hero-countdown .days { font-size: 3.5rem; }
+    .hero { padding: 3.5rem 1.25rem 3rem; }
     .content-wrap { padding: 0 1rem; }
-    .blueprint-card { padding: 1.25rem; }
-    .phase-card { padding: 1.25rem; }
+    .blueprint-card { padding: 1.25rem 1rem; }
+    .phase-header { padding: 1.25rem; }
+    .phase-card.expanded .phase-body { padding: 0 1.25rem 1.25rem; }
+    .blueprint-card table { font-size: 0.78rem; }
+    .blueprint-card th { font-size: 0.6rem; padding: 0.3rem 0.35rem 0.5rem; }
+    .blueprint-card td { padding: 0.45rem 0.35rem; }
   }
 </style>
 </head>
 <body>
 
-<!-- ═══ Dark Hero ════════════════════════════════════════════════ -->
-<header class="hero">
+<div class="noise-overlay" aria-hidden="true"></div>
+
+<!-- ═══ Dark Hero ════════════════════════════════════════════════════ -->
+<header class="hero" id="hero">
+  <div class="hero-glow" id="heroGlow" aria-hidden="true"></div>
   <div class="hero-inner">
     <p class="kicker">MRCEM Primary Exam Preparation</p>
     <h1>Pass the MRCEM Primary</h1>
@@ -300,132 +470,215 @@
       <span class="label" id="countdown-label">days until the exam</span>
     </div>
     <p class="app-banner">Applications open <strong>15 July 2026 at 10am UK</strong> — close 22 July at 4pm.</p>
+    <div class="hero-line" aria-hidden="true"></div>
   </div>
 </header>
 
+<!-- ═══ Sticky Mini-Nav (desktop only) ═══════════════════════════════ -->
+<nav class="page-nav" id="pageNav" aria-label="On this page">
+  <a href="#blueprint">Blueprint</a>
+  <a href="#phase1">Phase 1</a>
+  <a href="#phase2">Phase 2</a>
+  <a href="#phase3">Phase 3</a>
+  <a href="#phase4">Phase 4</a>
+  <a href="#reference">Reference</a>
+</nav>
+
 <div class="content-wrap">
 
-<!-- ═══ Blueprint ═════════════════════════════════════════════════ -->
-<section>
-  <h2 class="section-heading">The Blueprint</h2>
+<div class="reading-time" id="readingTime"></div>
+
+<!-- ═══ Blueprint ════════════════════════════════════════════════════ -->
+<section class="reveal-section" id="blueprint">
+  <h2 class="section-heading"><span>··&thinsp;<span class="dot"></span>&thinsp;· The Blueprint ·&thinsp;<span class="dot"></span>&thinsp;··</span></h2>
   <div class="blueprint-card">
     <p>Every lesson maps to the official MRCEM Primary blueprint (Nov 2023). 180 SBAs · 3 hours · Angoff standard-set · Pass rate ~25%.</p>
     <table>
       <tr><th>Category</th><th>Questions</th><th>Weight</th><th>Coverage</th></tr>
       <tr>
         <td>🦴 Anatomy</td><td>60</td><td>33%</td>
-        <td><div class="blueprint-bar"><div class="blueprint-bar-fill" style="width:8%"></div></div></td>
+        <td>
+          <div class="blueprint-bar"><div class="blueprint-bar-fill" data-pct="8"></div></div>
+          <span class="coverage-label">8%</span>
+        </td>
       </tr>
       <tr>
         <td>🫁 Physiology</td><td>60</td><td>33%</td>
-        <td><div class="blueprint-bar"><div class="blueprint-bar-fill" style="width:5%"></div></div></td>
+        <td>
+          <div class="blueprint-bar"><div class="blueprint-bar-fill" data-pct="5"></div></div>
+          <span class="coverage-label">5%</span>
+        </td>
       </tr>
       <tr>
         <td>💊 Pharmacology</td><td>24</td><td>13%</td>
-        <td><div class="blueprint-bar"><div class="blueprint-bar-fill" style="width:0%"></div></div></td>
+        <td>
+          <div class="blueprint-bar"><div class="blueprint-bar-fill" data-pct="0"></div></div>
+          <span class="coverage-label">0%</span>
+        </td>
       </tr>
       <tr>
         <td>🦠 Microbiology</td><td>17</td><td>9%</td>
-        <td><div class="blueprint-bar"><div class="blueprint-bar-fill" style="width:0%"></div></div></td>
+        <td>
+          <div class="blueprint-bar"><div class="blueprint-bar-fill" data-pct="0"></div></div>
+          <span class="coverage-label">0%</span>
+        </td>
       </tr>
       <tr>
         <td>🔬 Pathology</td><td>9</td><td>5%</td>
-        <td><div class="blueprint-bar"><div class="blueprint-bar-fill" style="width:60%"></div></div></td>
+        <td>
+          <div class="blueprint-bar"><div class="blueprint-bar-fill" data-pct="60"></div></div>
+          <span class="coverage-label">60%</span>
+        </td>
       </tr>
       <tr>
         <td>📊 EBM</td><td>10</td><td>6%</td>
-        <td><div class="blueprint-bar"><div class="blueprint-bar-fill" style="width:0%"></div></div></td>
+        <td>
+          <div class="blueprint-bar"><div class="blueprint-bar-fill" data-pct="0"></div></div>
+          <span class="coverage-label">0%</span>
+        </td>
       </tr>
     </table>
   </div>
 </section>
 
-<!-- ═══ Phase 1 ═══════════════════════════════════════════════════ -->
-<section>
-  <h2 class="section-heading">Phase 1 · Foundations</h2>
-  <div class="phase-card">
-    <h3>Core Anatomy &amp; Physiology</h3>
-    <p class="dates">Weeks 1–6 · 21 June – 1 August</p>
-    <p>Anatomy (33%) and Physiology (33%) dominate the exam — we front-load them. ~55/60 anatomy questions and ~50/60 physiology questions covered in this phase alone.</p>
-    <ul class="lesson-list">
-      <li><span class="num">001</span><span class="title"><a href="lessons/0001-cellular-injury-inflammation.html">Cellular Injury, Inflammation &amp; Immune Response</a></span><span class="status ready">Ready</span></li>
-      <li><span class="num">002</span><span class="title"><a href="lessons/0002-upper-limb-anatomy.html">Upper Limb Anatomy</a></span><span class="status ready">Ready</span></li>
-      <li><span class="num">003</span><span class="title"><span class="no-link">Lower Limb Anatomy</span></span><span class="status next">Next</span></li>
-      <li><span class="num">004</span><span class="title"><span class="no-link">Thorax Anatomy</span></span><span class="status upcoming">Upcoming</span></li>
-      <li><span class="num">005</span><span class="title"><span class="no-link">Abdomen Anatomy</span></span><span class="status upcoming">Upcoming</span></li>
-      <li><span class="num">006</span><span class="title"><span class="no-link">Head &amp; Neck Anatomy</span></span><span class="status upcoming">Upcoming</span></li>
-      <li><span class="num">007</span><span class="title"><span class="no-link">Cardiovascular Physiology</span></span><span class="status upcoming">Upcoming</span></li>
-      <li><span class="num">008</span><span class="title"><span class="no-link">Respiratory Physiology</span></span><span class="status upcoming">Upcoming</span></li>
-      <li><span class="num">009</span><span class="title"><span class="no-link">CNS Anatomy: Brain &amp; Spinal Cord</span></span><span class="status upcoming">Upcoming</span></li>
-      <li><span class="num">010</span><span class="title"><span class="no-link">Cranial Nerve Lesions</span></span><span class="status upcoming">Upcoming</span></li>
-      <li><span class="num">011</span><span class="title"><span class="no-link">Renal Physiology</span></span><span class="status upcoming">Upcoming</span></li>
-      <li><span class="num">012</span><span class="title"><span class="no-link">GI Physiology</span></span><span class="status upcoming">Upcoming</span></li>
-      <li><span class="num">013</span><span class="title"><span class="no-link">Endocrine Physiology</span></span><span class="status upcoming">Upcoming</span></li>
-      <li><span class="num">014</span><span class="title"><span class="no-link">Microbiology: Principles</span></span><span class="status upcoming">Upcoming</span></li>
-    </ul>
+<!-- ═══ Phase 1 ══════════════════════════════════════════════════════ -->
+<section class="reveal-section" id="phase1" style="--card-index:0">
+  <h2 class="section-heading"><span>·· Phase 1 · Foundations ··</span></h2>
+  <div class="phase-card" id="phaseCard1">
+    <div class="phase-header" onclick="togglePhase('phaseCard1')" role="button" aria-expanded="false" tabindex="0">
+      <div class="phase-badge">1</div>
+      <div class="phase-info">
+        <h3>Core Anatomy &amp; Physiology</h3>
+        <p class="dates">Weeks 1–6 · 21 June – 1 August</p>
+      </div>
+      <div class="phase-toggle"><svg viewBox="0 0 12 12"><path d="M6 8L2 4h8L6 8z" fill="currentColor"/></svg></div>
+    </div>
+    <div class="phase-body">
+      <p>Anatomy (33%) and Physiology (33%) dominate the exam — we front-load them. ~55/60 anatomy questions and ~50/60 physiology questions covered in this phase alone.</p>
+      <div class="phase-progress">
+        <span>2 of 14 lessons ready</span>
+        <div class="phase-progress-bar"><div class="phase-progress-fill" style="width:14%"></div></div>
+        <span>14%</span>
+      </div>
+      <ul class="lesson-list">
+        <li><span class="num">001</span><span class="title"><a href="lessons/0001-cellular-injury-inflammation.html">Cellular Injury, Inflammation &amp; Immune Response</a></span><span class="status ready">Ready</span></li>
+        <li><span class="num">002</span><span class="title"><a href="lessons/0002-upper-limb-anatomy.html">Upper Limb Anatomy</a></span><span class="status ready">Ready</span></li>
+        <li><span class="num">003</span><span class="title"><span class="no-link">Lower Limb Anatomy</span></span><span class="status next">Next</span></li>
+        <li><span class="num">004</span><span class="title"><span class="no-link">Thorax Anatomy</span></span><span class="status upcoming">Upcoming</span></li>
+        <li><span class="num">005</span><span class="title"><span class="no-link">Abdomen Anatomy</span></span><span class="status upcoming">Upcoming</span></li>
+        <li><span class="num">006</span><span class="title"><span class="no-link">Head &amp; Neck Anatomy</span></span><span class="status upcoming">Upcoming</span></li>
+        <li><span class="num">007</span><span class="title"><span class="no-link">Cardiovascular Physiology</span></span><span class="status upcoming">Upcoming</span></li>
+        <li><span class="num">008</span><span class="title"><span class="no-link">Respiratory Physiology</span></span><span class="status upcoming">Upcoming</span></li>
+        <li><span class="num">009</span><span class="title"><span class="no-link">CNS Anatomy: Brain &amp; Spinal Cord</span></span><span class="status upcoming">Upcoming</span></li>
+        <li><span class="num">010</span><span class="title"><span class="no-link">Cranial Nerve Lesions</span></span><span class="status upcoming">Upcoming</span></li>
+        <li><span class="num">011</span><span class="title"><span class="no-link">Renal Physiology</span></span><span class="status upcoming">Upcoming</span></li>
+        <li><span class="num">012</span><span class="title"><span class="no-link">GI Physiology</span></span><span class="status upcoming">Upcoming</span></li>
+        <li><span class="num">013</span><span class="title"><span class="no-link">Endocrine Physiology</span></span><span class="status upcoming">Upcoming</span></li>
+        <li><span class="num">014</span><span class="title"><span class="no-link">Microbiology: Principles</span></span><span class="status upcoming">Upcoming</span></li>
+      </ul>
+    </div>
   </div>
 </section>
 
-<!-- ═══ Phase 2 ═══════════════════════════════════════════════════ -->
-<section>
-  <h2 class="section-heading">Phase 2 · Clinical Sciences</h2>
-  <div class="phase-card">
-    <h3>Pharmacology, Microbiology &amp; Pathology</h3>
-    <p class="dates">Weeks 7–10 · 2 August – 29 August</p>
-    <p>System-based pharmacology mapped to the anatomy and physiology already covered. Microbiology deep dive into pathogen groups.</p>
-    <ul class="lesson-list">
-      <li><span class="num">015</span><span class="title"><span class="no-link">Cardiovascular Pharmacology</span></span><span class="status upcoming">Upcoming</span></li>
-      <li><span class="num">016</span><span class="title"><span class="no-link">Respiratory Pharmacology</span></span><span class="status upcoming">Upcoming</span></li>
-      <li><span class="num">017</span><span class="title"><span class="no-link">CNS Pharmacology</span></span><span class="status upcoming">Upcoming</span></li>
-      <li><span class="num">018</span><span class="title"><span class="no-link">Antimicrobials</span></span><span class="status upcoming">Upcoming</span></li>
-      <li><span class="num">019</span><span class="title"><span class="no-link">GI &amp; Endocrine Pharmacology</span></span><span class="status upcoming">Upcoming</span></li>
-      <li><span class="num">020</span><span class="title"><span class="no-link">Microbiology: Pathogen Groups</span></span><span class="status upcoming">Upcoming</span></li>
-      <li><span class="num">021</span><span class="title"><span class="no-link">Haematology + Remaining Pathology</span></span><span class="status upcoming">Upcoming</span></li>
-      <li><span class="num">022</span><span class="title"><span class="no-link">MSK, Anaesthesia &amp; Immunological Pharm</span></span><span class="status upcoming">Upcoming</span></li>
-    </ul>
+<!-- ═══ Phase 2 ══════════════════════════════════════════════════════ -->
+<section class="reveal-section" id="phase2" style="--card-index:1">
+  <h2 class="section-heading"><span>·· Phase 2 · Clinical Sciences ··</span></h2>
+  <div class="phase-card" id="phaseCard2">
+    <div class="phase-header" onclick="togglePhase('phaseCard2')" role="button" aria-expanded="false" tabindex="0">
+      <div class="phase-badge">2</div>
+      <div class="phase-info">
+        <h3>Pharmacology, Microbiology &amp; Pathology</h3>
+        <p class="dates">Weeks 7–10 · 2 August – 29 August</p>
+      </div>
+      <div class="phase-toggle"><svg viewBox="0 0 12 12"><path d="M6 8L2 4h8L6 8z" fill="currentColor"/></svg></div>
+    </div>
+    <div class="phase-body">
+      <p>System-based pharmacology mapped to the anatomy and physiology already covered. Microbiology deep dive into pathogen groups.</p>
+      <div class="phase-progress">
+        <span>0 of 8 lessons ready</span>
+        <div class="phase-progress-bar"><div class="phase-progress-fill" style="width:0%"></div></div>
+        <span>0%</span>
+      </div>
+      <ul class="lesson-list">
+        <li><span class="num">015</span><span class="title"><span class="no-link">Cardiovascular Pharmacology</span></span><span class="status upcoming">Upcoming</span></li>
+        <li><span class="num">016</span><span class="title"><span class="no-link">Respiratory Pharmacology</span></span><span class="status upcoming">Upcoming</span></li>
+        <li><span class="num">017</span><span class="title"><span class="no-link">CNS Pharmacology</span></span><span class="status upcoming">Upcoming</span></li>
+        <li><span class="num">018</span><span class="title"><span class="no-link">Antimicrobials</span></span><span class="status upcoming">Upcoming</span></li>
+        <li><span class="num">019</span><span class="title"><span class="no-link">GI &amp; Endocrine Pharmacology</span></span><span class="status upcoming">Upcoming</span></li>
+        <li><span class="num">020</span><span class="title"><span class="no-link">Microbiology: Pathogen Groups</span></span><span class="status upcoming">Upcoming</span></li>
+        <li><span class="num">021</span><span class="title"><span class="no-link">Haematology + Remaining Pathology</span></span><span class="status upcoming">Upcoming</span></li>
+        <li><span class="num">022</span><span class="title"><span class="no-link">MSK, Anaesthesia &amp; Immunological Pharm</span></span><span class="status upcoming">Upcoming</span></li>
+      </ul>
+    </div>
   </div>
 </section>
 
-<!-- ═══ Phase 3 ═══════════════════════════════════════════════════ -->
-<section>
-  <h2 class="section-heading">Phase 3 · Integration</h2>
-  <div class="phase-card">
-    <h3>System-Based Review</h3>
-    <p class="dates">Weeks 11–14 · 30 August – 26 September</p>
-    <p>Systems reviewed end-to-end: Anatomy → Physiology → Pathology → Pharmacology. Heavy question practice with cross-category SBAs.</p>
-    <ul class="lesson-list">
-      <li><span class="num">023</span><span class="title"><span class="no-link">CVS System Integration</span></span><span class="status upcoming">Upcoming</span></li>
-      <li><span class="num">024</span><span class="title"><span class="no-link">Respiratory System Integration</span></span><span class="status upcoming">Upcoming</span></li>
-      <li><span class="num">025</span><span class="title"><span class="no-link">Neurology System Integration</span></span><span class="status upcoming">Upcoming</span></li>
-      <li><span class="num">026</span><span class="title"><span class="no-link">GI, Renal &amp; Endocrine Integration</span></span><span class="status upcoming">Upcoming</span></li>
-      <li><span class="num">027</span><span class="title"><span class="no-link">Pharmacology Full Consolidation</span></span><span class="status upcoming">Upcoming</span></li>
-      <li><span class="num">028</span><span class="title"><span class="no-link">MSK Anatomy Final Pass</span></span><span class="status upcoming">Upcoming</span></li>
-    </ul>
+<!-- ═══ Phase 3 ══════════════════════════════════════════════════════ -->
+<section class="reveal-section" id="phase3" style="--card-index:2">
+  <h2 class="section-heading"><span>·· Phase 3 · Integration ··</span></h2>
+  <div class="phase-card" id="phaseCard3">
+    <div class="phase-header" onclick="togglePhase('phaseCard3')" role="button" aria-expanded="false" tabindex="0">
+      <div class="phase-badge">3</div>
+      <div class="phase-info">
+        <h3>System-Based Review</h3>
+        <p class="dates">Weeks 11–14 · 30 August – 26 September</p>
+      </div>
+      <div class="phase-toggle"><svg viewBox="0 0 12 12"><path d="M6 8L2 4h8L6 8z" fill="currentColor"/></svg></div>
+    </div>
+    <div class="phase-body">
+      <p>Systems reviewed end-to-end: Anatomy → Physiology → Pathology → Pharmacology. Heavy question practice with cross-category SBAs.</p>
+      <div class="phase-progress">
+        <span>0 of 6 lessons ready</span>
+        <div class="phase-progress-bar"><div class="phase-progress-fill" style="width:0%"></div></div>
+        <span>0%</span>
+      </div>
+      <ul class="lesson-list">
+        <li><span class="num">023</span><span class="title"><span class="no-link">CVS System Integration</span></span><span class="status upcoming">Upcoming</span></li>
+        <li><span class="num">024</span><span class="title"><span class="no-link">Respiratory System Integration</span></span><span class="status upcoming">Upcoming</span></li>
+        <li><span class="num">025</span><span class="title"><span class="no-link">Neurology System Integration</span></span><span class="status upcoming">Upcoming</span></li>
+        <li><span class="num">026</span><span class="title"><span class="no-link">GI, Renal &amp; Endocrine Integration</span></span><span class="status upcoming">Upcoming</span></li>
+        <li><span class="num">027</span><span class="title"><span class="no-link">Pharmacology Full Consolidation</span></span><span class="status upcoming">Upcoming</span></li>
+        <li><span class="num">028</span><span class="title"><span class="no-link">MSK Anatomy Final Pass</span></span><span class="status upcoming">Upcoming</span></li>
+      </ul>
+    </div>
   </div>
 </section>
 
-<!-- ═══ Phase 4 ═══════════════════════════════════════════════════ -->
-<section>
-  <h2 class="section-heading">Phase 4 · Exam Conditioning</h2>
-  <div class="phase-card">
-    <h3>EBM, Consolidation &amp; Mock Exams</h3>
-    <p class="dates">Weeks 15–18 · 27 September – 26 October</p>
-    <p>Evidence Based Medicine (10Q), final consolidation passes, two full mock exams with wrong-answer analysis, and weak-spot drilling.</p>
-    <ul class="lesson-list">
-      <li><span class="num">029</span><span class="title"><span class="no-link">EBM: Statistics</span></span><span class="status upcoming">Upcoming</span></li>
-      <li><span class="num">030</span><span class="title"><span class="no-link">EBM: Study Methodology &amp; Critical Appraisal</span></span><span class="status upcoming">Upcoming</span></li>
-      <li><span class="num">031</span><span class="title"><span class="no-link">Anatomy Final Pass</span></span><span class="status upcoming">Upcoming</span></li>
-      <li><span class="num">032</span><span class="title"><span class="no-link">Microbiology Final Pass</span></span><span class="status upcoming">Upcoming</span></li>
-      <li><span class="num">033</span><span class="title"><span class="no-link">Pharmacology Rapid Review</span></span><span class="status upcoming">Upcoming</span></li>
-      <li><span class="num">034</span><span class="title"><span class="no-link">Mock Exam 1 + Analysis</span></span><span class="status upcoming">Upcoming</span></li>
-      <li><span class="num">035</span><span class="title"><span class="no-link">Mock Exam 2 + Final Drills</span></span><span class="status upcoming">Upcoming</span></li>
-    </ul>
+<!-- ═══ Phase 4 ══════════════════════════════════════════════════════ -->
+<section class="reveal-section" id="phase4" style="--card-index:3">
+  <h2 class="section-heading"><span>·· Phase 4 · Exam Conditioning ··</span></h2>
+  <div class="phase-card" id="phaseCard4">
+    <div class="phase-header" onclick="togglePhase('phaseCard4')" role="button" aria-expanded="false" tabindex="0">
+      <div class="phase-badge">4</div>
+      <div class="phase-info">
+        <h3>EBM, Consolidation &amp; Mock Exams</h3>
+        <p class="dates">Weeks 15–18 · 27 September – 26 October</p>
+      </div>
+      <div class="phase-toggle"><svg viewBox="0 0 12 12"><path d="M6 8L2 4h8L6 8z" fill="currentColor"/></svg></div>
+    </div>
+    <div class="phase-body">
+      <p>Evidence Based Medicine (10Q), final consolidation passes, two full mock exams with wrong-answer analysis, and weak-spot drilling.</p>
+      <div class="phase-progress">
+        <span>0 of 7 lessons ready</span>
+        <div class="phase-progress-bar"><div class="phase-progress-fill" style="width:0%"></div></div>
+        <span>0%</span>
+      </div>
+      <ul class="lesson-list">
+        <li><span class="num">029</span><span class="title"><span class="no-link">EBM: Statistics</span></span><span class="status upcoming">Upcoming</span></li>
+        <li><span class="num">030</span><span class="title"><span class="no-link">EBM: Study Methodology &amp; Critical Appraisal</span></span><span class="status upcoming">Upcoming</span></li>
+        <li><span class="num">031</span><span class="title"><span class="no-link">Anatomy Final Pass</span></span><span class="status upcoming">Upcoming</span></li>
+        <li><span class="num">032</span><span class="title"><span class="no-link">Microbiology Final Pass</span></span><span class="status upcoming">Upcoming</span></li>
+        <li><span class="num">033</span><span class="title"><span class="no-link">Pharmacology Rapid Review</span></span><span class="status upcoming">Upcoming</span></li>
+        <li><span class="num">034</span><span class="title"><span class="no-link">Mock Exam 1 + Analysis</span></span><span class="status upcoming">Upcoming</span></li>
+        <li><span class="num">035</span><span class="title"><span class="no-link">Mock Exam 2 + Final Drills</span></span><span class="status upcoming">Upcoming</span></li>
+      </ul>
+    </div>
   </div>
 </section>
 
-<!-- ═══ Reference ═════════════════════════════════════════════════ -->
-<section>
-  <h2 class="section-heading">Reference</h2>
+<!-- ═══ Reference ════════════════════════════════════════════════════ -->
+<section class="reveal-section" id="reference">
+  <h2 class="section-heading"><span>·· Reference ··</span></h2>
   <ul class="ref-list">
     <li><a href="reference/cellular-injury-cheatsheet.html">Cellular Injury &amp; Inflammation Cheat Sheet</a></li>
     <li><a href="PLAN.md">Full 18-Week Study Plan</a></li>
@@ -435,24 +688,146 @@
 
 </div><!-- /content-wrap -->
 
-<!-- ═══ Dark Footer ══════════════════════════════════════════════ -->
+<!-- ═══ Dark Footer ═════════════════════════════════════════════════ -->
 <footer class="site-footer">
-  <p>💬 Questions about anything in these lessons? <a href="#">Ask me</a> anytime — I'm your teacher. If something's unclear, we work through it until it's solid.</p>
+  <div class="site-footer-inner">
+    <div class="footer-ornament">···</div>
+    <p>💬 Questions about anything in these lessons? <a href="#">Ask me</a> anytime — I'm your teacher. If something's unclear, we work through it until it's solid.</p>
+    <p class="footer-meta">MRCEM Primary Exam Prep · 18-week course · 35 lessons</p>
+  </div>
 </footer>
 
+<!-- ═══ Scripts ══════════════════════════════════════════════════════ -->
 <script>
-const examDate = new Date('2026-10-27T09:00:00+01:00');
-const el = document.getElementById('countdown-days');
-const label = document.getElementById('countdown-label');
-function update() {
-  const now = new Date();
-  const diff = examDate - now;
-  const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
-  el.textContent = days > 0 ? days : '0';
-  label.textContent = days > 0 ? 'days until the exam' : "It's exam day. You've got this.";
+/* ── Parallax Hero Glow ─────────────────────── */
+(function() {
+  const hero = document.getElementById('hero');
+  const glow = document.getElementById('heroGlow');
+  if (!hero || !glow) return;
+  hero.addEventListener('mousemove', function(e) {
+    const rect = hero.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+    glow.style.setProperty('--mx', x + '%');
+    glow.style.setProperty('--my', y + '%');
+  });
+  hero.addEventListener('mouseleave', function() {
+    glow.style.setProperty('--mx', '50%');
+    glow.style.setProperty('--my', '40%');
+  });
+})();
+
+/* ── Countdown with flip ────────────────────── */
+(function() {
+  const examDate = new Date('2026-10-27T09:00:00+01:00');
+  const el = document.getElementById('countdown-days');
+  const label = document.getElementById('countdown-label');
+  let lastDays = -1;
+  function update() {
+    const days = Math.ceil((examDate - new Date()) / (1000 * 60 * 60 * 24));
+    const d = days > 0 ? days : 0;
+    if (d !== lastDays) {
+      el.textContent = d;
+      el.classList.add('flip');
+      setTimeout(function() { el.classList.remove('flip'); }, 200);
+      lastDays = d;
+    }
+    label.textContent = days > 0 ? 'days until the exam' : "It's exam day. You've got this.";
+  }
+  update();
+  setInterval(update, 30000);
+})();
+
+/* ── Phase Toggle ───────────────────────────── */
+function togglePhase(id) {
+  var card = document.getElementById(id);
+  if (!card) return;
+  var expanded = card.classList.contains('expanded');
+  // Close all others
+  document.querySelectorAll('.phase-card.expanded').forEach(function(c) {
+    if (c.id !== id) { c.classList.remove('expanded'); c.querySelector('.phase-header').setAttribute('aria-expanded', 'false'); }
+  });
+  card.classList.toggle('expanded');
+  card.querySelector('.phase-header').setAttribute('aria-expanded', !expanded);
 }
-update();
-setInterval(update, 60000);
+
+/* ── Keyboard: Enter/Space on phase headers ───── */
+document.querySelectorAll('.phase-header').forEach(function(h) {
+  h.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      var card = h.closest('.phase-card');
+      if (card) togglePhase(card.id);
+    }
+  });
+});
+
+/* ── Intersection Observer: section reveals ──── */
+(function() {
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal-section').forEach(function(s) { observer.observe(s); });
+})();
+
+/* ── Blueprint bars animate on scroll ────────── */
+(function() {
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.querySelectorAll('.blueprint-bar-fill').forEach(function(bar) {
+          var pct = bar.getAttribute('data-pct') || '0';
+          bar.style.width = pct + '%';
+          bar.classList.add('animated');
+        });
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  var card = document.querySelector('.blueprint-card');
+  if (card) obs.observe(card);
+})();
+
+/* ── Sticky Mini-Nav active state ────────────── */
+(function() {
+  var sections = [];
+  var links = document.querySelectorAll('#pageNav a');
+  links.forEach(function(a) {
+    var id = a.getAttribute('href').replace('#', '');
+    var el = document.getElementById(id);
+    if (el) sections.push({ id: id, el: el, link: a });
+  });
+  if (sections.length === 0) return;
+  window.addEventListener('scroll', function() {
+    var scrollY = window.scrollY + 120;
+    var active = sections[0];
+    for (var i = sections.length - 1; i >= 0; i--) {
+      if (sections[i].el.offsetTop <= scrollY) { active = sections[i]; break; }
+    }
+    links.forEach(function(a) { a.classList.remove('active'); });
+    active.link.classList.add('active');
+  }, { passive: true });
+})();
+
+/* ── Reading time estimate ───────────────────── */
+(function() {
+  var text = document.querySelector('.content-wrap').textContent || '';
+  var wordCount = text.split(/\s+/).filter(Boolean).length;
+  var minutes = Math.max(1, Math.ceil(wordCount / 200));
+  document.getElementById('readingTime').textContent = '~' + minutes + ' min read · ' + wordCount.toLocaleString() + ' words';
+})();
+
+/* ── Noise toggle: respect prefers-reduced-motion ── */
+(function() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    var overlay = document.querySelector('.noise-overlay');
+    if (overlay) overlay.remove();
+  }
+})();
 </script>
 
 </body>
